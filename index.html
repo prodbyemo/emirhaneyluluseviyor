@@ -6155,12 +6155,63 @@ button:hover{
    START
 ========================================================= */
 
+let probabilityTestCompleted=false;
+
+function getProbabilityTestMaxScroll(){
+
+    const testSection=
+        document.querySelector(".probability-test");
+
+    if(!testSection){
+        return Infinity;
+    }
+
+    const testBottom=
+        testSection.offsetTop
+        +
+        testSection.offsetHeight;
+
+    return Math.max(
+        testSection.offsetTop,
+        testBottom-window.innerHeight
+    );
+
+}
+
+
+function keepInsideProbabilityTest(){
+
+    if(probabilityTestCompleted){
+        return;
+    }
+
+    const maxScroll=
+        getProbabilityTestMaxScroll();
+
+    if(window.scrollY>maxScroll){
+
+        window.scrollTo({
+            top:maxScroll,
+            behavior:"auto"
+        });
+
+    }
+
+}
+
+
 function startSite(){
+
+    probabilityTestCompleted=false;
 
     document
         .getElementById("story")
         .style
         .display="block";
+
+
+    document.documentElement.style.overflow="";
+    document.body.style.overflow="";
 
 
     setTimeout(()=>{
@@ -6173,14 +6224,22 @@ function startSite(){
 
             });
 
-        setTimeout(()=>{
-            document.documentElement.style.overflow="hidden";
-            document.body.style.overflow="hidden";
-        },700);
-
     },100);
 
 }
+
+
+window.addEventListener(
+    "scroll",
+    keepInsideProbabilityTest,
+    {passive:true}
+);
+
+
+window.addEventListener(
+    "resize",
+    keepInsideProbabilityTest
+);
 
 
 
@@ -6196,10 +6255,39 @@ function nextQuestion(current,next){
         .remove("active-step");
 
 
-    document
-        .getElementById(next)
+    const nextStep=
+        document.getElementById(next);
+
+    nextStep
         .classList
         .add("active-step");
+
+
+    setTimeout(()=>{
+
+        const card=
+            nextStep.closest(".test-card");
+
+        if(card){
+
+            const cardTop=
+                card.getBoundingClientRect().top
+                +
+                window.scrollY
+                -
+                28;
+
+            const maxScroll=
+                getProbabilityTestMaxScroll();
+
+            window.scrollTo({
+                top:Math.min(cardTop,maxScroll),
+                behavior:"smooth"
+            });
+
+        }
+
+    },60);
 
 }
 
@@ -6218,8 +6306,24 @@ function finishTest(){
         .style
         .display="block";
 
+
+    probabilityTestCompleted=true;
+
+
     document.documentElement.style.overflow="";
     document.body.style.overflow="";
+
+
+    setTimeout(()=>{
+
+        document
+            .getElementById("testResult")
+            .scrollIntoView({
+                behavior:"smooth",
+                block:"center"
+            });
+
+    },80);
 
 }
 
