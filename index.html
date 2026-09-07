@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#09090b" />
+
+  <!-- Arama motorlarında görünmesini azaltır -->
+  <meta name="robots" content="noindex, nofollow, noarchive" />
+
+  <title>Eylül</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background:
+        radial-gradient(circle at 50% 20%, rgba(120, 20, 45, 0.13), transparent 35%),
+        #09090b;
+      color: #f5f2ef;
+      font-family: "Inter", sans-serif;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 20% 25%, rgba(255,255,255,.025), transparent 20%),
+        radial-gradient(circle at 80% 75%, rgba(255,255,255,.02), transparent 25%);
+      z-index: -1;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 22px;
+      position: relative;
+    }
+
+    .content {
+      width: min(680px, 100%);
+      text-align: center;
+    }
+
+    .eylul {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(72px, 16vw, 130px);
+      font-weight: 500;
+      letter-spacing: -4px;
+      line-height: .9;
+      opacity: 0;
+      animation: fadeUp 1.8s forwards .4s;
+    }
+
+    .subtitle {
+      margin-top: 28px;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(23px, 5vw, 34px);
+      color: #c9c1bc;
+      opacity: 0;
+      animation: fadeUp 1.5s forwards 1.4s;
+    }
+
+    .small {
+      margin-top: 14px;
+      color: #817c79;
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      opacity: 0;
+      animation: fadeUp 1.5s forwards 2s;
+    }
+
+    .btn {
+      border: 1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.04);
+      color: #eee9e5;
+      padding: 15px 31px;
+      border-radius: 999px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: .35s ease;
+      backdrop-filter: blur(12px);
+      font-family: "Inter", sans-serif;
+    }
+
+    .btn:hover {
+      background: #eee9e5;
+      color: #111;
+      transform: translateY(-2px);
+    }
+
+    .start-btn {
+      margin-top: 42px;
+      opacity: 0;
+      animation: fadeUp 1.5s forwards 2.6s;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    #story {
+      display: none;
+    }
+
+    .story-section {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 70px 24px;
+    }
+
+    .story-box {
+      width: min(650px, 100%);
+      text-align: center;
+    }
+
+    .number {
+      color: #8e6b73;
+      font-size: 12px;
+      letter-spacing: 4px;
+      margin-bottom: 24px;
+    }
+
+    h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 500;
+      font-size: clamp(40px, 8vw, 66px);
+      line-height: 1.05;
+    }
+
+    .text {
+      color: #bcb4af;
+      margin: 30px auto 0;
+      max-width: 560px;
+      font-size: 16px;
+      line-height: 2;
+    }
+
+    .highlight {
+      color: #f4e5e8;
+    }
+
+    .quote {
+      margin: 55px auto;
+      padding: 30px 0;
+      max-width: 530px;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(26px, 6vw, 42px);
+      line-height: 1.3;
+      color: #eadcde;
+      border-top: 1px solid rgba(255,255,255,.08);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+
+    .memory-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 45px;
+    }
+
+    .memory {
+      min-height: 180px;
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 18px;
+      display: flex;
+      padding: 20px;
+      align-items: flex-end;
+      text-align: left;
+      background:
+        linear-gradient(to top, rgba(0,0,0,.65), rgba(0,0,0,.1)),
+        radial-gradient(circle at top, #391925, #141012);
+      transition: .35s;
+    }
+
+    .memory:hover {
+      transform: translateY(-5px);
+      border-color: rgba(255,255,255,.2);
+    }
+
+    .memory span {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 20px;
+      line-height: 1.2;
+    }
+
+    .letter {
+      margin: 45px auto 0;
+      text-align: left;
+      max-width: 570px;
+      padding: 32px;
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.025);
+      border-radius: 22px;
+      line-height: 2;
+      color: #c8c0bb;
+    }
+
+    .letter strong {
+      color: #f3e9e6;
+      font-weight: 500;
+    }
+
+    .music-box {
+      margin: 45px auto 0;
+      padding: 30px;
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.025);
+    }
+
+    .music-icon {
+      font-size: 35px;
+      margin-bottom: 14px;
+    }
+
+    .music-title {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 29px;
+    }
+
+    .music-desc {
+      color: #817b78;
+      font-size: 13px;
+      margin: 8px 0 22px;
+    }
+
+    .final {
+      background:
+        radial-gradient(circle at center, rgba(126, 29, 56, .22), transparent 45%);
+    }
+
+    .question {
+      margin-top: 38px;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(32px, 7vw, 50px);
+      line-height: 1.2;
+    }
+
+    .choices {
+      display: flex;
+      justify-content: center;
+      gap: 13px;
+      flex-wrap: wrap;
+      margin-top: 35px;
+    }
+
+    .yes {
+      background: #efe7e4;
+      color: #161313;
+      border-color: #efe7e4;
+    }
+
+    .response {
+      margin-top: 26px;
+      color: #aaa19c;
+      min-height: 28px;
+      line-height: 1.6;
+    }
+
+    .heart {
+      position: fixed;
+      bottom: -20px;
+      font-size: 13px;
+      opacity: 0;
+      animation: floatHeart linear forwards;
+      pointer-events: none;
+    }
+
+    .signature {
+      margin-top: 48px;
+      color: #655f5c;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 21px;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(22px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes floatHeart {
+      0% {
+        opacity: 0;
+        transform: translateY(0) rotate(0deg);
+      }
+      15% {
+        opacity: .35;
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(-105vh) rotate(25deg);
+      }
+    }
+
+    @media (max-width: 650px) {
+      .memory-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .memory {
+        min-height: 125px;
+      }
+
+      .letter {
+        padding: 25px 21px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- AÇILIŞ -->
+  <section class="page" id="intro">
+    <div class="content">
+      <h1 class="eylul">Eylül.</h1>
+
+      <p class="subtitle">
+        Bunu sana sıradan bir mesajla anlatmak istemedim.
+      </p>
+
+      <p class="small">
+        sadece birkaç dakikanı istiyorum
+      </p>
+
+      <button class="btn start-btn" onclick="startStory()">
+        devam et
+      </button>
+    </div>
+  </section>
+
+
+  <main id="story">
+
+    <!-- BÖLÜM 1 -->
+    <section class="story-section">
+      <div class="story-box">
+
+        <div class="number">01 — BAŞLANGIÇ</div>
+
+        <h2>
+          Bazı insanlar gider.<br>
+          Bazılarıysa sende kalır.
+        </h2>
+
+        <p class="text">
+          Aradan ne geçerse geçsin, bazı insanların hayatındaki yeri
+          sıradanlaşmıyor.
+          <br><br>
+          Sen benim için öyle birisin.
+        </p>
+
+        <div class="quote">
+          “Sana geri dön diye bir site hazırlamadım.
+          Sana içimde kalanları dürüstçe göstermek için hazırladım.”
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- BÖLÜM 2 -->
+    <section class="story-section">
+      <div class="story-box">
+
+        <div class="number">02 — BİZDEN KALANLAR</div>
+
+        <h2>
+          Hatırladığım küçük şeyler.
+        </h2>
+
+        <p class="text">
+          Büyük olaylardan çok, bazen insanın aklında en küçük detaylar kalıyor.
+        </p>
+
+        <div class="memory-grid">
+
+          <div class="memory">
+            <span>
+              Gece uzayan konuşmalarımız.
+            </span>
+          </div>
+
+          <div class="memory">
+            <span>
+              Birbirimizi güldürdüğümüz saçma anlar.
+            </span>
+          </div>
+
+          <div class="memory">
+            <span>
+              Seni tanımaya başladığım ilk günlerdeki heyecanım.
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- BÖLÜM 3 -->
+    <section class="story-section">
+      <div class="story-box">
+
+        <div class="number">03 — SANA SÖYLEMEK İSTEDİĞİM</div>
+
+        <h2>
+          Sana karşı hâlâ söylemek istediğim şeyler var.
+        </h2>
+
+        <div class="letter">
+
+          <p>
+            <strong>Eylül,</strong>
+          </p>
+
+          <br>
+
+          <p>
+            Bazen insan bazı şeylerin değerini ancak araya mesafe girince
+            daha iyi anlıyor.
+          </p>
+
+          <br>
+
+          <p>
+            Geçmişte yaptığım her şeyi doğru yaptığımı söylemeyeceğim.
+            Hatalarım oldu. Seni kırdığım, yanlış anladığım veya kendimi
+            doğru ifade edemediğim anlar olduysa bunun sorumluluğunu alıyorum.
+          </p>
+
+          <br>
+
+          <p>
+            Ama sana karşı hissettiğim şeylerin benim için sıradan olmadığını
+            biliyorum.
+          </p>
+
+          <br>
+
+          <p>
+            Bu sayfayı da seni bir şeye mecbur bırakmak için değil,
+            <strong>sana hâlâ değer verdiğimi göstermek için</strong>
+            hazırladım.
+          </p>
+
+          <br>
+
+          <p>
+            Her şeyi eskisi gibi yapmak zorunda değiliz.
+            Belki sadece yeniden konuşabiliriz.
+            Daha sakin, daha dürüst, daha güzel bir yerden.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- MÜZİK -->
+    <section class="story-section">
+      <div class="story-box">
+
+        <div class="number">04 — BİR ŞARKI</div>
+
+        <h2>
+          Çünkü bazı şeyleri konuşmak yerine müzik anlatıyor.
+        </h2>
+
+        <div class="music-box">
+
+          <div class="music-icon">♬</div>
+
+          <div class="music-title">
+            Senin için seçtiğim bir şarkı
+          </div>
+
+          <div class="music-desc">
+            Buraya daha sonra kendi Spotify / YouTube / şarkı linkimizi ekleyeceğiz.
+          </div>
+
+          <!--
+          Aşağıdaki # yerine şarkı linkini koyabilirsin.
+          Örnek:
+          href="https://open.spotify.com/..."
+          -->
+
+          <a
+            class="btn"
+            href="#"
+            target="_blank"
+            style="display:inline-block;text-decoration:none;"
+          >
+            🎧 dinle
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- FİNAL -->
+    <section class="story-section final">
+      <div class="story-box">
+
+        <div class="number">05 — SON OLARAK</div>
+
+        <h2>
+          Geçmişi silemeyiz.
+        </h2>
+
+        <p class="text">
+          Ama istersek bundan sonrasına başka türlü bakabiliriz.
+        </p>
+
+        <div class="question">
+          Benimle yeniden konuşmayı dener misin?
+        </div>
+
+        <div class="choices">
+
+          <button class="btn yes" onclick="answerYes()">
+            Konuşabiliriz ❤️
+          </button>
+
+          <button class="btn" onclick="answerNo()">
+            Şu an istemiyorum
+          </button>
+
+        </div>
+
+        <div class="response" id="response"></div>
+
+        <div class="signature">
+          — Emirhan
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <script>
+
+    function startStory() {
+      document.getElementById("story").style.display = "block";
+
+      setTimeout(() => {
+        document.getElementById("story").scrollIntoView({
+          behavior: "smooth"
+        });
+      }, 100);
+    }
+
+
+    function answerYes() {
+
+      document.getElementById("response").innerHTML =
+        "Bunu okumaya zaman ayırdığın için teşekkür ederim. ❤️<br>Gerisini konuşarak hallederiz.";
+
+      createHearts();
+    }
+
+
+    function answerNo() {
+
+      document.getElementById("response").innerHTML =
+        "Anlıyorum. Kararına saygı duyuyorum.<br>Yine de buraya kadar okuduğun için teşekkür ederim.";
+
+    }
+
+
+    function createHearts() {
+
+      for (let i = 0; i < 24; i++) {
+
+        setTimeout(() => {
+
+          const heart = document.createElement("div");
+
+          heart.className = "heart";
+          heart.innerHTML = "♥";
+
+          heart.style.left = Math.random() * 100 + "vw";
+          heart.style.animationDuration =
+            (4 + Math.random() * 4) + "s";
+
+          document.body.appendChild(heart);
+
+          setTimeout(() => {
+            heart.remove();
+          }, 8000);
+
+        }, i * 120);
+
+      }
+
+    }
+
+  </script>
+
+</body>
+</html>
