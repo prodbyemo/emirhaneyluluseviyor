@@ -2757,6 +2757,13 @@ button:hover{
 
 
 /* =========================================================
+   OLASILIK SONUCU + NE DEĞİŞECEK
+========================================================= */
+.probability-chain{margin:5px auto 25px;display:grid;gap:7px;color:#817874;font-size:12px;letter-spacing:.5px}.probability-chain b{color:#5f5754;font-weight:400}.impossible-rate{margin-top:25px;font-family:"Cormorant Garamond",serif;font-size:clamp(54px,10vw,92px);line-height:1;color:#f0dfe3;text-shadow:0 0 45px rgba(196,123,141,.2);animation:ratePulse 2s infinite alternate}.rate-label{margin-top:12px;color:#736a67;font-size:9px;letter-spacing:2px;text-transform:uppercase}.probability-note{max-width:560px;margin:27px auto 0;color:#9f9691;line-height:1.8}.probability-note strong{color:#eadbdd}.probability-verdict{max-width:620px;margin:30px auto 0;font-size:clamp(30px,5vw,45px);font-weight:500}
+.change-section{background:radial-gradient(circle at 50% 45%,rgba(71,96,84,.12),transparent 42%),#070708}.change-grid{margin-top:52px;display:grid;grid-template-columns:1fr 1fr;gap:14px}.change-card{min-height:220px;padding:27px;display:flex;flex-direction:column;border:1px solid rgba(255,255,255,.08);border-radius:24px;background:rgba(255,255,255,.023);text-align:left}.change-icon{font-size:35px;margin-bottom:auto}.change-card h3{font-size:29px}.change-card p{margin-top:10px;color:#918884;font-size:13px;line-height:1.75}.change-equation{max-width:680px;margin:50px auto 0;padding:31px;border:1px dashed rgba(255,255,255,.13);border-radius:25px;color:#b9aeaa;font-family:"Cormorant Garamond",serif;font-size:clamp(25px,5vw,36px);line-height:1.55}.change-equation strong{color:#eedfe1}.change-final{max-width:650px;margin:28px auto 0;color:#807773;line-height:1.8}.change-final strong{color:#dfd0cd}
+@keyframes ratePulse{from{transform:scale(.98);opacity:.82}to{transform:scale(1.02);opacity:1}}
+
+/* =========================================================
    KEYFRAMES
 ========================================================= */
 
@@ -3325,6 +3332,10 @@ button:hover{
 
     }
 
+    .change-grid{
+        grid-template-columns:1fr;
+    }
+
 
     .letter{
 
@@ -3396,271 +3407,77 @@ button:hover{
 
 
 <!-- =========================================================
-     TEST
+     OLASILIK TESTİ
 ========================================================= -->
-
-<section class="test-section">
-
+<section class="test-section probability-test">
 <div class="container">
-
-
     <div class="reveal">
-
-
-        <div class="eyebrow">
-
-            giriş prosedürü
-
-        </div>
-
-
-        <h2>
-
-            Önce kimlik doğrulaması.
-
-        </h2>
-
-
+        <div class="eyebrow">Emirhan Araştırma Enstitüsü • olasılık departmanı</div>
+        <h2>Önce küçük bir olasılık hesabı.</h2>
         <p class="text">
-
-            Bu dosya herkese açık değil.
-
-            Devam edebilmek için üç adet
-            son derece bilimsel soruyu cevaplamalısın.
-
+            Dünyada milyarlarca insan var. Buna rağmen bir şekilde aynı zamanda,
+            aynı hikâyenin içinde birbirimizi bulduk. Bunun ne kadar saçma bir ihtimal
+            olduğunu üç son derece bilimsel soruyla hesaplayacağız.
         </p>
-
-
     </div>
-
-
 
     <div class="test-card reveal scale">
-
-
-        <div
-            class="test-step active-step"
-            id="q1"
-        >
-
-
-            <div class="question-number">
-
-                soru 01 / 03
-
-            </div>
-
-
-            <div class="test-question">
-
-                Van hakkında görüşünüz?
-
-            </div>
-
-
+        <div class="test-step active-step" id="q1">
+            <div class="question-number">soru 01 / 03</div>
+            <div class="test-question">8 milyardan fazla insanın arasından birbirimizi tanıma ihtimalimiz sence neydi?</div>
             <div class="answers">
-
-
-                <button onclick="nextQuestion('q1','q2')">
-
-                    A — Dünyanın coğrafi merkezi.
-
-                </button>
-
-
-                <button onclick="nextQuestion('q1','q2')">
-
-                    B — Başkent olmaya uygun olabilir.
-
-                </button>
-
-
-                <button onclick="nextQuestion('q1','q2')">
-
-                    C — Van kedileri çok iyi.
-
-                </button>
-
-
-                <button onclick="nextQuestion('q1','q2')">
-
-                    D — Bu sorunun nereye gittiğini sevmiyorum.
-
-                </button>
-
-
+                <button onclick="nextQuestion('q1','q2')">A — Gayet normal.</button>
+                <button onclick="nextQuestion('q1','q2')">B — Düşük.</button>
+                <button onclick="nextQuestion('q1','q2')">C — Aşırı düşük.</button>
+                <button onclick="nextQuestion('q1','q2')">D — Emirhan birazdan bunu saçma bir yüzdeye bağlayacak.</button>
             </div>
-
-
         </div>
 
-
-
-        <div
-            class="test-step"
-            id="q2"
-        >
-
-
-            <div class="question-number">
-
-                soru 02 / 03
-
-            </div>
-
-
-            <div class="test-question">
-
-                Biri sana kişiye özel şarkı yapsa?
-
-            </div>
-
-
+        <div class="test-step" id="q2">
+            <div class="question-number">soru 02 / 03</div>
+            <div class="test-question">Peki tanıştıktan sonra birbirimizin hayatında gerçekten iz bırakma ihtimalimiz?</div>
             <div class="answers">
-
-
-                <button onclick="nextQuestion('q2','q3')">
-
-                    A — Dinlerim.
-
-                </button>
-
-
-                <button onclick="nextQuestion('q2','q3')">
-
-                    B — Arkadaşlarıma dinletirim.
-
-                </button>
-
-
-                <button onclick="nextQuestion('q2','q3')">
-
-                    C — Yenilerini isterim.
-
-                </button>
-
-
-                <button onclick="nextQuestion('q2','q3')">
-
-                    D — Hepsi.
-
-                </button>
-
-
+                <button onclick="nextQuestion('q2','q3')">A — Olabilir.</button>
+                <button onclick="nextQuestion('q2','q3')">B — Daha da düşük.</button>
+                <button onclick="nextQuestion('q2','q3')">C — İstatistik departmanını çağırın.</button>
+                <button onclick="nextQuestion('q2','q3')">D — Bu araştırmanın tarafsızlığından şüpheleniyorum.</button>
             </div>
-
-
         </div>
 
-
-
-        <div
-            class="test-step"
-            id="q3"
-        >
-
-
-            <div class="question-number">
-
-                soru 03 / 03
-
-            </div>
-
-
-            <div class="test-question">
-
-                “ablam yuk” ne demektir?
-
-            </div>
-
-
+        <div class="test-step" id="q3">
+            <div class="question-number">soru 03 / 03</div>
+            <div class="test-question">Birinin diğerinden ilham alıp üç şarkı yayımlaması, binlerce kişinin bunları dinlemesi ve aylar sonra hâlâ onun için site yapıyor olması ihtimali?</div>
             <div class="answers">
-
-
-                <button onclick="finishTest()">
-
-                    A — Bilen bilir.
-
-                </button>
-
-
-                <button onclick="finishTest()">
-
-                    B — Uluslararası diplomatik ifade.
-
-                </button>
-
-
-                <button onclick="finishTest()">
-
-                    C — Esranurca.
-
-                </button>
-
-
-                <button onclick="finishTest()">
-
-                    D — Bu bilgiyi açıklayamam.
-
-                </button>
-
-
+                <button onclick="finishTest()">A — Normal.</button>
+                <button onclick="finishTest()">B — Pek normal değil.</button>
+                <button onclick="finishTest()">C — Bu olay kontrolden çıkmış.</button>
+                <button onclick="finishTest()">D — Bu adamın işi gücü yok mu 😭</button>
             </div>
-
-
         </div>
 
-
-
-        <div
-            class="test-result"
-            id="testResult"
-        >
-
-
-            <div class="pass">
-
-                ✅
-
+        <div class="test-result probability-result" id="testResult">
+            <div class="probability-chain">
+                <span>8.000.000.000+ insan</span><b>↓</b>
+                <span>aynı zamanda yaşamak</span><b>↓</b>
+                <span>birbirimizi bulmak</span><b>↓</b>
+                <span>birbirimiz için önemli hâle gelmek</span><b>↓</b>
+                <span>üç şarkıya dönüşmek</span><b>↓</b>
+                <span>ve hâlâ burada olmak</span>
             </div>
-
-
-            <h3>
-
-                Kimlik doğrulandı.
-
-            </h3>
-
-
-            <p>
-
-                Yanlış cevap versen de geçecektin zaten.
-
-                Siteyi özellikle sana yaptım.
-
+            <div class="impossible-rate">%0,000000024</div>
+            <div class="rate-label">Emirhan Araştırma Enstitüsü'nün tamamen tarafsız* hesabı</div>
+            <p class="probability-note">
+                *Gerçek bilimsel hesap değildir. Zaten örneklem büyüklüğümüz iki kişi. 😭
+                <br><br>
+                Ama şu kısmı hesaplamaya gerek yok:
+                <strong>milyarlarca insanın olduğu dünyada yollarımız gerçekten kesişti.</strong>
             </p>
-
-
-            <button
-                style="margin-top:25px"
-                onclick="goAdvantages()"
-            >
-
-                raporu aç
-
-            </button>
-
-
+            <h3 class="probability-verdict">İmkânsıza yakın olan kısmı zaten yaptık: birbirimizi bulduk.</h3>
+            <button style="margin-top:25px" onclick="goAdvantages()">şimdi avantajlara bakalım</button>
         </div>
-
-
     </div>
-
-
 </div>
-
 </section>
-
 
 
 <!-- =========================================================
@@ -5960,6 +5777,41 @@ button:hover{
 
 </section>
 
+
+
+<!-- =========================================================
+     NE DEĞİŞECEK?
+========================================================= -->
+<section class="change-section">
+<div class="container">
+    <div class="reveal">
+        <div class="eyebrow">avantaj 09 — sistem güncellemesi</div>
+        <h2>Peki bende ne değişecek?</h2>
+        <p class="text">
+            Çünkü yeniden konuşmak istiyorsam aynı hataları yeniden yapmak
+            pek parlak bir plan olmaz. Bu yüzden EmirhanOS'a birkaç ciddi güncelleme geliyor.
+        </p>
+    </div>
+
+    <div class="change-grid">
+        <div class="change-card reveal left"><div class="change-icon">🌿</div><h3>Daha çok alan</h3><p>Her şeyi hemen çözmeye, cevap almaya veya netleştirmeye çalışmayacağım. Bazen bir şeyin kendi hızında ilerlemesine izin vereceğim.</p></div>
+        <div class="change-card reveal right"><div class="change-icon">🧊</div><h3>Daha sakin iletişim</h3><p>Bir şey canımı sıktığında anlık tepki vermek yerine düşünüp sonra konuşacağım. Gereksiz kriz üretim departmanı küçültülüyor.</p></div>
+        <div class="change-card reveal left"><div class="change-icon">🔍</div><h3>Daha az kurcalama</h3><p>Her kelimeden, sessizlikten veya küçük şeyden gizli anlam çıkarmak yerine sana ve söylediğine daha fazla güveneceğim.</p></div>
+        <div class="change-card reveal right"><div class="change-icon">🎵</div><h3>Kendi hayatımı da yaşayacağım</h3><p>Müziğim, okul hedeflerim, arkadaşlarım ve kendi düzenim devam edecek. Güzel bir şey hayatın tamamı olmak zorunda değil.</p></div>
+        <div class="change-card reveal left"><div class="change-icon">🪞</div><h3>Hatamı kabul etmek</h3><p>Hatalıysam “ama sen de...” diye savunmaya kaçmadan önce kendi payıma bakacağım. Bazen özür gerçekten sadece özürdür.</p></div>
+        <div class="change-card reveal right"><div class="change-icon">⏳</div><h3>Söz değil, istikrar</h3><p>“Değişeceğim” demek kolay. Asıl mesele bunu haftalar ve aylar boyunca davranışla göstermek. Bu bölümün kanıtı site değil, zaman olacak.</p></div>
+    </div>
+
+    <div class="change-equation reveal scale">
+        Aynı Emirhan + aynı hatalar = <strong>aynı sonuç.</strong><br>
+        Matematik bu konuda da acımasız.
+    </div>
+    <p class="change-final reveal">
+        Ve en önemlisi: <strong>seni kaybetme korkusuyla seni bunaltmak istemiyorum.</strong>
+        Yeniden bir şey kuracaksak, ikimizin de içinde rahat nefes alabildiği bir şey olsun.
+    </p>
+</div>
+</section>
 
 
 <!-- =========================================================
