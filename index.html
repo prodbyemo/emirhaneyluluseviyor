@@ -2763,6 +2763,126 @@ button:hover{
 .change-section{background:radial-gradient(circle at 50% 45%,rgba(71,96,84,.12),transparent 42%),#070708}.change-grid{margin-top:52px;display:grid;grid-template-columns:1fr 1fr;gap:14px}.change-card{min-height:220px;padding:27px;display:flex;flex-direction:column;border:1px solid rgba(255,255,255,.08);border-radius:24px;background:rgba(255,255,255,.023);text-align:left}.change-icon{font-size:35px;margin-bottom:auto}.change-card h3{font-size:29px}.change-card p{margin-top:10px;color:#918884;font-size:13px;line-height:1.75}.change-equation{max-width:680px;margin:50px auto 0;padding:31px;border:1px dashed rgba(255,255,255,.13);border-radius:25px;color:#b9aeaa;font-family:"Cormorant Garamond",serif;font-size:clamp(25px,5vw,36px);line-height:1.55}.change-equation strong{color:#eedfe1}.change-final{max-width:650px;margin:28px auto 0;color:#807773;line-height:1.8}.change-final strong{color:#dfd0cd}
 @keyframes ratePulse{from{transform:scale(.98);opacity:.82}to{transform:scale(1.02);opacity:1}}
 
+
+/* =========================================================
+   OLASILIK HAREKETLERİ + FİNAL ETKİLERİ
+========================================================= */
+
+.probability-result{
+    position:relative;
+    overflow:hidden;
+    padding:28px 8px 8px;
+}
+
+.probability-result::before,
+.probability-result::after{
+    content:"";
+    position:absolute;
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    filter:blur(55px);
+    opacity:.18;
+    pointer-events:none;
+}
+
+.probability-result::before{
+    left:-80px;
+    top:15%;
+    background:#9a4f6c;
+    animation:probGlowLeft 5s ease-in-out infinite alternate;
+}
+
+.probability-result::after{
+    right:-80px;
+    bottom:5%;
+    background:#4e5f8e;
+    animation:probGlowRight 6s ease-in-out infinite alternate;
+}
+
+.probability-chain span{
+    display:block;
+    opacity:0;
+    transform:translateX(-55px);
+    animation:probSlide .65s cubic-bezier(.16,1,.3,1) forwards;
+}
+
+.probability-chain span:nth-of-type(1){animation-delay:.08s}
+.probability-chain span:nth-of-type(2){animation-delay:.28s}
+.probability-chain span:nth-of-type(3){animation-delay:.48s}
+.probability-chain span:nth-of-type(4){animation-delay:.68s}
+.probability-chain span:nth-of-type(5){animation-delay:.88s}
+.probability-chain span:nth-of-type(6){animation-delay:1.08s}
+
+.probability-chain b{
+    display:block;
+    animation:arrowDrop .8s ease-in-out infinite alternate;
+}
+
+.impossible-rate{
+    position:relative;
+    z-index:2;
+    background:linear-gradient(90deg,#f0dfe3,#b97c91,#f0dfe3);
+    background-size:220% auto;
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+    animation:ratePulse 2s infinite alternate,rateShine 4s linear infinite;
+}
+
+.rate-label,
+.probability-note,
+.probability-verdict{
+    position:relative;
+    z-index:2;
+}
+
+#thinkCountdown{
+    margin-top:16px;
+    color:#eadbdd;
+    font-family:"Cormorant Garamond",serif;
+    font-size:clamp(27px,5vw,39px);
+    letter-spacing:1px;
+}
+
+#noButton{
+    position:relative;
+}
+
+#noButton:hover{
+    animation:noWiggle .35s ease;
+}
+
+@keyframes probSlide{
+    to{opacity:1;transform:translateX(0)}
+}
+
+@keyframes arrowDrop{
+    from{transform:translateY(-2px);opacity:.35}
+    to{transform:translateY(4px);opacity:.85}
+}
+
+@keyframes probGlowLeft{
+    from{transform:translate(-15px,-10px) scale(.9)}
+    to{transform:translate(60px,35px) scale(1.25)}
+}
+
+@keyframes probGlowRight{
+    from{transform:translate(15px,10px) scale(.9)}
+    to{transform:translate(-60px,-30px) scale(1.2)}
+}
+
+@keyframes rateShine{
+    from{background-position:0% center}
+    to{background-position:220% center}
+}
+
+@keyframes noWiggle{
+    0%,100%{transform:translateX(0)}
+    25%{transform:translateX(-4px) rotate(-1deg)}
+    75%{transform:translateX(4px) rotate(1deg)}
+}
+
 /* =========================================================
    KEYFRAMES
 ========================================================= */
@@ -3465,10 +3585,8 @@ button:hover{
                 <span>ve hâlâ burada olmak</span>
             </div>
             <div class="impossible-rate">%0,000000024</div>
-            <div class="rate-label">Emirhan Araştırma Enstitüsü'nün tamamen tarafsız* hesabı</div>
+            <div class="rate-label">Emirhan Araştırma Enstitüsü'nün tamamen tarafsız hesabı</div>
             <p class="probability-note">
-                *Gerçek bilimsel hesap değildir. Zaten örneklem büyüklüğümüz iki kişi. 😭
-                <br><br>
                 Ama şu kısmı hesaplamaya gerek yok:
                 <strong>milyarlarca insanın olduğu dünyada yollarımız gerçekten kesişti.</strong>
             </p>
@@ -4577,7 +4695,7 @@ button:hover{
 
                 <div class="incoming">
 
-                    ESRANUR:
+                    EYLÜL:
 
                 </div>
 
@@ -4605,7 +4723,7 @@ button:hover{
 
                         <br>
 
-                        Aile içi gizli protokol.
+                        Eylülce gizli protokol.
 
                     </p>
 
@@ -4968,7 +5086,7 @@ button:hover{
 
             <div class="speech">
 
-                ablam yuk
+                görümcelik onaylandı
 
             </div>
 
@@ -5005,11 +5123,14 @@ button:hover{
 
                 <br><br>
 
-                Diplomatik açıklamasını da yaptı:
+                Görümcelik departmanı hazır.
 
+                <br><br>
+
+                Bu arada kayıtları düzeltelim:
                 <strong style="color:#eadde0">
 
-                    “ablam yuk”
+                    “yuk” Eylül'ün lafı.
 
                 </strong>
 
@@ -5070,7 +5191,7 @@ button:hover{
 
             <span>
 
-                resmî aile dili
+                Eylülce resmî kelime
 
             </span>
 
@@ -6002,6 +6123,7 @@ button:hover{
 
 
         <button
+            id="noButton"
             onclick="noAnswer()"
         >
 
@@ -6051,6 +6173,11 @@ function startSite(){
 
             });
 
+        setTimeout(()=>{
+            document.documentElement.style.overflow="hidden";
+            document.body.style.overflow="hidden";
+        },700);
+
     },100);
 
 }
@@ -6090,6 +6217,9 @@ function finishTest(){
         .getElementById("testResult")
         .style
         .display="block";
+
+    document.documentElement.style.overflow="";
+    document.body.style.overflow="";
 
 }
 
@@ -6271,16 +6401,34 @@ function yesAnswer(){
         +
         "Hilal'e kabinede yer bulunduğunu "
         +
-        "ve Van Belediyesi'ne hazırlıklara başlamasını bildiriyorum.";
+        "ve Van Belediyesi'ne hazırlıklara başlamasını bildiriyorum."
+        +
+        "<br><br>"
+        +
+        "Seni şimdi Emirhan'ın Instagram DM'ine ışınlıyorum...";
 
 
     celebration();
+
+    setTimeout(()=>{
+        window.location.href="https://ig.me/m/emirhanbser";
+    },1200);
 
 }
 
 
 
+let thinkTimer=null;
+
 function maybeAnswer(){
+
+    const duration=24*60*60*1000;
+    let deadline=Number(localStorage.getItem("eylulThinkDeadline"));
+
+    if(!deadline || deadline<=Date.now()){
+        deadline=Date.now()+duration;
+        localStorage.setItem("eylulThinkDeadline",String(deadline));
+    }
 
     document
         .getElementById("finalAnswer")
@@ -6290,7 +6438,53 @@ function maybeAnswer(){
         +
         "<br><br>"
         +
-        "Kürdistan projesini şimdilik taslaklarda tutuyorum.";
+        "Kürdistan projesini şimdilik taslaklarda tutuyorum."
+        +
+        '<div id="thinkCountdown"></div>';
+
+    startThinkCountdown(deadline);
+
+}
+
+
+
+function startThinkCountdown(deadline){
+
+    if(thinkTimer){
+        clearInterval(thinkTimer);
+    }
+
+    const render=()=>{
+
+        const left=deadline-Date.now();
+        const el=document.getElementById("thinkCountdown");
+
+        if(!el){
+            clearInterval(thinkTimer);
+            return;
+        }
+
+        if(left<=0){
+            el.innerHTML="24 saat tamamlandı. Karar yine sende. ❤️";
+            localStorage.removeItem("eylulThinkDeadline");
+            clearInterval(thinkTimer);
+            return;
+        }
+
+        const hours=Math.floor(left/(1000*60*60));
+        const minutes=Math.floor((left%(1000*60*60))/(1000*60));
+        const seconds=Math.floor((left%(1000*60))/1000);
+
+        el.textContent=
+            String(hours).padStart(2,"0")
+            +":"
+            +String(minutes).padStart(2,"0")
+            +":"
+            +String(seconds).padStart(2,"0");
+    };
+
+    render();
+    thinkTimer=setInterval(render,1000);
 
 }
 
@@ -6309,6 +6503,18 @@ function noAnswer(){
         "Yalnız Van'ın başkent olma ihtimali ciddi şekilde düştü.";
 
 }
+
+
+
+window.addEventListener("DOMContentLoaded",()=>{
+
+    const deadline=Number(localStorage.getItem("eylulThinkDeadline"));
+
+    if(deadline>Date.now()){
+        // Sayaç daha önce başlatıldıysa sayfayı yenileyince de süre korunur.
+    }
+
+});
 
 
 
