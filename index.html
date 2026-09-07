@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#09090b" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="theme-color" content="#09090b">
 
-  <!-- Arama motorlarında görünmesini azaltır -->
-  <meta name="robots" content="noindex, nofollow, noarchive" />
-
-  <title>Eylül</title>
+  <title>Eylül'e küçük bir teklif</title>
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
 
     * {
       margin: 0;
@@ -25,309 +23,370 @@
 
     body {
       background:
-        radial-gradient(circle at 50% 20%, rgba(120, 20, 45, 0.13), transparent 35%),
-        #09090b;
-      color: #f5f2ef;
+        radial-gradient(circle at 50% 0%, rgba(126, 34, 63, .20), transparent 35%),
+        #080809;
+      color: #f7f3ef;
       font-family: "Inter", sans-serif;
       overflow-x: hidden;
     }
 
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      background:
-        radial-gradient(circle at 20% 25%, rgba(255,255,255,.025), transparent 20%),
-        radial-gradient(circle at 80% 75%, rgba(255,255,255,.02), transparent 25%);
-      z-index: -1;
-    }
-
     .page {
       min-height: 100vh;
+      padding: 70px 22px;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 32px 22px;
       position: relative;
     }
 
-    .content {
-      width: min(680px, 100%);
+    .container {
+      width: min(720px, 100%);
       text-align: center;
     }
 
     .eylul {
       font-family: "Cormorant Garamond", serif;
-      font-size: clamp(72px, 16vw, 130px);
+      font-size: clamp(75px, 18vw, 145px);
       font-weight: 500;
-      letter-spacing: -4px;
       line-height: .9;
       opacity: 0;
-      animation: fadeUp 1.8s forwards .4s;
+      transform: translateY(30px);
+      animation: intro 1.7s forwards .3s;
     }
 
-    .subtitle {
-      margin-top: 28px;
+    .intro-text {
       font-family: "Cormorant Garamond", serif;
+      color: #cfc5c0;
       font-size: clamp(23px, 5vw, 34px);
-      color: #c9c1bc;
+      line-height: 1.4;
+      margin-top: 30px;
       opacity: 0;
-      animation: fadeUp 1.5s forwards 1.4s;
+      animation: intro 1.5s forwards 1.3s;
     }
 
-    .small {
-      margin-top: 14px;
-      color: #817c79;
-      font-size: 13px;
-      letter-spacing: 2px;
+    .tiny {
+      color: #756f6b;
+      font-size: 12px;
       text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-top: 18px;
       opacity: 0;
-      animation: fadeUp 1.5s forwards 2s;
+      animation: intro 1.5s forwards 1.9s;
     }
 
     .btn {
-      border: 1px solid rgba(255,255,255,.18);
-      background: rgba(255,255,255,.04);
-      color: #eee9e5;
-      padding: 15px 31px;
-      border-radius: 999px;
-      font-size: 14px;
+      appearance: none;
+      border: 1px solid rgba(255,255,255,.17);
+      background: rgba(255,255,255,.045);
+      color: white;
+      border-radius: 100px;
+      padding: 15px 29px;
       cursor: pointer;
-      transition: .35s ease;
-      backdrop-filter: blur(12px);
-      font-family: "Inter", sans-serif;
+      font-family: inherit;
+      font-size: 14px;
+      transition: .3s;
+      backdrop-filter: blur(10px);
     }
 
     .btn:hover {
-      background: #eee9e5;
-      color: #111;
-      transform: translateY(-2px);
+      transform: translateY(-3px) scale(1.02);
+      background: #f2e9e5;
+      color: #171313;
     }
 
-    .start-btn {
+    .start {
       margin-top: 42px;
       opacity: 0;
-      animation: fadeUp 1.5s forwards 2.6s;
-    }
-
-    .hidden {
-      display: none !important;
+      animation: intro 1.5s forwards 2.5s;
     }
 
     #story {
       display: none;
     }
 
-    .story-section {
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 70px 24px;
-    }
-
-    .story-box {
-      width: min(650px, 100%);
-      text-align: center;
-    }
-
-    .number {
-      color: #8e6b73;
-      font-size: 12px;
+    .section-number {
+      color: #9d6d79;
       letter-spacing: 4px;
-      margin-bottom: 24px;
+      font-size: 11px;
+      margin-bottom: 25px;
     }
 
     h2 {
       font-family: "Cormorant Garamond", serif;
+      font-size: clamp(42px, 9vw, 69px);
       font-weight: 500;
-      font-size: clamp(40px, 8vw, 66px);
-      line-height: 1.05;
+      line-height: 1;
     }
 
     .text {
-      color: #bcb4af;
+      max-width: 580px;
       margin: 30px auto 0;
-      max-width: 560px;
+      color: #b9b0ab;
       font-size: 16px;
-      line-height: 2;
+      line-height: 1.9;
     }
 
-    .highlight {
-      color: #f4e5e8;
-    }
-
-    .quote {
-      margin: 55px auto;
-      padding: 30px 0;
-      max-width: 530px;
-      font-family: "Cormorant Garamond", serif;
-      font-size: clamp(26px, 6vw, 42px);
-      line-height: 1.3;
-      color: #eadcde;
-      border-top: 1px solid rgba(255,255,255,.08);
-      border-bottom: 1px solid rgba(255,255,255,.08);
-    }
-
-    .memory-grid {
+    .cards {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
       margin-top: 45px;
     }
 
-    .memory {
-      min-height: 180px;
-      border: 1px solid rgba(255,255,255,.08);
-      border-radius: 18px;
-      display: flex;
-      padding: 20px;
-      align-items: flex-end;
+    .card {
+      min-height: 230px;
+      border-radius: 23px;
+      padding: 27px;
       text-align: left;
+      border: 1px solid rgba(255,255,255,.08);
       background:
-        linear-gradient(to top, rgba(0,0,0,.65), rgba(0,0,0,.1)),
-        radial-gradient(circle at top, #391925, #141012);
-      transition: .35s;
+        linear-gradient(145deg, rgba(255,255,255,.055), rgba(255,255,255,.015));
+      position: relative;
+      overflow: hidden;
+      transition: .4s;
     }
 
-    .memory:hover {
-      transform: translateY(-5px);
-      border-color: rgba(255,255,255,.2);
+    .card:hover {
+      transform: translateY(-7px);
+      border-color: rgba(255,255,255,.22);
     }
 
-    .memory span {
+    .emoji {
+      font-size: 38px;
+    }
+
+    .card h3 {
+      margin-top: 30px;
       font-family: "Cormorant Garamond", serif;
-      font-size: 20px;
-      line-height: 1.2;
+      font-size: 29px;
+      font-weight: 600;
+    }
+
+    .card p {
+      margin-top: 12px;
+      color: #aaa19d;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .important {
+      grid-column: span 2;
+      text-align: center;
+      min-height: 200px;
+      background:
+        radial-gradient(circle at center, rgba(128,31,60,.22), transparent 65%),
+        rgba(255,255,255,.025);
+    }
+
+    .big-number {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 60px;
+      margin-top: 10px;
+    }
+
+    .versus {
+      color: #756d69;
+      font-size: 14px;
+    }
+
+    .future {
+      margin-top: 45px;
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 25px;
+      overflow: hidden;
+    }
+
+    .future-row {
+      padding: 25px;
+      display: flex;
+      gap: 20px;
+      text-align: left;
+      align-items: center;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+      transition: .3s;
+    }
+
+    .future-row:last-child {
+      border-bottom: none;
+    }
+
+    .future-row:hover {
+      background: rgba(255,255,255,.04);
+      padding-left: 31px;
+    }
+
+    .future-icon {
+      font-size: 30px;
+      width: 43px;
+      flex-shrink: 0;
+    }
+
+    .future-row strong {
+      display: block;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 24px;
+      font-weight: 600;
+    }
+
+    .future-row span {
+      display: block;
+      color: #978f8b;
+      font-size: 13px;
+      line-height: 1.5;
+      margin-top: 5px;
+    }
+
+    .kurdistan-card {
+      margin-top: 45px;
+      position: relative;
+      padding: 38px 28px;
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 27px;
+      background:
+        radial-gradient(circle at top, rgba(99,65,122,.18), transparent 55%),
+        rgba(255,255,255,.025);
+    }
+
+    .kurdistan-card .flag {
+      font-size: 46px;
+    }
+
+    .kurdistan-card h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 35px;
+      margin-top: 16px;
+    }
+
+    .kurdistan-card p {
+      max-width: 520px;
+      margin: 15px auto 0;
+      line-height: 1.8;
+      color: #b4aaa5;
+    }
+
+    .disclaimer {
+      margin-top: 15px;
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      color: #595451;
+      text-transform: uppercase;
     }
 
     .letter {
+      max-width: 600px;
       margin: 45px auto 0;
+      padding: 35px;
       text-align: left;
-      max-width: 570px;
-      padding: 32px;
       border: 1px solid rgba(255,255,255,.08);
+      border-radius: 25px;
       background: rgba(255,255,255,.025);
-      border-radius: 22px;
+      color: #beb5b0;
       line-height: 2;
-      color: #c8c0bb;
     }
 
     .letter strong {
-      color: #f3e9e6;
-      font-weight: 500;
+      color: #f2e4e5;
     }
 
-    .music-box {
-      margin: 45px auto 0;
-      padding: 30px;
-      border-radius: 24px;
-      border: 1px solid rgba(255,255,255,.08);
-      background: rgba(255,255,255,.025);
-    }
-
-    .music-icon {
-      font-size: 35px;
-      margin-bottom: 14px;
-    }
-
-    .music-title {
+    .quote {
       font-family: "Cormorant Garamond", serif;
-      font-size: 29px;
+      font-size: clamp(27px, 6vw, 43px);
+      line-height: 1.25;
+      margin-top: 45px;
     }
 
-    .music-desc {
-      color: #817b78;
-      font-size: 13px;
-      margin: 8px 0 22px;
-    }
-
-    .final {
+    .final-page {
       background:
-        radial-gradient(circle at center, rgba(126, 29, 56, .22), transparent 45%);
+        radial-gradient(circle at 50% 50%, rgba(145,37,66,.20), transparent 35%);
     }
 
     .question {
-      margin-top: 38px;
       font-family: "Cormorant Garamond", serif;
-      font-size: clamp(32px, 7vw, 50px);
-      line-height: 1.2;
+      font-size: clamp(35px, 8vw, 55px);
+      margin-top: 34px;
     }
 
     .choices {
       display: flex;
       justify-content: center;
-      gap: 13px;
       flex-wrap: wrap;
+      gap: 12px;
       margin-top: 35px;
     }
 
     .yes {
-      background: #efe7e4;
-      color: #161313;
-      border-color: #efe7e4;
+      background: #f0e6e2;
+      color: #151111;
     }
 
-    .response {
-      margin-top: 26px;
-      color: #aaa19c;
-      min-height: 28px;
-      line-height: 1.6;
-    }
-
-    .heart {
-      position: fixed;
-      bottom: -20px;
-      font-size: 13px;
-      opacity: 0;
-      animation: floatHeart linear forwards;
-      pointer-events: none;
+    #response {
+      min-height: 50px;
+      margin-top: 28px;
+      color: #aaa09c;
+      line-height: 1.7;
     }
 
     .signature {
-      margin-top: 48px;
-      color: #655f5c;
+      margin-top: 42px;
+      color: #625b58;
       font-family: "Cormorant Garamond", serif;
-      font-size: 21px;
+      font-size: 23px;
     }
 
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(22px);
-      }
+    .floating {
+      position: fixed;
+      bottom: -40px;
+      pointer-events: none;
+      z-index: 999;
+      animation: fly linear forwards;
+    }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 25px;
+      color: #57514f;
+      font-size: 11px;
+      letter-spacing: 2px;
+    }
+
+    @keyframes intro {
       to {
         opacity: 1;
         transform: translateY(0);
       }
     }
 
-    @keyframes floatHeart {
-      0% {
-        opacity: 0;
+    @keyframes fly {
+      from {
         transform: translateY(0) rotate(0deg);
-      }
-      15% {
-        opacity: .35;
-      }
-      100% {
         opacity: 0;
-        transform: translateY(-105vh) rotate(25deg);
+      }
+
+      10% {
+        opacity: .8;
+      }
+
+      to {
+        transform: translateY(-115vh) rotate(35deg);
+        opacity: 0;
       }
     }
 
     @media (max-width: 650px) {
-      .memory-grid {
+      .cards {
         grid-template-columns: 1fr;
       }
 
-      .memory {
-        min-height: 125px;
+      .important {
+        grid-column: span 1;
+      }
+
+      .card {
+        min-height: 190px;
       }
 
       .letter {
-        padding: 25px 21px;
+        padding: 26px 22px;
       }
     }
   </style>
@@ -337,233 +396,331 @@
 
   <!-- AÇILIŞ -->
   <section class="page" id="intro">
-    <div class="content">
+
+    <div class="container">
+
       <h1 class="eylul">Eylül.</h1>
 
-      <p class="subtitle">
-        Bunu sana sıradan bir mesajla anlatmak istemedim.
+      <p class="intro-text">
+        Seni geri kazanmak için PowerPoint hazırlamak biraz vizyonsuz olurdu.
+        <br>
+        O yüzden sana site yaptım.
       </p>
 
-      <p class="small">
-        sadece birkaç dakikanı istiyorum
-      </p>
+      <div class="tiny">
+        emirhan teknoloji a.ş. sunar
+      </div>
 
-      <button class="btn start-btn" onclick="startStory()">
-        devam et
+      <button class="btn start" onclick="basla()">
+        peki bakalım ne saçmalamışsın
       </button>
+
     </div>
+
   </section>
 
 
   <main id="story">
 
-    <!-- BÖLÜM 1 -->
-    <section class="story-section">
-      <div class="story-box">
 
-        <div class="number">01 — BAŞLANGIÇ</div>
+    <!-- NEDEN -->
+    <section class="page">
+
+      <div class="container">
+
+        <div class="section-number">
+          01 — CİDDİ BİR ARAŞTIRMA
+        </div>
 
         <h2>
-          Bazı insanlar gider.<br>
-          Bazılarıysa sende kalır.
+          Benimle neden barışmalısın?
         </h2>
 
         <p class="text">
-          Aradan ne geçerse geçsin, bazı insanların hayatındaki yeri
-          sıradanlaşmıyor.
-          <br><br>
-          Sen benim için öyle birisin.
+          Yaklaşık 14 saniye süren son derece bilimsel araştırmamın
+          sonuçlarını aşağıda bulabilirsin.
         </p>
 
-        <div class="quote">
-          “Sana geri dön diye bir site hazırlamadım.
-          Sana içimde kalanları dürüstçe göstermek için hazırladım.”
+
+        <div class="cards">
+
+          <div class="card">
+            <div class="emoji">🤝</div>
+
+            <h3>Takım olabiliriz.</h3>
+
+            <p>
+              Senin saçma fikirlerine ben destek olurum,
+              benim saçma fikirlerime sen “Emirhan sen mal mısın?”
+              dersin. Sistem kusursuz.
+            </p>
+          </div>
+
+
+          <div class="card">
+            <div class="emoji">🎧</div>
+
+            <h3>Bedava prodüktör.</h3>
+
+            <p>
+              Teknik olarak sevgilinin sana şarkı yapabilme ihtimali
+              nüfusun büyük kısmından daha yüksek.
+            </p>
+          </div>
+
+
+          <div class="card important">
+
+            <div class="emoji">📏</div>
+
+            <h3>
+              Bir de matematik var.
+            </h3>
+
+            <div class="big-number">
+              170 + 178
+            </div>
+
+            <div class="versus">
+              kusursuz diplomatik boy farkı
+            </div>
+
+            <p>
+              Sen 170'sin, ben 178'im.
+              Yani öpüşürken parmak uçlarına çıkmak zorunda değilsin.
+              Boyun tutulmadan romantizm yaşayabiliyoruz.
+              Bunun değerini bil.
+            </p>
+
+          </div>
+
         </div>
 
       </div>
+
     </section>
 
 
-    <!-- BÖLÜM 2 -->
-    <section class="story-section">
-      <div class="story-box">
 
-        <div class="number">02 — BİZDEN KALANLAR</div>
+    <!-- GELECEK -->
+    <section class="page">
+
+      <div class="container">
+
+        <div class="section-number">
+          02 — OLASI GELECEK SENARYOLARI
+        </div>
 
         <h2>
-          Hatırladığım küçük şeyler.
+          Bir düşün.
         </h2>
 
         <p class="text">
-          Büyük olaylardan çok, bazen insanın aklında en küçük detaylar kalıyor.
+          Barışırsak teorik olarak önümüzde saçma derecede fazla
+          ihtimal var.
         </p>
 
-        <div class="memory-grid">
 
-          <div class="memory">
-            <span>
-              Gece uzayan konuşmalarımız.
-            </span>
+        <div class="future">
+
+          <div class="future-row">
+            <div class="future-icon">🌙</div>
+
+            <div>
+              <strong>Gece konuşmaları</strong>
+              <span>
+                “5 dakika konuşup yatacağız” deyip iki saat konuşabiliriz.
+              </span>
+            </div>
           </div>
 
-          <div class="memory">
-            <span>
-              Birbirimizi güldürdüğümüz saçma anlar.
-            </span>
+
+          <div class="future-row">
+            <div class="future-icon">🎵</div>
+
+            <div>
+              <strong>Birlikte müzik</strong>
+              <span>
+                Sen bir şey söylersin, ben onu şarkıya çeviririm.
+                Sonra telif haklarını sana vermem.
+              </span>
+            </div>
           </div>
 
-          <div class="memory">
-            <span>
-              Seni tanımaya başladığım ilk günlerdeki heyecanım.
-            </span>
+
+          <div class="future-row">
+            <div class="future-icon">🍕</div>
+
+            <div>
+              <strong>Çok ciddi yetişkin aktiviteleri</strong>
+              <span>
+                Pizza söylemek, film seçememek ve 40 dakika
+                “sen seç” diye kavga etmek.
+              </span>
+            </div>
+          </div>
+
+
+          <div class="future-row">
+            <div class="future-icon">👴🏻</div>
+
+            <div>
+              <strong>İleri seviye plan</strong>
+              <span>
+                70 yaşında hâlâ birbirimize aynı saçma şakaları
+                yapıyor olabiliriz.
+              </span>
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="kurdistan-card">
+
+          <div class="flag">🏔️</div>
+
+          <h3>
+            Plan B: ülke kurmak
+          </h3>
+
+          <p>
+            Eğer bütün bunlar yetmezse,
+            şakadan beraber Kürdistan'ı kurarız.
+            <br><br>
+            Van'ı başkent yaparız.
+            Sen cumhurbaşkanı olursun.
+            Ben de Kültür ve Müzik Bakanlığı'nı alırım.
+            <br><br>
+            İlk devlet kararnamesi:
+            kötü müzik yasak.
+          </p>
+
+          <div class="disclaimer">
+            bu bölüm tamamen saçmalama amaçlıdır 😭
           </div>
 
         </div>
 
       </div>
+
     </section>
 
 
-    <!-- BÖLÜM 3 -->
-    <section class="story-section">
-      <div class="story-box">
 
-        <div class="number">03 — SANA SÖYLEMEK İSTEDİĞİM</div>
+    <!-- DUYGUSAL -->
+    <section class="page">
+
+      <div class="container">
+
+        <div class="section-number">
+          03 — ŞAKA BİR YANA
+        </div>
 
         <h2>
-          Sana karşı hâlâ söylemek istediğim şeyler var.
+          Asıl söylemek istediğim şey.
         </h2>
+
 
         <div class="letter">
 
-          <p>
-            <strong>Eylül,</strong>
-          </p>
+          <strong>Eylül,</strong>
 
-          <br>
+          <br><br>
 
-          <p>
-            Bazen insan bazı şeylerin değerini ancak araya mesafe girince
-            daha iyi anlıyor.
-          </p>
+          Bütün bu saçmalıkların altında aslında çok basit bir şey var.
 
-          <br>
+          <br><br>
 
-          <p>
-            Geçmişte yaptığım her şeyi doğru yaptığımı söylemeyeceğim.
-            Hatalarım oldu. Seni kırdığım, yanlış anladığım veya kendimi
-            doğru ifade edemediğim anlar olduysa bunun sorumluluğunu alıyorum.
-          </p>
+          Seni hayatımda değer verdiğim herhangi biri gibi görmedim.
+          Seninle konuşmak, seni güldürmek ve senden gelen küçücük
+          bir şeyi bile görmek benim için gerçekten önemliydi.
 
-          <br>
+          <br><br>
 
-          <p>
-            Ama sana karşı hissettiğim şeylerin benim için sıradan olmadığını
-            biliyorum.
-          </p>
+          Geçmişte her şeyi kusursuz yaptığımı söylemeyeceğim.
+          Yapmadım.
 
-          <br>
+          <br><br>
 
-          <p>
-            Bu sayfayı da seni bir şeye mecbur bırakmak için değil,
-            <strong>sana hâlâ değer verdiğimi göstermek için</strong>
-            hazırladım.
-          </p>
+          Ama yeniden konuşma şansımız olursa,
+          geçmişte yaptığımız şeyleri aynen tekrar etmekten çok
+          <strong>daha güzel bir şey kurmayı</strong>
+          isterim.
 
-          <br>
+          <br><br>
 
-          <p>
-            Her şeyi eskisi gibi yapmak zorunda değiliz.
-            Belki sadece yeniden konuşabiliriz.
-            Daha sakin, daha dürüst, daha güzel bir yerden.
-          </p>
+          Daha sakin.
+          Daha dürüst.
+          Daha eğlenceli.
+
+          <br><br>
+
+          Ve mümkünse bol bol saçmaladığımız bir şey.
 
         </div>
 
-      </div>
-    </section>
 
-
-    <!-- MÜZİK -->
-    <section class="story-section">
-      <div class="story-box">
-
-        <div class="number">04 — BİR ŞARKI</div>
-
-        <h2>
-          Çünkü bazı şeyleri konuşmak yerine müzik anlatıyor.
-        </h2>
-
-        <div class="music-box">
-
-          <div class="music-icon">♬</div>
-
-          <div class="music-title">
-            Senin için seçtiğim bir şarkı
-          </div>
-
-          <div class="music-desc">
-            Buraya daha sonra kendi Spotify / YouTube / şarkı linkimizi ekleyeceğiz.
-          </div>
-
-          <!--
-          Aşağıdaki # yerine şarkı linkini koyabilirsin.
-          Örnek:
-          href="https://open.spotify.com/..."
-          -->
-
-          <a
-            class="btn"
-            href="#"
-            target="_blank"
-            style="display:inline-block;text-decoration:none;"
-          >
-            🎧 dinle
-          </a>
-
+        <div class="quote">
+          “Belki mesele eskisine dönmek değildir.
+          Belki bu kez daha güzelini yapmaktır.”
         </div>
 
       </div>
+
     </section>
 
 
-    <!-- FİNAL -->
-    <section class="story-section final">
-      <div class="story-box">
 
-        <div class="number">05 — SON OLARAK</div>
+    <!-- FINAL -->
+    <section class="page final-page">
+
+      <div class="container">
+
+        <div class="section-number">
+          04 — KARAR MERCİİ: EYLÜL
+        </div>
 
         <h2>
-          Geçmişi silemeyiz.
+          Ben teklifimi bıraktım.
         </h2>
 
         <p class="text">
-          Ama istersek bundan sonrasına başka türlü bakabiliriz.
+          Geri kalan karar senin.
         </p>
+
 
         <div class="question">
           Benimle yeniden konuşmayı dener misin?
         </div>
 
+
         <div class="choices">
 
-          <button class="btn yes" onclick="answerYes()">
-            Konuşabiliriz ❤️
+          <button class="btn yes" onclick="evet()">
+            tamam konuşalım ❤️
           </button>
 
-          <button class="btn" onclick="answerNo()">
-            Şu an istemiyorum
+          <button class="btn" onclick="dusun()">
+            bi düşüneyim
+          </button>
+
+          <button class="btn" onclick="hayir()">
+            istemiyorum
           </button>
 
         </div>
 
-        <div class="response" id="response"></div>
+
+        <div id="response"></div>
+
 
         <div class="signature">
           — Emirhan
         </div>
 
       </div>
+
     </section>
 
   </main>
@@ -571,56 +728,76 @@
 
   <script>
 
-    function startStory() {
+    function basla() {
+
       document.getElementById("story").style.display = "block";
 
       setTimeout(() => {
+
         document.getElementById("story").scrollIntoView({
           behavior: "smooth"
         });
+
       }, 100);
+
     }
 
 
-    function answerYes() {
+
+    function evet() {
 
       document.getElementById("response").innerHTML =
-        "Bunu okumaya zaman ayırdığın için teşekkür ederim. ❤️<br>Gerisini konuşarak hallederiz.";
+        "Bu seçeneğin doğru cevap olduğunu bilim zaten söylüyordu. ❤️<br><br>Şaka bir yana, teşekkür ederim.";
 
-      createHearts();
+      konfeti("❤️");
+      konfeti("✨");
+      konfeti("🫶🏻");
+
     }
 
 
-    function answerNo() {
+
+    function dusun() {
 
       document.getElementById("response").innerHTML =
-        "Anlıyorum. Kararına saygı duyuyorum.<br>Yine de buraya kadar okuduğun için teşekkür ederim.";
+        "Adil. Bu sitenin bütçesi karar sürecinde rüşvet vermeye yetmedi 😭<br><br>İstediğin kadar düşün.";
 
     }
 
 
-    function createHearts() {
 
-      for (let i = 0; i < 24; i++) {
+    function hayir() {
+
+      document.getElementById("response").innerHTML =
+        "Tamam. Kararına saygı duyarım.<br><br>Ama Van'ın başkent olma ihtimali böylece ciddi şekilde düştü.";
+
+    }
+
+
+
+    function konfeti(simge) {
+
+      for(let i = 0; i < 20; i++) {
 
         setTimeout(() => {
 
-          const heart = document.createElement("div");
+          const item = document.createElement("div");
 
-          heart.className = "heart";
-          heart.innerHTML = "♥";
+          item.className = "floating";
+          item.innerHTML = simge;
 
-          heart.style.left = Math.random() * 100 + "vw";
-          heart.style.animationDuration =
+          item.style.left = Math.random() * 100 + "vw";
+          item.style.fontSize = (14 + Math.random() * 22) + "px";
+          item.style.animationDuration =
             (4 + Math.random() * 4) + "s";
 
-          document.body.appendChild(heart);
+          document.body.appendChild(item);
 
           setTimeout(() => {
-            heart.remove();
-          }, 8000);
+            item.remove();
+          }, 8500);
 
-        }, i * 120);
+        }, i * 100);
 
       }
 
