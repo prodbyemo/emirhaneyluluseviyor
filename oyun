@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Eylül × Emirhan — Gece Oyunu</title>
+<style>
+:root{--bg:#09090b;--card:#121216;--card2:#18181d;--line:#2b2b33;--txt:#f6f2f4;--muted:#aaa2a8;--pink:#d9789d;--wine:#6d243e;--ok:#7bb58d}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 50% -20%,#3a1724 0,#0d0b0e 38%,#09090b 70%);color:var(--txt);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;min-height:100vh}
+button,input{font:inherit}button{cursor:pointer}.wrap{width:min(1100px,94%);margin:0 auto;padding:28px 0 50px}.brand{text-align:center;margin-bottom:22px}.brand h1{font-family:Georgia,serif;font-size:clamp(32px,6vw,62px);margin:4px}.brand p{color:var(--muted)}
+.card{background:rgba(18,18,22,.92);border:1px solid var(--line);border-radius:22px;padding:20px}.hidden{display:none!important}.btn{border:1px solid #573243;background:#24171d;color:white;border-radius:14px;padding:13px 17px;font-weight:700}.btn:hover{background:#342029}.btn.primary{background:#f2e8ec;color:#1a1014;border-color:#f2e8ec}.btn.ghost{background:transparent}.btn:disabled{opacity:.45;cursor:not-allowed}
+input{width:100%;background:#0c0c10;border:1px solid var(--line);color:white;border-radius:13px;padding:14px;outline:none}input:focus{border-color:#895169}.grid{display:grid;gap:14px}.two{grid-template-columns:1fr 1fr}.join{max-width:620px;margin:auto}.small{font-size:13px;color:var(--muted)}.roomCode{font-size:30px;letter-spacing:5px;font-weight:900}.status{display:inline-flex;align-items:center;gap:7px;font-size:13px;color:var(--muted)}.dot{width:8px;height:8px;border-radius:50%;background:#777}.dot.on{background:var(--ok);box-shadow:0 0 10px #7bb58d}
+.gameLayout{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(280px,.75fr);gap:14px}.topbar{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:14px}.progress{height:7px;background:#29292f;border-radius:20px;overflow:hidden}.progress>div{height:100%;background:#d58aa5;width:0;transition:.3s}
+.question{font-family:Georgia,serif;font-size:clamp(27px,4vw,45px);line-height:1.12;margin:14px 0}.options{display:grid;grid-template-columns:1fr 1fr;gap:10px}.option{min-height:62px;text-align:left;border:1px solid var(--line);background:var(--card2);color:white;border-radius:15px;padding:13px}.option:hover,.option.selected{border-color:#b36b87;background:#2c1921}.answerInput{margin-top:10px}.center{text-align:center}.emoji{font-size:60px}.revealBox{margin-top:15px;padding:16px;border-radius:16px;background:#0d0d11;border:1px solid var(--line)}
+.chat{display:flex;flex-direction:column;height:570px}.chatHead{padding-bottom:12px;border-bottom:1px solid var(--line)}.messages{flex:1;overflow:auto;padding:12px 2px;display:flex;flex-direction:column;gap:8px}.msg{max-width:84%;padding:10px 12px;border-radius:14px;background:#24242a;word-break:break-word}.msg.me{align-self:flex-end;background:#4b2635}.msg .who{font-size:11px;color:#c5b7bd;margin-bottom:3px}.chatForm{display:flex;gap:7px}.chatForm input{min-width:0}.chatForm button{padding:0 14px}
+.notice{padding:11px 13px;border-radius:13px;background:#21161b;border:1px solid #4a2d39;color:#dccbd1;margin:12px 0}.timer{font-variant-numeric:tabular-nums;font-weight:900}.playerCards{display:flex;gap:8px;flex-wrap:wrap}.player{padding:8px 11px;border:1px solid var(--line);border-radius:999px;font-size:13px}.waiting{animation:pulse 1.4s infinite}@keyframes pulse{50%{opacity:.45}}
+@media(max-width:780px){.gameLayout{grid-template-columns:1fr}.chat{height:400px}.two,.options{grid-template-columns:1fr}.wrap{padding-top:15px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="brand"><div class="small">EMİRHAN ARAŞTIRMA ENSTİTÜSÜ • UZAKTAN İLİŞKİ AR-GE</div><h1>Eylül × Emirhan</h1><p>İki cihaz. Tek oda. Yaklaşık 20 dakika saçmalık. ❤️</p></div>
+
+  <section id="lobby" class="card join">
+    <h2>Gizli odaya gir</h2>
+    <p class="small">Biriniz oda oluşturur, diğeriniz çıkan kodla katılır. İsim olarak yalnızca Eylül veya Emirhan seçilebilir.</p>
+    <div class="grid two">
+      <div>
+        <label class="small">Sen kimsin?</label>
+        <select id="nameSelect" style="width:100%;padding:14px;border-radius:13px;background:#0c0c10;color:white;border:1px solid var(--line);margin-top:6px">
+          <option>Emirhan</option><option>Eylül</option>
+        </select>
+      </div>
+      <div>
+        <label class="small">Oda kodu</label>
+        <input id="roomInput" maxlength="6" placeholder="Örn. EYL170" style="margin-top:6px;text-transform:uppercase">
+      </div>
+    </div>
+    <div style="display:flex;gap:9px;flex-wrap:wrap;margin-top:15px">
+      <button class="btn primary" id="createBtn">Yeni oda oluştur</button>
+      <button class="btn" id="joinBtn">Kodla katıl</button>
+    </div>
+    <div id="lobbyMsg" class="notice hidden"></div>
+  </section>
+
+  <section id="room" class="hidden">
+    <div class="topbar card">
+      <div><div class="small">ODA</div><div id="roomCode" class="roomCode">------</div></div>
+      <div class="playerCards"><span class="player" id="pEmirhan">⚪ Emirhan</span><span class="player" id="pEylul">⚪ Eylül</span></div>
+      <div><div class="status"><span id="liveDot" class="dot"></span><span id="connectionText">bağlanıyor</span></div><div class="small timer" id="timer">20:00</div></div>
+    </div>
+
+    <div class="gameLayout">
+      <main class="card">
+        <div class="topbar"><span class="small" id="roundLabel">LOBBY</span><span class="small">Uyum puanı: <b id="score">0</b></span></div>
+        <div class="progress"><div id="progressBar"></div></div>
+        <div id="gameArea" style="padding-top:15px">
+          <div class="center"><div class="emoji">📡</div><h2>Diğer kişiyi bekliyoruz.</h2><p class="small">Oda kodunu ona gönder. İkiniz gelince oda sahibi oyunu başlatabilir.</p><button id="startGameBtn" class="btn primary" disabled>Oyunu başlat</button></div>
+        </div>
+      </main>
+
+      <aside class="card chat">
+        <div class="chatHead"><b>💬 Gizli Hat</b><div class="small">Oyun boyunca açık. Mesajlar bu odada canlı görünür.</div></div>
+        <div id="messages" class="messages"></div>
+        <form id="chatForm" class="chatForm"><input id="chatInput" maxlength="300" autocomplete="off" placeholder="Bir şey yaz..."><button class="btn" type="submit">↑</button></form>
+      </aside>
+    </div>
+  </section>
+</div>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
+import { getDatabase, ref, set, get, update, push, onValue, onDisconnect, serverTimestamp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-database.js";
+
+const firebaseConfig={
+ apiKey:"AIzaSyCgFiEihzjtIKMCjUkqAT9Q9eonLeUIBLw",
+ authDomain:"eylul-emirhan-oyun.firebaseapp.com",
+ databaseURL:"https://eylul-emirhan-oyun-default-rtdb.europe-west1.firebasedatabase.app",
+ projectId:"eylul-emirhan-oyun",
+ storageBucket:"eylul-emirhan-oyun.firebasestorage.app",
+ messagingSenderId:"895771389698",
+ appId:"1:895771389698:web:2387395be1ca33f02e1c1b"
+};
+const app=initializeApp(firebaseConfig),db=getDatabase(app);
+const $=s=>document.querySelector(s);
+let roomId="",me="",isHost=false,roomState=null,roundStartedAt=null,timerInt=null;
+
+const rounds=[
+ {type:"both",title:"Hangimiz daha inatçı?",opts:["Eylül","Emirhan"],quip:"Diplomatik kriz ihtimali ölçülüyor."},
+ {type:"both",title:"Hangimiz gece 03:00'te gereksiz derin konu açar?",opts:["Eylül","Emirhan"],quip:"Uyku düzeni bu araştırmaya dahil edilmemiştir."},
+ {type:"both",title:"Birlikte bir yere ışınlanabilseniz?",opts:["Ankara","Van","İstanbul","Deniz kenarı"],quip:"Ulaşım masrafı Emirhan Araştırma Enstitüsü tarafından karşılanmayacaktır."},
+ {type:"text",title:"Karşındaki kişide sevdiğin küçük bir şeyi yaz.",quip:"İkiniz de gönderene kadar cevap gizli. Kaçış yok."},
+ {type:"both",title:"Hangimiz daha çok saçma bir şeyi ciddiye alır?",opts:["Eylül","Emirhan"],quip:"Bu sitenin varlığı önemli bir kanıt olabilir."},
+ {type:"both",title:"Aynı şeyi seçmeye çalışın: bir gece aktivitesi.",opts:["Film","Yürüyüş","Müzik","Saatlerce konuşmak"],quip:"TELEPATİ TESTİ 01"},
+ {type:"text",title:"Birbirinizi üç kelimeyle roastlayın.",quip:"Mahkeme bu turdaki ifadeleri delil kabul etmeyecektir."},
+ {type:"both",title:"Aynı şeyi seçmeye çalışın: ortak bir yemek.",opts:["Pizza","Döner","Makarna","Tatlı"],quip:"TELEPATİ TESTİ 02"},
+ {type:"text",title:"Birlikte yapacağınız tamamen saçma bir gelecek planı yaz.",quip:"Bütçe sınırsız. Mantık yasak."},
+ {type:"both",title:"Hangimiz daha romantik?",opts:["Eylül","Emirhan"],quip:"Tarafsızlık departmanı Emirhan tarafından fonlanmaktadır."},
+ {type:"text",title:"Karşındakine sormaya çekindiğin ama komik/masum bir soru yaz.",quip:"Cevap vermek istemediğiniz şeyi cevaplamak zorunda değilsiniz."},
+ {type:"both",title:"Aynı şeyi seçmeye çalışın: şu an ne yapalım?",opts:["Konuşalım","Şarkı açalım","Soru soralım","Bir tur daha oynayalım"],quip:"SON TELEPATİ TESTİ"}
+];
+
+function code(){const chars="ABCDEFGHJKLMNPQRSTUVWXYZ23456789";return Array.from({length:6},()=>chars[Math.floor(Math.random()*chars.length)]).join("")}
+function cleanCode(v){return v.toUpperCase().replace(/[^A-Z0-9]/g,"").slice(0,6)}
+function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+async function createRoom(){
+ me=$("#nameSelect").value; roomId=code(); isHost=true;
+ await set(ref(db,"rooms/"+roomId),{createdAt:serverTimestamp(),host:me,status:"lobby",round:0,score:0,players:{[me]:{online:true,joinedAt:serverTimestamp()}}});
+ enter();
+}
+async function joinRoom(){
+ me=$("#nameSelect").value;roomId=cleanCode($("#roomInput").value);
+ if(roomId.length!==6)return lobbyError("6 haneli oda kodunu gir.");
+ const snap=await get(ref(db,"rooms/"+roomId));
+ if(!snap.exists())return lobbyError("Bu oda bulunamadı 😭 Kod doğru mu?");
+ const data=snap.val(); if(data.players&&data.players[me]&&data.players[me].online)return lobbyError(me+" zaten bu odada çevrimiçi görünüyor.");
+ if(data.players&&Object.keys(data.players).length>=2&&!data.players[me])return lobbyError("Oda dolu.");
+ isHost=data.host===me;await update(ref(db,"rooms/"+roomId+"/players/"+me),{online:true,joinedAt:serverTimestamp()});enter();
+}
+function lobbyError(t){$("#lobbyMsg").textContent=t;$("#lobbyMsg").classList.remove("hidden")}
+function enter(){
+ $("#lobby").classList.add("hidden");$("#room").classList.remove("hidden");$("#roomCode").textContent=roomId;
+ const myPresence=ref(db,`rooms/${roomId}/players/${me}/online`);set(myPresence,true);onDisconnect(myPresence).set(false);
+ onValue(ref(db,".info/connected"),s=>{$("#liveDot").classList.toggle("on",!!s.val());$("#connectionText").textContent=s.val()?"canlı bağlantı":"bağlantı yok"});
+ onValue(ref(db,"rooms/"+roomId),s=>{if(!s.exists())return;roomState=s.val();renderRoom()});
+ onValue(ref(db,`rooms/${roomId}/messages`),renderMessages);
+}
+function renderRoom(){
+ const ps=roomState.players||{};$("#pEmirhan").textContent=(ps.Emirhan?.online?"🟢 ":"⚪ ")+"Emirhan";$("#pEylul").textContent=(ps["Eylül"]?.online?"🟢 ":"⚪ ")+"Eylül";
+ const both=!!ps.Emirhan?.online&&!!ps["Eylül"]?.online;
+ if(roomState.status==="lobby"){
+   $("#startGameBtn").disabled=!(isHost&&both);
+   $("#startGameBtn").textContent=!both?"Diğer kişiyi bekliyoruz…":isHost?"Oyunu başlat":"Emirhan Araştırma Enstitüsü hazırlanıyor…";
+ } else renderGame();
+}
+$("#createBtn").addEventListener("click",createRoom);$("#joinBtn").addEventListener("click",joinRoom);
+$("#roomInput").addEventListener("input",e=>e.target.value=cleanCode(e.target.value));
+$("#startGameBtn").addEventListener("click",async()=>{if(!isHost)return;await update(ref(db,"rooms/"+roomId),{status:"playing",round:0,score:0,startedAt:Date.now()})});
+
+$("#chatForm").addEventListener("submit",async e=>{e.preventDefault();const inp=$("#chatInput"),text=inp.value.trim();if(!text||!roomId)return;inp.value="";await push(ref(db,`rooms/${roomId}/messages`),{who:me,text,at:serverTimestamp()})});
+function renderMessages(s){
+ const box=$("#messages");box.innerHTML="";const data=s.val()||{};Object.values(data).sort((a,b)=>(a.at||0)-(b.at||0)).slice(-100).forEach(m=>{const d=document.createElement("div");d.className="msg"+(m.who===me?" me":"");d.innerHTML=`<div class="who">${esc(m.who)}</div>${esc(m.text)}`;box.appendChild(d)});box.scrollTop=box.scrollHeight;
+}
+function answerPath(i){return `rooms/${roomId}/answers/${i}/${me}`}
+async function chooseAnswer(v){await set(ref(db,answerPath(roomState.round)),{value:v,at:serverTimestamp()})}
+async function nextRound(){if(!isHost)return;const next=roomState.round+1;if(next>=rounds.length)await update(ref(db,"rooms/"+roomId),{status:"finished"});else await update(ref(db,"rooms/"+roomId),{round:next})}
+function renderGame(){
+ if(roomState.status==="finished"){renderFinal();return}
+ const i=roomState.round,r=rounds[i],answers=roomState.answers?.[i]||{},mine=answers[me],otherName=me==="Emirhan"?"Eylül":"Emirhan",other=answers[otherName],both=mine&&other;
+ $("#roundLabel").textContent=`TUR ${i+1} / ${rounds.length}`;$("#score").textContent=roomState.score||0;$("#progressBar").style.width=((i+1)/rounds.length*100)+"%";
+ if(both){
+   const same=String(mine.value).trim().toLowerCase()===String(other.value).trim().toLowerCase();
+   const bonus=(r.type==="both"&&same)?10:5;
+   $("#gameArea").innerHTML=`<div class="center"><div class="emoji">${same?"🎯":"👀"}</div><div class="question">${same&&r.type==="both"?"TELEPATİ / UYUM!":"Cevaplar açıldı."}</div></div><div class="revealBox"><b>Emirhan:</b> ${esc(answers.Emirhan?.value||"—")}</div><div class="revealBox"><b>Eylül:</b> ${esc(answers["Eylül"]?.value||"—")}</div><p class="small center">${same&&r.type==="both"?"+10 uyum puanı. Aynı beyin hücresi tespit edildi.":"Emirhan Araştırma Enstitüsü bu veriyi ileride aleyhinize kullanmayacaktır."}</p>${isHost?'<div class="center"><button class="btn primary" id="nextRound">Sonraki tur →</button></div>':'<p class="small center waiting">Sonraki tur hazırlanıyor…</p>'}`;
+   if(isHost){$("#nextRound").onclick=async()=>{const scored=roomState.scored?.[i];if(!scored){await update(ref(db,"rooms/"+roomId),{score:(roomState.score||0)+bonus,[`scored/${i}`]:true})}await nextRound()}}
+ }else if(mine){
+   $("#gameArea").innerHTML=`<div class="center"><div class="emoji">🔒</div><div class="question">Cevabın kilitlendi.</div><p>${esc(mine.value)}</p><p class="small waiting">${esc(otherName)} cevap verince ikisi aynı anda açılacak…</p></div>`;
+ }else{
+   let controls="";
+   if(r.type==="both")controls=`<div class="options">${r.opts.map((o,j)=>`<button class="option" data-v="${esc(o)}">${esc(o)}</button>`).join("")}</div>`;
+   else controls=`<form id="answerForm"><input class="answerInput" id="answerText" maxlength="180" placeholder="Cevabını yaz…" required><button class="btn primary" style="margin-top:10px" type="submit">Cevabı kilitle 🔒</button></form>`;
+   $("#gameArea").innerHTML=`<div class="small">${esc(r.quip)}</div><div class="question">${esc(r.title)}</div><p class="small">Cevaplar ikiniz de gönderene kadar birbirinizden gizli.</p>${controls}`;
+   document.querySelectorAll(".option").forEach(b=>b.onclick=()=>chooseAnswer(b.dataset.v));
+   const f=$("#answerForm");if(f)f.onsubmit=e=>{e.preventDefault();const v=$("#answerText").value.trim();if(v)chooseAnswer(v)};
+ }
+ startTimer();
+}
+function startTimer(){
+ clearInterval(timerInt);const started=roomState.startedAt;if(!started)return;
+ const tick=()=>{const left=Math.max(0,20*60*1000-(Date.now()-started)),m=Math.floor(left/60000),s=Math.floor(left%60000/1000);$("#timer").textContent=`${String(m).padStart(2,"0")}:${String(s).padStart(2,"0")}`};tick();timerInt=setInterval(tick,1000)
+}
+function renderFinal(){
+ clearInterval(timerInt);$("#roundLabel").textContent="FİNAL";$("#progressBar").style.width="100%";$("#score").textContent=roomState.score||0;
+ const sc=roomState.score||0;let verdict=sc>=80?"Şüpheli derecede aynı kafadasınız.":sc>=50?"Gayet tehlikeli bir uyum var.":"Telepati departmanı battı ama sohbet hattı hâlâ açık. 😭";
+ $("#gameArea").innerHTML=`<div class="center"><div class="emoji">❤️</div><div class="question">Deney tamamlandı.</div><h2>${sc} uyum puanı</h2><p>${verdict}</p><div class="revealBox">Resmî sonuç: İkiniz de 20 dakika boyunca aynı saçma internet sitesinde kaldınız. İstatistikten daha güçlü bir veri olabilir.</div><p class="small">Chat açık kalıyor. Kaçış yok.</p></div>`;
+}
+</script>
+</body>
+</html>
