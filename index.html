@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="tr">
 
 <head>
@@ -13,6 +12,7 @@
 <meta name="theme-color" content="#070708">
 
 <title>Eylül — Gizli Dosya</title>
+
 
 <style>
 
@@ -4877,6 +4877,7 @@ button:hover{
 <link rel="preload" as="image" href="image00001 (1).png">
 </head>
 
+
 <body>
 
 <div id="eylulGate" aria-modal="true" role="dialog">
@@ -4886,25 +4887,23 @@ button:hover{
         <h2>Bu dosya Eylül'e ait.</h2>
         <p>Eylül'ün en sevdiği hitap şekli ne?</p>
 
-```
-    <input
-        id="gateInput"
-        class="gate-input"
-        type="text"
-        autocomplete="off"
-        placeholder="Cevabını yaz..."
-        aria-label="Eylül'ün en sevdiği hitap şekli"
-    >
+        <input
+            id="gateInput"
+            class="gate-input"
+            type="text"
+            autocomplete="off"
+            placeholder="Cevabını yaz..."
+            aria-label="Eylül'ün en sevdiği hitap şekli"
+        >
 
-    <button class="gate-button" id="gateButton" type="button">
-        dosyayı aç
-    </button>
+        <button class="gate-button" id="gateButton" type="button">
+            dosyayı aç
+        </button>
 
-    <div class="gate-message" id="gateMessage"></div>
+        <div class="gate-message" id="gateMessage"></div>
+    </div>
 </div>
-```
 
-</div>
 
 <div id="togetherPuzzle" aria-modal="true" role="dialog" aria-label="Bulmaca 01">
     <div class="puzzle-shell">
@@ -4915,64 +4914,64 @@ button:hover{
             <strong>Görev: Eylül ve Emirhan'ı mutlu et.</strong>
         </p>
 
-```
-    <div class="puzzle-board" id="puzzleBoard">
-        <div class="puzzle-half-label left">yalnız emirhan</div>
-        <div class="puzzle-half-label right">eylül + gereksiz kalabalık</div>
+        <div class="puzzle-board" id="puzzleBoard">
+            <div class="puzzle-half-label left">yalnız emirhan</div>
+            <div class="puzzle-half-label right">eylül + gereksiz kalabalık</div>
 
-        <div class="emirhan-zone" id="emirhanZone">
-            <div class="person-card" id="emirhanCard">
-                <img
-                    class="person-photo"
-                    src="WhatsApp Image 2026-09-07 at 10.42.47 PM.jpeg"
-                    alt="Emirhan"
-                    draggable="false"
-                >
-                <div class="person-name">Emirhan</div>
-                <div class="sad-face">mutsuzluk seviyesi: yüksek</div>
+            <div class="emirhan-zone" id="emirhanZone">
+                <div class="person-card" id="emirhanCard">
+                    <img
+                        class="person-photo"
+                        src="WhatsApp Image 2026-09-07 at 10.42.47 PM.jpeg"
+                        alt="Emirhan"
+                        draggable="false"
+                    >
+                    <div class="person-name">Emirhan</div>
+                    <div class="sad-face">mutsuzluk seviyesi: yüksek</div>
+                </div>
             </div>
-        </div>
 
-        <div class="bad-crowd" aria-hidden="true">
-            <div class="bad-person"></div>
-            <div class="bad-person"></div>
-            <div class="bad-person"></div>
-            <div class="bad-person"></div>
-            <div class="bad-person"></div>
-            <div class="bad-person"></div>
-            <div class="bad-person"></div>
-        </div>
-        <div class="bad-tag">kötü insanlar™</div>
-
-        <div class="eylul-start" id="eylulStart">
-            <div class="person-card" id="eylulDraggable" role="button" aria-label="Eylül'ü sürükle">
-                <div class="drag-ring"></div>
-                <img
-                    class="person-photo"
-                    src="Screenshot 2026-09-07 224433.png"
-                    alt="Eylül"
-                    draggable="false"
-                >
-                <div class="person-name">Eylül</div>
-                <div class="sad-face">mutsuzluk seviyesi: yüksek</div>
+            <div class="bad-crowd" aria-hidden="true">
+                <div class="bad-person"></div>
+                <div class="bad-person"></div>
+                <div class="bad-person"></div>
+                <div class="bad-person"></div>
+                <div class="bad-person"></div>
+                <div class="bad-person"></div>
+                <div class="bad-person"></div>
             </div>
+            <div class="bad-tag">kötü insanlar™</div>
+
+            <div class="eylul-start" id="eylulStart">
+                <div class="person-card" id="eylulDraggable" role="button" aria-label="Eylül'ü sürükle">
+                    <div class="drag-ring"></div>
+                    <img
+                        class="person-photo"
+                        src="Screenshot 2026-09-07 224433.png"
+                        alt="Eylül"
+                        draggable="false"
+                    >
+                    <div class="person-name">Eylül</div>
+                    <div class="sad-face">mutsuzluk seviyesi: yüksek</div>
+                </div>
+            </div>
+
+            <div class="drag-hint">Eylül'ü tutup sürükleyebilirsin ↔</div>
+            <div class="puzzle-heart">❤️</div>
         </div>
 
-        <div class="drag-hint">Eylül'ü tutup sürükleyebilirsin ↔</div>
-        <div class="puzzle-heart">❤️</div>
-    </div>
-
-    <div class="puzzle-success">
-        <strong>ÇÖZÜLDÜ.</strong>
-        <span>Beklenenden daha kolaymış. Eylül'ü Emirhan'ın yanına koy.</span>
-        <button class="puzzle-continue" id="puzzleContinue" type="button">
-            dosyaya devam et →
-        </button>
+        <div class="puzzle-success">
+            <strong>ÇÖZÜLDÜ.</strong>
+            <span>Beklenenden daha kolaymış. Eylül'ü Emirhan'ın yanına koy.</span>
+            <button class="puzzle-continue" id="puzzleContinue" type="button">
+                dosyaya devam et →
+            </button>
+        </div>
     </div>
 </div>
-```
 
-</div>
+
+
 
 <!-- =========================================================
      INTRO
@@ -4982,52 +4981,54 @@ button:hover{
 
 <div class="container">
 
-```
-<h1 class="intro-name">
 
-    Eylül.
+    <h1 class="intro-name">
 
-</h1>
+        Eylül.
 
-
-<div class="intro-text">
-
-    Her şey ilerideki piçlerimiz için.
-
-    <br>
-
-    İki kelime konuşacağız diye internet sitesi yaptım.
-
-</div>
+    </h1>
 
 
-<div class="intro-small">
+    <div class="intro-text">
 
-    bağımsız araştırma • tarafsız rapor • kesinlikle manipülasyon yok
+        Her şey ilerideki piçlerimiz için.
 
-</div>
+        <br>
+
+        İki kelime konuşacağız diye internet sitesi yaptım.
+
+    </div>
 
 
-<button
-    class="start"
-    onclick="startSite()"
->
+    <div class="intro-small">
 
-    dosyayı aç
+        bağımsız araştırma • tarafsız rapor • kesinlikle manipülasyon yok
 
-</button>
-```
+    </div>
+
+
+    <button
+        class="start"
+        onclick="startSite()"
+    >
+
+        dosyayı aç
+
+    </button>
+
 
 </div>
 
 </section>
 
+
+
 <main id="story">
+
 
 <!-- =========================================================
      OLASILIK TESTİ
 ========================================================= -->
-
 <section class="test-section probability-test">
 <div class="container">
     <div class="reveal">
@@ -5040,64 +5041,62 @@ button:hover{
         </p>
     </div>
 
-```
-<div class="test-card reveal scale">
-    <div class="test-step active-step" id="q1">
-        <div class="question-number">soru 01 / 03</div>
-        <div class="test-question">8 milyardan fazla insanın arasından birbirimizi tanıma ihtimalimiz sence neydi?</div>
-        <div class="answers">
-            <button onclick="nextQuestion('q1','q2')">A — Gayet normal.</button>
-            <button onclick="nextQuestion('q1','q2')">B — Düşük.</button>
-            <button onclick="nextQuestion('q1','q2')">C — Aşırı düşük.</button>
-            <button onclick="nextQuestion('q1','q2')">D — Emirhan birazdan bunu saçma bir yüzdeye bağlayacak.</button>
+    <div class="test-card reveal scale">
+        <div class="test-step active-step" id="q1">
+            <div class="question-number">soru 01 / 03</div>
+            <div class="test-question">8 milyardan fazla insanın arasından birbirimizi tanıma ihtimalimiz sence neydi?</div>
+            <div class="answers">
+                <button onclick="nextQuestion('q1','q2')">A — Gayet normal.</button>
+                <button onclick="nextQuestion('q1','q2')">B — Düşük.</button>
+                <button onclick="nextQuestion('q1','q2')">C — Aşırı düşük.</button>
+                <button onclick="nextQuestion('q1','q2')">D — Emirhan birazdan bunu saçma bir yüzdeye bağlayacak.</button>
+            </div>
+        </div>
+
+        <div class="test-step" id="q2">
+            <div class="question-number">soru 02 / 03</div>
+            <div class="test-question">Peki tanıştıktan sonra birbirimizin hayatında gerçekten iz bırakma ihtimalimiz?</div>
+            <div class="answers">
+                <button onclick="nextQuestion('q2','q3')">A — Olabilir.</button>
+                <button onclick="nextQuestion('q2','q3')">B — Daha da düşük.</button>
+                <button onclick="nextQuestion('q2','q3')">C — İstatistik departmanını çağırın.</button>
+                <button onclick="nextQuestion('q2','q3')">D — Bu araştırmanın tarafsızlığından şüpheleniyorum.</button>
+            </div>
+        </div>
+
+        <div class="test-step" id="q3">
+            <div class="question-number">soru 03 / 03</div>
+            <div class="test-question">Birinin diğerinden ilham alıp üç şarkı yayımlaması, binlerce kişinin bunları dinlemesi ve aylar sonra hâlâ onun için site yapıyor olması ihtimali?</div>
+            <div class="answers">
+                <button onclick="finishTest()">A — Normal.</button>
+                <button onclick="finishTest()">B — Pek normal değil.</button>
+                <button onclick="finishTest()">C — Bu olay kontrolden çıkmış.</button>
+                <button onclick="finishTest()">D — Bu adamın işi gücü yok mu 😭</button>
+            </div>
+        </div>
+
+        <div class="test-result probability-result" id="testResult">
+            <div class="probability-chain">
+                <span>8.000.000.000+ insan</span><b>↓</b>
+                <span>aynı zamanda yaşamak</span><b>↓</b>
+                <span>birbirimizi bulmak</span><b>↓</b>
+                <span>birbirimiz için önemli hâle gelmek</span><b>↓</b>
+                <span>üç şarkıya dönüşmek</span><b>↓</b>
+                <span>ve hâlâ burada olmak</span>
+            </div>
+            <div class="impossible-rate">%0,000000024</div>
+            <div class="rate-label">Emirhan Araştırma Enstitüsü'nün tamamen tarafsız hesabı</div>
+            <p class="probability-note">
+                Ama şu kısmı hesaplamaya gerek yok:
+                <strong>milyarlarca insanın olduğu dünyada yollarımız gerçekten kesişti.</strong>
+            </p>
+            <h3 class="probability-verdict">İmkânsıza yakın olan kısmı zaten yaptık: birbirimizi bulduk.</h3>
+            <button style="margin-top:25px" onclick="goAdvantages()">şimdi avantajlara bakalım</button>
         </div>
     </div>
-
-    <div class="test-step" id="q2">
-        <div class="question-number">soru 02 / 03</div>
-        <div class="test-question">Peki tanıştıktan sonra birbirimizin hayatında gerçekten iz bırakma ihtimalimiz?</div>
-        <div class="answers">
-            <button onclick="nextQuestion('q2','q3')">A — Olabilir.</button>
-            <button onclick="nextQuestion('q2','q3')">B — Daha da düşük.</button>
-            <button onclick="nextQuestion('q2','q3')">C — İstatistik departmanını çağırın.</button>
-            <button onclick="nextQuestion('q2','q3')">D — Bu araştırmanın tarafsızlığından şüpheleniyorum.</button>
-        </div>
-    </div>
-
-    <div class="test-step" id="q3">
-        <div class="question-number">soru 03 / 03</div>
-        <div class="test-question">Birinin diğerinden ilham alıp üç şarkı yayımlaması, binlerce kişinin bunları dinlemesi ve aylar sonra hâlâ onun için site yapıyor olması ihtimali?</div>
-        <div class="answers">
-            <button onclick="finishTest()">A — Normal.</button>
-            <button onclick="finishTest()">B — Pek normal değil.</button>
-            <button onclick="finishTest()">C — Bu olay kontrolden çıkmış.</button>
-            <button onclick="finishTest()">D — Bu adamın işi gücü yok mu 😭</button>
-        </div>
-    </div>
-
-    <div class="test-result probability-result" id="testResult">
-        <div class="probability-chain">
-            <span>8.000.000.000+ insan</span><b>↓</b>
-            <span>aynı zamanda yaşamak</span><b>↓</b>
-            <span>birbirimizi bulmak</span><b>↓</b>
-            <span>birbirimiz için önemli hâle gelmek</span><b>↓</b>
-            <span>üç şarkıya dönüşmek</span><b>↓</b>
-            <span>ve hâlâ burada olmak</span>
-        </div>
-        <div class="impossible-rate">%0,000000024</div>
-        <div class="rate-label">Emirhan Araştırma Enstitüsü'nün tamamen tarafsız hesabı</div>
-        <p class="probability-note">
-            Ama şu kısmı hesaplamaya gerek yok:
-            <strong>milyarlarca insanın olduğu dünyada yollarımız gerçekten kesişti.</strong>
-        </p>
-        <h3 class="probability-verdict">İmkânsıza yakın olan kısmı zaten yaptık: birbirimizi bulduk.</h3>
-        <button style="margin-top:25px" onclick="goAdvantages()">şimdi avantajlara bakalım</button>
-    </div>
-</div>
-```
-
 </div>
 </section>
+
 
 <!-- =========================================================
      ADVANTAGES INTRO
@@ -5110,60 +5109,62 @@ button:hover{
 
 <div class="container reveal">
 
-```
-<div class="eyebrow">
 
-    resmî araştırma raporu
+    <div class="eyebrow">
 
-</div>
-
-
-<h2>
-
-    Benimle yeniden konuşmanın avantajları.
-
-</h2>
-
-
-<p class="text">
-
-    Uzun ve tamamen tarafsız araştırmalar sonucunda
-    çeşitli faydalar tespit edildi.
-
-    <br><br>
-
-    Bazıları romantik.
-
-    Bazıları ekonomik.
-
-    Bazıları ise uluslararası ilişkileri ilgilendiriyor.
-
-</p>
-
-
-<div class="big-file">
-
-
-    <div class="big-file-number">
-
-        9+
+        resmî araştırma raporu
 
     </div>
 
 
-    <div class="big-file-label">
+    <h2>
 
-        ciddi avantaj tespit edildi
+        Benimle yeniden konuşmanın avantajları.
+
+    </h2>
+
+
+    <p class="text">
+
+        Uzun ve tamamen tarafsız araştırmalar sonucunda
+        çeşitli faydalar tespit edildi.
+
+        <br><br>
+
+        Bazıları romantik.
+
+        Bazıları ekonomik.
+
+        Bazıları ise uluslararası ilişkileri ilgilendiriyor.
+
+    </p>
+
+
+    <div class="big-file">
+
+
+        <div class="big-file-number">
+
+            9+
+
+        </div>
+
+
+        <div class="big-file-label">
+
+            ciddi avantaj tespit edildi
+
+        </div>
+
 
     </div>
 
-
-</div>
-```
 
 </div>
 
 </section>
+
+
 
 <!-- =========================================================
      HEIGHT
@@ -5173,156 +5174,158 @@ button:hover{
 
 <div class="container">
 
-```
-<div class="reveal">
+
+    <div class="reveal">
 
 
-    <div class="eyebrow">
+        <div class="eyebrow">
 
-        avantaj 01 — fizik ve mühendislik
+            avantaj 01 — fizik ve mühendislik
+
+        </div>
+
+
+        <h2>
+
+            Başlangıç için temel matematik.
+
+        </h2>
+
+
+        <p class="text">
+
+            Sen 170'sin.
+
+            Ben 178'im.
+
+            <br><br>
+
+            Burada tesadüften fazlası olabilir.
+
+        </p>
+
 
     </div>
 
 
-    <h2>
 
-        Başlangıç için temel matematik.
-
-    </h2>
+    <div class="photo-stage">
 
 
-    <p class="text">
+        <div class="photo-person eylulPic reveal left">
 
-        Sen 170'sin.
 
-        Ben 178'im.
+            <div class="cm">
+
+                170 cm
+
+            </div>
+
+
+            <div class="polaroid">
+
+
+                <img
+                    src="Screenshot 2026-09-07 224433.png"
+                    alt="Eylül"
+                >
+
+
+                <div class="photo-name">
+
+                    Eylül
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="height-middle reveal scale">
+
+
+            <div class="kiss">
+
+                💋
+
+            </div>
+
+
+            <div class="height-diff">
+
+                8 cm
+
+            </div>
+
+
+            <div class="height-mini">
+
+                sistem uyumlu
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="photo-person emirhanPic reveal right">
+
+
+            <div class="cm">
+
+                178 cm
+
+            </div>
+
+
+            <div class="polaroid">
+
+
+                <img
+                    src="WhatsApp Image 2026-09-07 at 10.42.47 PM.jpeg"
+                    alt="Emirhan"
+                >
+
+
+                <div class="photo-name">
+
+                    Emirhan
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="height-joke reveal">
+
+        Öpüşürken parmak uçlarına çıkmak
+        zorunda kalmazsın.
 
         <br><br>
 
-        Burada tesadüften fazlası olabilir.
-
-    </p>
-
-
-</div>
-
-
-
-<div class="photo-stage">
-
-
-    <div class="photo-person eylulPic reveal left">
-
-
-        <div class="cm">
-
-            170 cm
-
-        </div>
-
-
-        <div class="polaroid">
-
-
-            <img
-                src="Screenshot 2026-09-07 224433.png"
-                alt="Eylül"
-            >
-
-
-            <div class="photo-name">
-
-                Eylül
-
-            </div>
-
-
-        </div>
-
+        Sistem fabrika çıkışı uyumlu.
 
     </div>
 
-
-
-    <div class="height-middle reveal scale">
-
-
-        <div class="kiss">
-
-            💋
-
-        </div>
-
-
-        <div class="height-diff">
-
-            8 cm
-
-        </div>
-
-
-        <div class="height-mini">
-
-            sistem uyumlu
-
-        </div>
-
-
-    </div>
-
-
-
-    <div class="photo-person emirhanPic reveal right">
-
-
-        <div class="cm">
-
-            178 cm
-
-        </div>
-
-
-        <div class="polaroid">
-
-
-            <img
-                src="WhatsApp Image 2026-09-07 at 10.42.47 PM.jpeg"
-                alt="Emirhan"
-            >
-
-
-            <div class="photo-name">
-
-                Emirhan
-
-            </div>
-
-
-        </div>
-
-
-    </div>
-
-
-</div>
-
-
-
-<div class="height-joke reveal">
-
-    Öpüşürken parmak uçlarına çıkmak
-    zorunda kalmazsın.
-
-    <br><br>
-
-    Sistem fabrika çıkışı uyumlu.
-
-</div>
-```
 
 </div>
 
 </section>
+
+
 
 <!-- =========================================================
      GEO
@@ -5332,572 +5335,121 @@ button:hover{
 
 <div class="container">
 
-```
-<div class="reveal">
+
+    <div class="reveal">
 
 
-    <div class="eyebrow">
+        <div class="eyebrow">
 
-        avantaj 02 — coğrafi uyumluluk laboratuvarı
-
-    </div>
-
-
-    <h2>
-
-        Coğrafi olarak da garip derecede uyumluyuz.
-
-    </h2>
-
-
-    <p class="text">
-
-        Senin Suriye–İran bağlantılı aile kökenlerinin
-        olması benim için problem değil.
-
-        <br><br>
-
-        Çünkü ben de Yozgatlıyım.
-
-        <br>
-
-        Bu noktadan sonra kimsenin
-        kimseyi coğrafya üzerinden yargılayacak
-        durumda olduğunu düşünmüyorum.
-
-    </p>
-
-
-</div>
-
-
-
-<div class="geo-machine reveal scale">
-
-
-    <div class="geo-person">
-
-
-        <div class="geo-icon">
-
-            🏔️
+            avantaj 02 — coğrafi uyumluluk laboratuvarı
 
         </div>
 
 
-        <strong>
+        <h2>
 
-            EYLÜL
+            Coğrafi olarak da garip derecede uyumluyuz.
 
-        </strong>
+        </h2>
 
 
-        <span>
+        <p class="text">
 
-            Van / Suriye / İran evreni
+            Senin Suriye–İran bağlantılı aile kökenlerinin
+            olması benim için problem değil.
 
-        </span>
+            <br><br>
+
+            Çünkü ben de Yozgatlıyım.
+
+            <br>
+
+            Bu noktadan sonra kimsenin
+            kimseyi coğrafya üzerinden yargılayacak
+            durumda olduğunu düşünmüyorum.
+
+        </p>
 
 
     </div>
 
 
 
-    <div class="geo-center">
+    <div class="geo-machine reveal scale">
 
 
-        <div class="geo-plus">
+        <div class="geo-person">
 
-            +
 
-        </div>
+            <div class="geo-icon">
 
-
-        <div class="geo-heart">
-
-            ❤️
-
-        </div>
-
-
-    </div>
-
-
-
-    <div class="geo-person">
-
-
-        <div class="geo-icon">
-
-            🌾
-
-        </div>
-
-
-        <strong>
-
-            EMİRHAN
-
-        </strong>
-
-
-        <span>
-
-            Yozgat Cumhuriyeti
-
-        </span>
-
-
-    </div>
-
-
-</div>
-
-
-
-<div class="compatibility reveal">
-
-
-    <div class="compatibility-top">
-
-
-        <span>
-
-            VAN × YOZGAT UYUMLULUK ANALİZİ
-
-        </span>
-
-
-        <strong>
-
-            %97
-
-        </strong>
-
-
-    </div>
-
-
-
-    <div class="compatibility-bar">
-
-        <div class="compatibility-fill"></div>
-
-    </div>
-
-
-
-    <p>
-
-        Yapılan son derece tarafsız araştırmalara göre
-        Vanlı–Yozgatlı çiftlerin uyum oranı %97.
-
-    </p>
-
-
-    <small>
-
-        Kaynak: Emirhan Araştırma Enstitüsü.
-        Örneklem büyüklüğü: 2 kişi.
-        Bilimsel güvenilirlik: sorma.
-
-    </small>
-
-
-</div>
-
-
-
-<div class="geo-verdict reveal">
-
-
-    <div>
-
-        🧪
-
-    </div>
-
-
-    <h3>
-
-        Bilim konuştu.
-
-    </h3>
-
-
-    <p>
-
-        Birbirimizi bulmuş olmamız romantizmden çok
-        istatistiksel zorunluluk olabilir.
-
-    </p>
-
-
-</div>
-```
-
-</div>
-
-</section>
-
-<!-- =========================================================
-     PREMIUM
-========================================================= -->
-
-<section class="subscription">
-
-<div class="container">
-
-```
-<div class="reveal">
-
-
-    <div class="eyebrow">
-
-        avantaj 03 — premium hizmetler
-
-    </div>
-
-
-    <h2>
-
-        Eylül Premium müzik aboneliği.
-
-    </h2>
-
-
-    <p class="text">
-
-        Piyasada benzer bir paket bulunamadı.
-
-        Çünkü ekonomik olarak muhtemelen mantıksız.
-
-    </p>
-
-
-</div>
-
-
-
-<div class="premium-card reveal scale">
-
-
-    <div class="premium-badge">
-
-        EYLÜL PREMIUM
-
-    </div>
-
-
-    <h3>
-
-        Her ay birbirinden eşsiz,
-        kişiye özel şarkı.
-
-    </h3>
-
-
-    <div class="premium-price">
-
-        0 TL
-
-        <span>
-
-            / sadece benimle konuşman gerekiyor
-
-        </span>
-
-    </div>
-
-
-
-    <div class="premium-list">
-
-
-        <div>
-
-            ✓ Sana özel beste ve söz
-
-        </div>
-
-
-        <div>
-
-            ✓ Profesyonel kayıt ve yayın
-
-        </div>
-
-
-        <div>
-
-            ✓ Spotify ve diğer platformlarda yayımlama
-
-        </div>
-
-
-        <div>
-
-            ✓ Binlerce insana ulaştırabilme ihtimali
-
-        </div>
-
-
-        <div>
-
-            ✓ Gecenin 03.14'ünde
-            “şuna bi bak olmuş mu?” demosu
-
-        </div>
-
-
-        <div>
-
-            ✓ İlham kaynağı kredisi:
-            Eylül
-
-        </div>
-
-
-        <div>
-
-            ✓ Gereksiz dramatik cover tasarımları
-            pakete dahildir
-
-        </div>
-
-
-    </div>
-
-
-</div>
-```
-
-</div>
-
-</section>
-
-<!-- =========================================================
-     MUSIC HISTORY
-========================================================= -->
-
-<section class="music-history">
-
-<div class="container">
-
-```
-<div class="reveal">
-
-
-    <div class="eyebrow">
-
-        geçmiş performans raporu
-
-    </div>
-
-
-    <h2>
-
-        Üstelik sistem daha önce çalıştı.
-
-    </h2>
-
-
-    <p class="text">
-
-        Şimdiye kadar senin için üç şarkı yayımladım.
-
-        <br><br>
-
-        Sonra küçük bir problem yaşandı:
-
-        <br>
-
-        insanlar gerçekten dinledi.
-
-    </p>
-
-
-</div>
-
-
-
-<div class="song-list">
-
-
-    <div class="song reveal left">
-
-
-        <div class="song-index">
-
-            01
-
-        </div>
-
-
-        <div>
-
-
-            <div class="song-label">
-
-                EYLÜL EVRENİ
+                🏔️
 
             </div>
 
 
-            <h3>
+            <strong>
 
-                Bi Ömür Boyunca
+                EYLÜL
 
-            </h3>
+            </strong>
+
+
+            <span>
+
+                Van / Suriye / İran evreni
+
+            </span>
 
 
         </div>
 
 
-        <div class="wave">
 
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-
-        </div>
+        <div class="geo-center">
 
 
-    </div>
+            <div class="geo-plus">
 
-
-
-    <div class="song reveal right">
-
-
-        <div class="song-index">
-
-            02
-
-        </div>
-
-
-        <div>
-
-
-            <div class="song-label">
-
-                EYLÜL EVRENİ
+                +
 
             </div>
 
 
-            <h3>
+            <div class="geo-heart">
 
-                Beni Tanıyorsun Ama
-
-            </h3>
-
-
-        </div>
-
-
-        <div class="wave">
-
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-
-        </div>
-
-
-    </div>
-
-
-
-    <div class="song reveal left">
-
-
-        <div class="song-index">
-
-            03
-
-        </div>
-
-
-        <div>
-
-
-            <div class="song-label">
-
-                EVET, YİNE SEN
+                ❤️
 
             </div>
 
 
-            <h3>
-
-                Kaç Yalan Söylemeliydi?
-
-            </h3>
-
-
         </div>
 
 
-        <div class="wave">
 
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-
-        </div>
+        <div class="geo-person">
 
 
-    </div>
+            <div class="geo-icon">
+
+                🌾
+
+            </div>
 
 
-</div>
+            <strong>
+
+                EMİRHAN
+
+            </strong>
 
 
+            <span>
 
-<div class="stats reveal">
+                Yozgat Cumhuriyeti
 
+            </span>
 
-    <div class="stat">
-
-
-        <div
-            class="stat-number counter"
-            data-target="30000"
-            data-suffix="+"
-        >
-
-            0
-
-        </div>
-
-
-        <div class="stat-label">
-
-            dinlenme
-
-        </div>
-
-
-        <div class="stat-joke">
-
-            bizim meseleyi artık yabancılar da takip ediyor
 
         </div>
 
@@ -5906,110 +5458,80 @@ button:hover{
 
 
 
-    <div class="stat">
+    <div class="compatibility reveal">
 
 
-        <div
-            class="stat-number counter"
-            data-target="300"
-            data-suffix="+"
-        >
+        <div class="compatibility-top">
 
-            0
+
+            <span>
+
+                VAN × YOZGAT UYUMLULUK ANALİZİ
+
+            </span>
+
+
+            <strong>
+
+                %97
+
+            </strong>
+
 
         </div>
 
 
-        <div class="stat-label">
 
-            yorum
+        <div class="compatibility-bar">
 
-        </div>
-
-
-        <div class="stat-joke">
-
-            toplu terapiye doğru ilerliyoruz
+            <div class="compatibility-fill"></div>
 
         </div>
+
+
+
+        <p>
+
+            Yapılan son derece tarafsız araştırmalara göre
+            Vanlı–Yozgatlı çiftlerin uyum oranı %97.
+
+        </p>
+
+
+        <small>
+
+            Kaynak: Emirhan Araştırma Enstitüsü.
+            Örneklem büyüklüğü: 2 kişi.
+            Bilimsel güvenilirlik: sorma.
+
+        </small>
 
 
     </div>
 
 
 
-    <div class="stat">
+    <div class="geo-verdict reveal">
 
 
-        <div
-            class="stat-number counter"
-            data-target="30"
-            data-suffix="+"
-        >
+        <div>
 
-            0
-
-        </div>
-
-
-        <div class="stat-label">
-
-            TikTok
-
-        </div>
-
-
-        <div class="stat-joke">
-
-            insanlar video çekiyor.
-            konu büyüdü.
-
-        </div>
-
-
-    </div>
-
-
-</div>
-
-
-
-<div class="career-warning reveal">
-
-
-    <div class="warning-dot"></div>
-
-
-    <div>
-
-
-        <div
-            class="eyebrow"
-            style="margin-bottom:10px"
-        >
-
-            kritik sistem uyarısı
+            🧪
 
         </div>
 
 
         <h3>
 
-            Dinleyiciler yeni şarkı bekliyor.
+            Bilim konuştu.
 
         </h3>
 
 
         <p>
 
-            Fakat üretim zincirinin en önemli
-            parçasıyla iletişim şu anda kesilmiş durumda:
-
-            <strong style="color:#eadadd">
-
-                ilham perisi.
-
-            </strong>
+            Birbirimizi bulmuş olmamız romantizmden çok
+            istatistiksel zorunluluk olabilir.
 
         </p>
 
@@ -6019,52 +5541,539 @@ button:hover{
 
 </div>
 
+</section>
 
 
-<div class="economy reveal">
 
-    Sen benimle konuşursun
+<!-- =========================================================
+     PREMIUM
+========================================================= -->
 
-    →
+<section class="subscription">
 
-    ben ilham alırım
+<div class="container">
 
-    →
 
-    şarkı yaparım
+    <div class="reveal">
 
-    →
 
-    insanlar dinler
+        <div class="eyebrow">
 
-    →
+            avantaj 03 — premium hizmetler
 
-    kariyer yükselir.
+        </div>
 
-    <br><br>
 
-    <strong>
+        <h2>
 
-        Sen olmazsan bu ekonomik sistem
-        nasıl ayakta kalacak Eylül?
+            Eylül Premium müzik aboneliği.
 
-    </strong>
+        </h2>
 
-</div>
-```
+
+        <p class="text">
+
+            Piyasada benzer bir paket bulunamadı.
+
+            Çünkü ekonomik olarak muhtemelen mantıksız.
+
+        </p>
+
+
+    </div>
+
+
+
+    <div class="premium-card reveal scale">
+
+
+        <div class="premium-badge">
+
+            EYLÜL PREMIUM
+
+        </div>
+
+
+        <h3>
+
+            Her ay birbirinden eşsiz,
+            kişiye özel şarkı.
+
+        </h3>
+
+
+        <div class="premium-price">
+
+            0 TL
+
+            <span>
+
+                / sadece benimle konuşman gerekiyor
+
+            </span>
+
+        </div>
+
+
+
+        <div class="premium-list">
+
+
+            <div>
+
+                ✓ Sana özel beste ve söz
+
+            </div>
+
+
+            <div>
+
+                ✓ Profesyonel kayıt ve yayın
+
+            </div>
+
+
+            <div>
+
+                ✓ Spotify ve diğer platformlarda yayımlama
+
+            </div>
+
+
+            <div>
+
+                ✓ Binlerce insana ulaştırabilme ihtimali
+
+            </div>
+
+
+            <div>
+
+                ✓ Gecenin 03.14'ünde
+                “şuna bi bak olmuş mu?” demosu
+
+            </div>
+
+
+            <div>
+
+                ✓ İlham kaynağı kredisi:
+                Eylül
+
+            </div>
+
+
+            <div>
+
+                ✓ Gereksiz dramatik cover tasarımları
+                pakete dahildir
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
 
 </div>
 
 </section>
 
+
+
+<!-- =========================================================
+     MUSIC HISTORY
+========================================================= -->
+
+<section class="music-history">
+
+<div class="container">
+
+
+    <div class="reveal">
+
+
+        <div class="eyebrow">
+
+            geçmiş performans raporu
+
+        </div>
+
+
+        <h2>
+
+            Üstelik sistem daha önce çalıştı.
+
+        </h2>
+
+
+        <p class="text">
+
+            Şimdiye kadar senin için üç şarkı yayımladım.
+
+            <br><br>
+
+            Sonra küçük bir problem yaşandı:
+
+            <br>
+
+            insanlar gerçekten dinledi.
+
+        </p>
+
+
+    </div>
+
+
+
+    <div class="song-list">
+
+
+        <div class="song reveal left">
+
+
+            <div class="song-index">
+
+                01
+
+            </div>
+
+
+            <div>
+
+
+                <div class="song-label">
+
+                    EYLÜL EVRENİ
+
+                </div>
+
+
+                <h3>
+
+                    Bi Ömür Boyunca
+
+                </h3>
+
+
+            </div>
+
+
+            <div class="wave">
+
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="song reveal right">
+
+
+            <div class="song-index">
+
+                02
+
+            </div>
+
+
+            <div>
+
+
+                <div class="song-label">
+
+                    EYLÜL EVRENİ
+
+                </div>
+
+
+                <h3>
+
+                    Beni Tanıyorsun Ama
+
+                </h3>
+
+
+            </div>
+
+
+            <div class="wave">
+
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="song reveal left">
+
+
+            <div class="song-index">
+
+                03
+
+            </div>
+
+
+            <div>
+
+
+                <div class="song-label">
+
+                    EVET, YİNE SEN
+
+                </div>
+
+
+                <h3>
+
+                    Kaç Yalan Söylemeliydi?
+
+                </h3>
+
+
+            </div>
+
+
+            <div class="wave">
+
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="stats reveal">
+
+
+        <div class="stat">
+
+
+            <div
+                class="stat-number counter"
+                data-target="30000"
+                data-suffix="+"
+            >
+
+                0
+
+            </div>
+
+
+            <div class="stat-label">
+
+                dinlenme
+
+            </div>
+
+
+            <div class="stat-joke">
+
+                bizim meseleyi artık yabancılar da takip ediyor
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="stat">
+
+
+            <div
+                class="stat-number counter"
+                data-target="300"
+                data-suffix="+"
+            >
+
+                0
+
+            </div>
+
+
+            <div class="stat-label">
+
+                yorum
+
+            </div>
+
+
+            <div class="stat-joke">
+
+                toplu terapiye doğru ilerliyoruz
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="stat">
+
+
+            <div
+                class="stat-number counter"
+                data-target="30"
+                data-suffix="+"
+            >
+
+                0
+
+            </div>
+
+
+            <div class="stat-label">
+
+                TikTok
+
+            </div>
+
+
+            <div class="stat-joke">
+
+                insanlar video çekiyor.
+                konu büyüdü.
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="career-warning reveal">
+
+
+        <div class="warning-dot"></div>
+
+
+        <div>
+
+
+            <div
+                class="eyebrow"
+                style="margin-bottom:10px"
+            >
+
+                kritik sistem uyarısı
+
+            </div>
+
+
+            <h3>
+
+                Dinleyiciler yeni şarkı bekliyor.
+
+            </h3>
+
+
+            <p>
+
+                Fakat üretim zincirinin en önemli
+                parçasıyla iletişim şu anda kesilmiş durumda:
+
+                <strong style="color:#eadadd">
+
+                    ilham perisi.
+
+                </strong>
+
+            </p>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="economy reveal">
+
+        Sen benimle konuşursun
+
+        →
+
+        ben ilham alırım
+
+        →
+
+        şarkı yaparım
+
+        →
+
+        insanlar dinler
+
+        →
+
+        kariyer yükselir.
+
+        <br><br>
+
+        <strong>
+
+            Sen olmazsan bu ekonomik sistem
+            nasıl ayakta kalacak Eylül?
+
+        </strong>
+
+    </div>
+
+
+</div>
+
+</section>
+
+
+
 <!-- =========================================================
      EYLUL OS
 ========================================================= -->
 
+
 <!-- =========================================================
      MINI OYUN — 4 PARÇA FOTOĞRAF PUZZLE
 ========================================================= -->
-
 <section class="mini-game-section" id="photoPuzzleGame">
     <div class="mg-wrap">
         <div class="mg-head reveal">
@@ -6076,245 +6085,247 @@ button:hover{
             </p>
         </div>
 
-```
-    <div class="love-puzzle-card reveal" id="lovePuzzleCard">
-        <div class="love-puzzle-top">
-            <span>dosya: <b>eylul_emirhan_final_final2.png</b></span>
-            <span id="lovePuzzleCounter">0 / 6</span>
-        </div>
-
-        <div class="love-puzzle-layout">
-            <div class="love-puzzle-pool" id="lovePuzzlePool">
-                <div class="love-piece" data-piece="4" data-label="04" style="background-position:0% 100%"></div>
-                <div class="love-piece" data-piece="1" data-label="01" style="background-position:0% 0%"></div>
-                <div class="love-piece" data-piece="6" data-label="06" style="background-position:100% 100%"></div>
-                <div class="love-piece" data-piece="3" data-label="03" style="background-position:100% 0%"></div>
-                <div class="love-piece" data-piece="2" data-label="02" style="background-position:50% 0%"></div>
-                <div class="love-piece" data-piece="5" data-label="05" style="background-position:50% 100%"></div>
+        <div class="love-puzzle-card reveal" id="lovePuzzleCard">
+            <div class="love-puzzle-top">
+                <span>dosya: <b>eylul_emirhan_final_final2.png</b></span>
+                <span id="lovePuzzleCounter">0 / 6</span>
             </div>
 
-            <div class="love-puzzle-board-wrap">
-                <div class="love-puzzle-board" id="lovePuzzleBoard">
-                    <div class="love-slot" data-slot="1">01</div>
-                    <div class="love-slot" data-slot="2">02</div>
-                    <div class="love-slot" data-slot="3">03</div>
-                    <div class="love-slot" data-slot="4">04</div>
-                    <div class="love-slot" data-slot="5">05</div>
-                    <div class="love-slot" data-slot="6">06</div>
+            <div class="love-puzzle-layout">
+                <div class="love-puzzle-pool" id="lovePuzzlePool">
+                    <div class="love-piece" data-piece="4" data-label="04" style="background-position:0% 100%"></div>
+                    <div class="love-piece" data-piece="1" data-label="01" style="background-position:0% 0%"></div>
+                    <div class="love-piece" data-piece="6" data-label="06" style="background-position:100% 100%"></div>
+                    <div class="love-piece" data-piece="3" data-label="03" style="background-position:100% 0%"></div>
+                    <div class="love-piece" data-piece="2" data-label="02" style="background-position:50% 0%"></div>
+                    <div class="love-piece" data-piece="5" data-label="05" style="background-position:50% 100%"></div>
+                </div>
+
+                <div class="love-puzzle-board-wrap">
+                    <div class="love-puzzle-board" id="lovePuzzleBoard">
+                        <div class="love-slot" data-slot="1">01</div>
+                        <div class="love-slot" data-slot="2">02</div>
+                        <div class="love-slot" data-slot="3">03</div>
+                        <div class="love-slot" data-slot="4">04</div>
+                        <div class="love-slot" data-slot="5">05</div>
+                        <div class="love-slot" data-slot="6">06</div>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="love-puzzle-message" id="lovePuzzleMessage">
-            <strong>Altı parça. Tek fotoğraf.</strong>
-            <span>doğru yerlere sürükle</span>
+            <div class="love-puzzle-message" id="lovePuzzleMessage">
+                <strong>Altı parça. Tek fotoğraf.</strong>
+                <span>doğru yerlere sürükle</span>
+            </div>
         </div>
     </div>
-</div>
-```
-
 </section>
 </div>
+
+
 
 <section class="eylulos">
 
 <div class="container">
 
-```
-<div class="reveal">
+
+    <div class="reveal">
 
 
-    <div class="eyebrow">
+        <div class="eyebrow">
 
-        avantaj 04 — iletişim teknolojileri
-
-    </div>
-
-
-    <h2>
-
-        Seni anlamak için özel yazılım geliştirdim.
-
-    </h2>
-
-
-    <p class="text">
-
-        Aylar süren araştırmalar sonucunda
-        Eylül dilini Türkçeye çevirebilen
-        gelişmiş bir yapay zekâ sistemi üretildi.
-
-        <br><br>
-
-        Henüz pek iyi çalışmıyor.
-
-    </p>
-
-
-</div>
-
-
-
-<div class="os-window reveal scale">
-
-
-    <div class="os-top">
-
-
-        <div class="os-dots">
-
-            <i></i>
-            <i></i>
-            <i></i>
+            avantaj 04 — iletişim teknolojileri
 
         </div>
 
 
-        <span>
+        <h2>
 
-            EylülOS™ 1.0
+            Seni anlamak için özel yazılım geliştirdim.
 
-        </span>
+        </h2>
+
+
+        <p class="text">
+
+            Aylar süren araştırmalar sonucunda
+            Eylül dilini Türkçeye çevirebilen
+            gelişmiş bir yapay zekâ sistemi üretildi.
+
+            <br><br>
+
+            Henüz pek iyi çalışmıyor.
+
+        </p>
 
 
     </div>
 
 
 
-    <div class="translator">
+    <div class="os-window reveal scale">
 
 
-        <div class="translation">
+        <div class="os-top">
 
 
-            <div class="incoming">
+            <div class="os-dots">
 
-                EYLÜL:
-
-            </div>
-
-
-            <div class="message-big">
-
-                hm
+                <i></i>
+                <i></i>
+                <i></i>
 
             </div>
 
 
-            <div class="analysis">
+            <span>
+
+                EylülOS™ 1.0
+
+            </span>
 
 
-                <span>
-
-                    ANALİZ EDİLİYOR...
-
-                </span>
+        </div>
 
 
-                <div class="loading">
 
-                    <i></i>
+        <div class="translator">
+
+
+            <div class="translation">
+
+
+                <div class="incoming">
+
+                    EYLÜL:
 
                 </div>
 
 
-                <p>
+                <div class="message-big">
 
-                    37 farklı anlam tespit edildi.
+                    hm
 
-                    <br>
-
-                    Kesin sonuç bulunamadı.
-
-                </p>
+                </div>
 
 
-            </div>
+                <div class="analysis">
 
 
-        </div>
+                    <span>
+
+                        ANALİZ EDİLİYOR...
+
+                    </span>
 
 
+                    <div class="loading">
 
-        <div class="translation">
+                        <i></i>
 
-
-            <div class="incoming">
-
-                EYLÜL:
-
-            </div>
+                    </div>
 
 
-            <div class="message-big">
+                    <p>
 
-                yuk
+                        37 farklı anlam tespit edildi.
 
-            </div>
+                        <br>
 
+                        Kesin sonuç bulunamadı.
 
-            <div class="analysis success-analysis">
-
-
-                <span>
-
-                    SONUÇ
-
-                </span>
+                    </p>
 
 
-                <p>
-
-                    Çeviri yapılamadı.
-
-                    <br>
-
-                    Eylülce gizli protokol.
-
-                </p>
+                </div>
 
 
             </div>
 
 
-        </div>
+
+            <div class="translation">
 
 
+                <div class="incoming">
 
-        <div class="translation">
+                    EYLÜL:
+
+                </div>
 
 
-            <div class="incoming">
+                <div class="message-big">
 
-                EYLÜL:
+                    yuk
+
+                </div>
+
+
+                <div class="analysis success-analysis">
+
+
+                    <span>
+
+                        SONUÇ
+
+                    </span>
+
+
+                    <p>
+
+                        Çeviri yapılamadı.
+
+                        <br>
+
+                        Eylülce gizli protokol.
+
+                    </p>
+
+
+                </div>
+
 
             </div>
 
 
-            <div class="message-big">
 
-                tamam
-
-            </div>
+            <div class="translation">
 
 
-            <div class="analysis danger-analysis">
+                <div class="incoming">
+
+                    EYLÜL:
+
+                </div>
 
 
-                <span>
+                <div class="message-big">
 
-                    KRİTİK UYARI
+                    tamam
 
-                </span>
+                </div>
 
 
-                <p>
+                <div class="analysis danger-analysis">
 
-                    “Tamam” kelimesinin gerçekten
-                    tamam anlamına gelip gelmediği
-                    doğrulanamadı.
 
-                </p>
+                    <span>
+
+                        KRİTİK UYARI
+
+                    </span>
+
+
+                    <p>
+
+                        “Tamam” kelimesinin gerçekten
+                        tamam anlamına gelip gelmediği
+                        doğrulanamadı.
+
+                    </p>
+
+
+                </div>
 
 
             </div>
@@ -6326,41 +6337,40 @@ button:hover{
     </div>
 
 
-</div>
+
+    <div class="os-verdict reveal">
 
 
+        <div class="robot">
 
-<div class="os-verdict reveal">
+            🤖
+
+        </div>
 
 
-    <div class="robot">
+        <h3>
 
-        🤖
+            Sistem hâlâ öğreniyor.
+
+        </h3>
+
+
+        <p>
+
+            Tahmini tamamlanma tarihi:
+            2047.
+
+        </p>
+
 
     </div>
 
-
-    <h3>
-
-        Sistem hâlâ öğreniyor.
-
-    </h3>
-
-
-    <p>
-
-        Tahmini tamamlanma tarihi:
-        2047.
-
-    </p>
-
-
-</div>
-```
 
 </div>
 
 </section>
+
+
 
 <!-- =========================================================
      ANKARA
@@ -6370,69 +6380,36 @@ button:hover{
 
 <div class="container">
 
-```
-<div class="reveal">
+
+    <div class="reveal">
 
 
-    <div class="eyebrow">
+        <div class="eyebrow">
 
-        avantaj 05 — gelecek paketi
-
-    </div>
-
-
-    <h2>
-
-        Ankara diye de küçük bir planımız var.
-
-    </h2>
-
-
-    <p class="text">
-
-        Bir gün aynı şehirde üniversite okuma
-        ihtimalimizi düşün.
-
-        <br><br>
-
-        Ankara'da sen kendi üniversitene,
-        ben kendi okuluma giderim.
-
-        Sonra günün sonunda buluşup
-        ikimiz de okuldan şikâyet ederiz.
-
-    </p>
-
-
-</div>
-
-
-
-<div class="ankara-cards">
-
-
-    <div class="ankara-card reveal left">
-
-
-        <div class="ankara-icon">
-
-            🎓
+            avantaj 05 — gelecek paketi
 
         </div>
 
 
-        <h3>
+        <h2>
 
-            Üniversite hayatı
+            Ankara diye de küçük bir planımız var.
 
-        </h3>
+        </h2>
 
 
-        <p>
+        <p class="text">
 
-            Aynı şehirde okuyup
-            “bugün okul çok kötüydü”
-            değerlendirme toplantıları.
+            Bir gün aynı şehirde üniversite okuma
+            ihtimalimizi düşün.
+
+            <br><br>
+
+            Ankara'da sen kendi üniversitene,
+            ben kendi okuluma giderim.
+
+            Sonra günün sonunda buluşup
+            ikimiz de okuldan şikâyet ederiz.
 
         </p>
 
@@ -6441,137 +6418,172 @@ button:hover{
 
 
 
-    <div class="ankara-card reveal right">
+    <div class="ankara-cards">
 
 
-        <div class="ankara-icon">
+        <div class="ankara-card reveal left">
 
-            ☕
+
+            <div class="ankara-icon">
+
+                🎓
+
+            </div>
+
+
+            <h3>
+
+                Üniversite hayatı
+
+            </h3>
+
+
+            <p>
+
+                Aynı şehirde okuyup
+                “bugün okul çok kötüydü”
+                değerlendirme toplantıları.
+
+            </p>
+
+
+        </div>
+
+
+
+        <div class="ankara-card reveal right">
+
+
+            <div class="ankara-icon">
+
+                ☕
+
+            </div>
+
+
+            <h3>
+
+                Ders çalışma
+
+            </h3>
+
+
+            <p>
+
+                Kütüphaneye ders çalışmaya gidip
+                zamanın yaklaşık %14'ünde
+                gerçekten ders çalışmak.
+
+            </p>
+
+
+        </div>
+
+
+
+        <div class="ankara-card reveal left">
+
+
+            <div class="ankara-icon">
+
+                🌃
+
+            </div>
+
+
+            <h3>
+
+                Ankara geceleri
+
+            </h3>
+
+
+            <p>
+
+                Akşam yürüyüşü,
+                müzik,
+                yemek,
+                gereksiz uzun sohbetler.
+
+            </p>
+
+
+        </div>
+
+
+
+        <div class="ankara-card reveal right">
+
+
+            <div class="ankara-icon">
+
+                🚌
+
+            </div>
+
+
+            <h3>
+
+                Ortak düşman
+
+            </h3>
+
+
+            <p>
+
+                Ankara toplu taşımasına
+                beraber sinirlenme hakkı.
+
+                Tamamen ücretsiz.
+
+            </p>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="places reveal scale">
+
+
+        <div class="place-number">
+
+            47
 
         </div>
 
 
         <h3>
 
-            Ders çalışma
+            beraber gidebileceğimiz Ankara mekânı
 
         </h3>
 
 
         <p>
 
-            Kütüphaneye ders çalışmaya gidip
-            zamanın yaklaşık %14'ünde
-            gerçekten ders çalışmak.
+            Ve evet.
+
+            Listeyi şimdiden hazırladım.
+
+            <br><br>
+
+            Normal davranmayı hiçbir zaman vaat etmedim.
 
         </p>
 
 
     </div>
 
-
-
-    <div class="ankara-card reveal left">
-
-
-        <div class="ankara-icon">
-
-            🌃
-
-        </div>
-
-
-        <h3>
-
-            Ankara geceleri
-
-        </h3>
-
-
-        <p>
-
-            Akşam yürüyüşü,
-            müzik,
-            yemek,
-            gereksiz uzun sohbetler.
-
-        </p>
-
-
-    </div>
-
-
-
-    <div class="ankara-card reveal right">
-
-
-        <div class="ankara-icon">
-
-            🚌
-
-        </div>
-
-
-        <h3>
-
-            Ortak düşman
-
-        </h3>
-
-
-        <p>
-
-            Ankara toplu taşımasına
-            beraber sinirlenme hakkı.
-
-            Tamamen ücretsiz.
-
-        </p>
-
-
-    </div>
-
-
-</div>
-
-
-
-<div class="places reveal scale">
-
-
-    <div class="place-number">
-
-        47
-
-    </div>
-
-
-    <h3>
-
-        beraber gidebileceğimiz Ankara mekânı
-
-    </h3>
-
-
-    <p>
-
-        Ve evet.
-
-        Listeyi şimdiden hazırladım.
-
-        <br><br>
-
-        Normal davranmayı hiçbir zaman vaat etmedim.
-
-    </p>
-
-
-</div>
-```
 
 </div>
 
 </section>
+
+
 
 <!-- =========================================================
      ESRANUR
@@ -6581,54 +6593,94 @@ button:hover{
 
 <div class="container">
 
-```
-<div class="reveal">
+
+    <div class="reveal">
 
 
-    <div class="eyebrow">
+        <div class="eyebrow">
 
-        avantaj 06 — aile paketi
+            avantaj 06 — aile paketi
+
+        </div>
+
+
+        <h2>
+
+            Kız kardeş desteği de dahil.
+
+        </h2>
+
+
+        <p class="text">
+
+            Bu hizmet için ekstra ücret alınmıyor.
+
+        </p>
+
 
     </div>
 
 
-    <h2>
 
-        Kız kardeş desteği de dahil.
-
-    </h2>
+    <div class="esranur-card reveal scale">
 
 
-    <p class="text">
-
-        Bu hizmet için ekstra ücret alınmıyor.
-
-    </p>
+        <div class="esranur-photo-box">
 
 
-</div>
+            <img
+                src="image00037.jpeg"
+                class="esranur-photo"
+                alt="Esranur"
+            >
+
+
+            <div class="fake-mouth"></div>
+
+
+            <div class="speech">
+
+                ablam yuk
+
+            </div>
+
+
+        </div>
 
 
 
-<div class="esranur-card reveal scale">
+        <div class="esranur-copy">
 
 
-    <div class="esranur-photo-box">
+            <small>
+
+                ESRANUR — AİLE İLİŞKİLERİ DEPARTMANI
+
+            </small>
 
 
-        <img
-            src="image00037.jpeg"
-            class="esranur-photo"
-            alt="Esranur"
-        >
+            <h3>
+
+                Görümcelik yapmak istiyor.
+
+            </h3>
 
 
-        <div class="fake-mouth"></div>
+            <p>
 
+                Kız kardeşim seni bayağı sevdi.
 
-        <div class="speech">
+                <br><br>
 
-            ablam yuk
+                Görünüşe göre olası görümcelik kariyerini
+                benden daha ciddiye alıyor.
+
+                <br><br>
+
+                Görümcelik departmanı hazır.
+
+            </p>
+
 
         </div>
 
@@ -6637,115 +6689,77 @@ button:hover{
 
 
 
-    <div class="esranur-copy">
+    <div class="family-stats reveal">
 
 
-        <small>
+        <div class="family-stat">
 
-            ESRANUR — AİLE İLİŞKİLERİ DEPARTMANI
+            <strong>
 
-        </small>
+                1
+
+            </strong>
+
+            <span>
+
+                adet kız kardeş
+
+            </span>
+
+        </div>
 
 
-        <h3>
+        <div class="family-stat">
 
-            Görümcelik yapmak istiyor.
+            <strong>
 
-        </h3>
+                %100
+
+            </strong>
+
+            <span>
+
+                görümcelik isteği
+
+            </span>
+
+        </div>
 
 
-        <p>
+        <div class="family-stat">
 
-            Kız kardeşim seni bayağı sevdi.
+            <strong>
 
-            <br><br>
+                yuk
 
-            Görünüşe göre olası görümcelik kariyerini
-            benden daha ciddiye alıyor.
+            </strong>
 
-            <br><br>
+            <span>
 
-            Görümcelik departmanı hazır.
+                Eylülce resmî kelime
 
-        </p>
+            </span>
+
+        </div>
 
 
     </div>
 
-
-</div>
-
-
-
-<div class="family-stats reveal">
-
-
-    <div class="family-stat">
-
-        <strong>
-
-            1
-
-        </strong>
-
-        <span>
-
-            adet kız kardeş
-
-        </span>
-
-    </div>
-
-
-    <div class="family-stat">
-
-        <strong>
-
-            %100
-
-        </strong>
-
-        <span>
-
-            görümcelik isteği
-
-        </span>
-
-    </div>
-
-
-    <div class="family-stat">
-
-        <strong>
-
-            yuk
-
-        </strong>
-
-        <span>
-
-            Eylülce resmî kelime
-
-        </span>
-
-    </div>
-
-
-</div>
-```
 
 </div>
 
 </section>
 
+
+
 <!-- =========================================================
      MOM
 ========================================================= -->
 
+
 <!-- =========================================================
      MINI OYUN — PRODBYEMO MIX
 ========================================================= -->
-
 <section class="mini-game-section" id="mixMiniGame">
     <div class="mg-wrap">
         <div class="mg-head reveal">
@@ -6757,179 +6771,109 @@ button:hover{
             </p>
         </div>
 
-```
-    <div class="mix-game-card reveal" id="mixGameCard">
-        <div class="mix-topline">
-            <div class="mix-project">PROJECT: EYLÜL × EMİRHAN</div>
-            <div class="mix-badge">ProdByEmo Console v1.0</div>
-        </div>
+        <div class="mix-game-card reveal" id="mixGameCard">
+            <div class="mix-topline">
+                <div class="mix-project">PROJECT: EYLÜL × EMİRHAN</div>
+                <div class="mix-badge">ProdByEmo Console v1.0</div>
+            </div>
 
-        <div class="mix-console">
-            <div class="mix-channels">
-                <div class="mix-channel">
-                    <div class="mix-channel-name">Eylül</div>
-                    <div class="mix-fader-wrap">
-                        <div class="mix-track"></div>
-                        <input class="mix-slider" data-key="eylul" type="range" min="0" max="100" value="38">
+            <div class="mix-console">
+                <div class="mix-channels">
+                    <div class="mix-channel">
+                        <div class="mix-channel-name">Eylül</div>
+                        <div class="mix-fader-wrap">
+                            <div class="mix-track"></div>
+                            <input class="mix-slider" data-key="eylul" type="range" min="0" max="100" value="38">
+                        </div>
+                        <div class="mix-value">38</div>
                     </div>
-                    <div class="mix-value">38</div>
+
+                    <div class="mix-channel">
+                        <div class="mix-channel-name">Emirhan</div>
+                        <div class="mix-fader-wrap">
+                            <div class="mix-track"></div>
+                            <input class="mix-slider" data-key="emirhan" type="range" min="0" max="100" value="42">
+                        </div>
+                        <div class="mix-value">42</div>
+                    </div>
+
+                    <div class="mix-channel">
+                        <div class="mix-channel-name">İletişim</div>
+                        <div class="mix-fader-wrap">
+                            <div class="mix-track"></div>
+                            <input class="mix-slider" data-key="iletisim" type="range" min="0" max="100" value="25">
+                        </div>
+                        <div class="mix-value">25</div>
+                    </div>
+
+                    <div class="mix-channel">
+                        <div class="mix-channel-name">Gurur</div>
+                        <div class="mix-fader-wrap">
+                            <div class="mix-track"></div>
+                            <input class="mix-slider" data-key="gurur" type="range" min="0" max="100" value="78">
+                        </div>
+                        <div class="mix-value">78</div>
+                    </div>
+
+                    <div class="mix-channel">
+                        <div class="mix-channel-name">İnat</div>
+                        <div class="mix-fader-wrap">
+                            <div class="mix-track"></div>
+                            <input class="mix-slider" data-key="inat" type="range" min="0" max="100" value="83">
+                        </div>
+                        <div class="mix-value">83</div>
+                    </div>
                 </div>
 
-                <div class="mix-channel">
-                    <div class="mix-channel-name">Emirhan</div>
-                    <div class="mix-fader-wrap">
-                        <div class="mix-track"></div>
-                        <input class="mix-slider" data-key="emirhan" type="range" min="0" max="100" value="42">
+                <div class="master-strip">
+                    <div class="master-title">MASTER</div>
+                    <div class="master-meter">
+                        <div class="master-fill" id="masterFill"></div>
                     </div>
-                    <div class="mix-value">42</div>
-                </div>
-
-                <div class="mix-channel">
-                    <div class="mix-channel-name">İletişim</div>
-                    <div class="mix-fader-wrap">
-                        <div class="mix-track"></div>
-                        <input class="mix-slider" data-key="iletisim" type="range" min="0" max="100" value="25">
+                    <div class="master-readout" id="masterReadout">
+                        -8.7 dB<br>NOT READY
                     </div>
-                    <div class="mix-value">25</div>
-                </div>
-
-                <div class="mix-channel">
-                    <div class="mix-channel-name">Gurur</div>
-                    <div class="mix-fader-wrap">
-                        <div class="mix-track"></div>
-                        <input class="mix-slider" data-key="gurur" type="range" min="0" max="100" value="78">
-                    </div>
-                    <div class="mix-value">78</div>
-                </div>
-
-                <div class="mix-channel">
-                    <div class="mix-channel-name">İnat</div>
-                    <div class="mix-fader-wrap">
-                        <div class="mix-track"></div>
-                        <input class="mix-slider" data-key="inat" type="range" min="0" max="100" value="83">
-                    </div>
-                    <div class="mix-value">83</div>
                 </div>
             </div>
 
-            <div class="master-strip">
-                <div class="master-title">MASTER</div>
-                <div class="master-meter">
-                    <div class="master-fill" id="masterFill"></div>
-                </div>
-                <div class="master-readout" id="masterReadout">
-                    -8.7 dB<br>NOT READY
-                </div>
+            <div class="mix-result" id="mixResult">
+                <strong>MASTER: sorunlu</strong>
+                <span>birkaç fader yanlış yerde gibi</span>
             </div>
-        </div>
-
-        <div class="mix-result" id="mixResult">
-            <strong>MASTER: sorunlu</strong>
-            <span>birkaç fader yanlış yerde gibi</span>
         </div>
     </div>
-</div>
-```
-
 </section>
+
 
 <section class="mom">
 
 <div class="container">
 
-```
-<div class="reveal">
+
+    <div class="reveal">
 
 
-    <div class="eyebrow">
+        <div class="eyebrow">
 
-        avantaj 07 — ortak görev
-
-    </div>
-
-
-    <h2>
-
-        Annemi haksız çıkarabiliriz.
-
-    </h2>
-
-
-    <p class="text">
-
-        Bu yalnızca romantik bir mesele değil.
-
-        <br>
-
-        Artık prensip meselesi.
-
-    </p>
-
-
-</div>
-
-
-
-<div class="mom-card reveal">
-
-
-    <div class="mom-photo-box">
-
-
-        <img
-            src="image00059.jpeg"
-            class="mom-photo"
-            alt="Anne"
-        >
-
-
-        <div class="mom-quote">
-
-            “Bir kız daha senden kurtuldu.
-            Kız rahatlamıştır.
-            Aferin Kürt kızına.”
+            avantaj 07 — ortak görev
 
         </div>
 
 
-    </div>
+        <h2>
+
+            Annemi haksız çıkarabiliriz.
+
+        </h2>
 
 
+        <p class="text">
 
-    <div class="mom-copy">
+            Bu yalnızca romantik bir mesele değil.
 
+            <br>
 
-        <small>
-
-            ANNEM — MUHALİF KANAT
-
-        </small>
-
-
-        <h3>
-
-            Bu açıklama cevapsız kalamaz.
-
-        </h3>
-
-
-        <p>
-
-            Annem yukarıdaki değerlendirmeyi yaptı.
-
-            <br><br>
-
-            Fazla özgüvenliydi.
-
-            <br><br>
-
-            Eğer yeniden konuşursak bir gün
-            yanına gidip hiçbir şey söylemeden
-            sadece yüzüne bakmam yeterli.
-
-            <br><br>
-
-            Bunun parasal karşılığı yok.
+            Artık prensip meselesi.
 
         </p>
 
@@ -6937,60 +6881,128 @@ button:hover{
     </div>
 
 
-</div>
+
+    <div class="mom-card reveal">
+
+
+        <div class="mom-photo-box">
+
+
+            <img
+                src="image00059.jpeg"
+                class="mom-photo"
+                alt="Anne"
+            >
+
+
+            <div class="mom-quote">
+
+                “Bir kız daha senden kurtuldu.
+                Kız rahatlamıştır.
+                Aferin Kürt kızına.”
+
+            </div>
+
+
+        </div>
 
 
 
-<div class="mom-operation reveal">
+        <div class="mom-copy">
 
 
-    <div class="eyebrow">
+            <small>
 
-        operasyon durumu
+                ANNEM — MUHALİF KANAT
+
+            </small>
+
+
+            <h3>
+
+                Bu açıklama cevapsız kalamaz.
+
+            </h3>
+
+
+            <p>
+
+                Annem yukarıdaki değerlendirmeyi yaptı.
+
+                <br><br>
+
+                Fazla özgüvenliydi.
+
+                <br><br>
+
+                Eğer yeniden konuşursak bir gün
+                yanına gidip hiçbir şey söylemeden
+                sadece yüzüne bakmam yeterli.
+
+                <br><br>
+
+                Bunun parasal karşılığı yok.
+
+            </p>
+
+
+        </div>
+
 
     </div>
 
 
-    <h3>
 
-        Annemi Haksız Çıkarma Projesi
-
-    </h3>
+    <div class="mom-operation reveal">
 
 
-    <p>
+        <div class="eyebrow">
 
-        Yeniden konuş
+            operasyon durumu
 
-        →
-
-        mutlu ol
-
-        →
-
-        annemin teorisini bilimsel olarak çökert.
-
-    </p>
+        </div>
 
 
-    <div class="progress">
+        <h3>
 
-        <div class="progress-fill"></div>
+            Annemi Haksız Çıkarma Projesi
+
+        </h3>
+
+
+        <p>
+
+            Yeniden konuş
+
+            →
+
+            mutlu ol
+
+            →
+
+            annemin teorisini bilimsel olarak çökert.
+
+        </p>
+
+
+        <div class="progress">
+
+            <div class="progress-fill"></div>
+
+        </div>
+
 
     </div>
 
-
-</div>
-```
 
 </div>
 
 </section>
 
+
 <!-- =========================================================
      MINI OYUN 04 — FOTOĞRAF DÜELLOSU
 ========================================================= -->
-
 <section class="mini-game-section" id="photoDuelGame">
     <div class="mg-wrap">
         <div class="mg-head reveal">
@@ -7002,47 +7014,47 @@ button:hover{
             </p>
         </div>
 
-```
-    <div class="photo-duel-card reveal" id="photoDuelCard">
-        <div class="photo-duel-top">
-            <span>tur <b id="duelRound">1 / 3</b></span>
-            <span>ilk aklına geleni seç</span>
-        </div>
+        <div class="photo-duel-card reveal" id="photoDuelCard">
+            <div class="photo-duel-top">
+                <span>tur <b id="duelRound">1 / 3</b></span>
+                <span>ilk aklına geleni seç</span>
+            </div>
 
-        <div class="photo-duel-prompt" id="duelPrompt">
-            Hangisi daha çok “saklanmalı”?
-        </div>
+            <div class="photo-duel-prompt" id="duelPrompt">
+                Hangisi daha çok “saklanmalı”?
+            </div>
 
-        <div class="photo-duel-arena">
-            <button class="duel-photo" id="duelLeft" type="button">
-                <img src="" alt="Fotoğraf seçeneği 1">
-            </button>
+            <div class="photo-duel-arena">
+                <button class="duel-photo" id="duelLeft" type="button">
+                    <img src="" alt="Fotoğraf seçeneği 1">
+                </button>
 
-            <div class="duel-vs">VS</div>
+                <div class="duel-vs">VS</div>
 
-            <button class="duel-photo" id="duelRight" type="button">
-                <img src="" alt="Fotoğraf seçeneği 2">
-            </button>
-        </div>
+                <button class="duel-photo" id="duelRight" type="button">
+                    <img src="" alt="Fotoğraf seçeneği 2">
+                </button>
+            </div>
 
-        <div class="duel-progress">
-            <span class="duel-dot"></span>
-            <span class="duel-dot"></span>
-            <span class="duel-dot"></span>
-        </div>
+            <div class="duel-progress">
+                <span class="duel-dot"></span>
+                <span class="duel-dot"></span>
+                <span class="duel-dot"></span>
+            </div>
 
-        <div class="duel-result" id="duelResult">
-            <strong>Seçimler kaydedildi. 📸</strong>
-            <span>
-                Resmî bir anlamı yok. Sadece bu üç fotoğraf artık Eylül seçim kurulundan geçti.
-            </span>
-            <div class="duel-strip" id="duelStrip"></div>
+            <div class="duel-result" id="duelResult">
+                <strong>Seçimler kaydedildi. 📸</strong>
+                <span>
+                    Resmî bir anlamı yok. Sadece bu üç fotoğraf artık Eylül seçim kurulundan geçti.
+                </span>
+                <div class="duel-strip" id="duelStrip"></div>
+            </div>
         </div>
     </div>
-</div>
-```
-
 </section>
+
+
+
 
 <!-- =========================================================
      SECRET
@@ -7052,66 +7064,68 @@ button:hover{
 
 <div class="container reveal scale">
 
-```
-<div class="secret-lock">
 
-    🔐
+    <div class="secret-lock">
 
-</div>
+        🔐
 
-
-<div class="eyebrow">
-
-    çok gizli dosya
-
-</div>
+    </div>
 
 
-<h2>
+    <div class="eyebrow">
 
-    Şimdi asıl sırrımıza geliyoruz.
+        çok gizli dosya
 
-</h2>
-
-
-<div class="secret-text">
-
-    Buraya kadar gelen herkesin
-    güvenlik yetkisi yok.
-
-    <br><br>
-
-    Bu bölüm yalnız sana.
-
-    <br><br>
-
-    Çünkü senin bazı
-
-    <strong>
-
-        coğrafi ve tarihî arzularını
-
-    </strong>
-
-    gayet iyi biliyorum...
-
-    <br><br>
-
-    Kötü kız.
-
-</div>
+    </div>
 
 
-<div class="secret-warning">
+    <h2>
 
-    ÇOK GİZLİ • EYLÜL DIŞINDA KİMSE OKUMASIN
+        Şimdi asıl sırrımıza geliyoruz.
 
-</div>
-```
+    </h2>
+
+
+    <div class="secret-text">
+
+        Buraya kadar gelen herkesin
+        güvenlik yetkisi yok.
+
+        <br><br>
+
+        Bu bölüm yalnız sana.
+
+        <br><br>
+
+        Çünkü senin bazı
+
+        <strong>
+
+            coğrafi ve tarihî arzularını
+
+        </strong>
+
+        gayet iyi biliyorum...
+
+        <br><br>
+
+        Kötü kız.
+
+    </div>
+
+
+    <div class="secret-warning">
+
+        ÇOK GİZLİ • EYLÜL DIŞINDA KİMSE OKUMASIN
+
+    </div>
+
 
 </div>
 
 </section>
+
+
 
 <!-- =========================================================
      KURDISTAN
@@ -7121,240 +7135,242 @@ button:hover{
 
 <div class="container">
 
-```
-<div class="reveal">
+
+    <div class="reveal">
 
 
-    <div class="project-sub">
+        <div class="project-sub">
 
-        EMİRHAN BAŞER ULUSLARARASI PROJELER
+            EMİRHAN BAŞER ULUSLARARASI PROJELER
 
-    </div>
-
-
-    <h2 class="project-title">
-
-        KÜRDİSTAN
-
-    </h2>
+        </div>
 
 
-    <div class="project-sub">
+        <h2 class="project-title">
 
-        EYLÜL İÇİN ÖZEL DEVLET PROJESİ
+            KÜRDİSTAN
 
-    </div>
-
-
-</div>
+        </h2>
 
 
+        <div class="project-sub">
 
-<div class="flag-wrap reveal scale">
+            EYLÜL İÇİN ÖZEL DEVLET PROJESİ
 
-
-    <div class="flag">
-
-
-        <div class="flag-red"></div>
-
-        <div class="flag-white"></div>
-
-        <div class="flag-green"></div>
+        </div>
 
 
     </div>
 
 
-    <div class="flag-sun"></div>
+
+    <div class="flag-wrap reveal scale">
 
 
-</div>
+        <div class="flag">
 
 
+            <div class="flag-red"></div>
 
-<div class="van reveal">
+            <div class="flag-white"></div>
+
+            <div class="flag-green"></div>
 
 
-    <div class="van-big">
+        </div>
 
-        Başkent: Van
+
+        <div class="flag-sun"></div>
+
 
     </div>
 
 
-    <p>
 
-        Konu üzerinde tartışmaya açık olduğumu
-        söylemek isterdim.
+    <div class="van reveal">
+
+
+        <div class="van-big">
+
+            Başkent: Van
+
+        </div>
+
+
+        <p>
+
+            Konu üzerinde tartışmaya açık olduğumu
+            söylemek isterdim.
+
+            <br>
+
+            Fakat proje dosyası çoktan hazırlanmış.
+
+        </p>
+
+
+    </div>
+
+
+
+    <div class="government">
+
+
+        <div class="gov-card reveal left">
+
+
+            <div class="gov-icon">
+
+                👑
+
+            </div>
+
+
+            <h3>
+
+                Eylül
+
+            </h3>
+
+
+            <p>
+
+                Devlet Başkanı.
+
+                Başka aday zaten değerlendirilmedi.
+
+            </p>
+
+
+        </div>
+
+
+
+        <div class="gov-card reveal scale">
+
+
+            <div class="gov-icon">
+
+                🎵
+
+            </div>
+
+
+            <h3>
+
+                Emirhan
+
+            </h3>
+
+
+            <p>
+
+                Kültür ve Müzik Bakanı.
+
+                Elimizdeki tek işe yarar yeteneği
+                doğru kullanalım.
+
+            </p>
+
+
+        </div>
+
+
+
+        <div class="gov-card reveal right">
+
+
+            <div class="gov-icon">
+
+                🫡
+
+            </div>
+
+
+            <h3>
+
+                Hilal
+
+            </h3>
+
+
+            <p>
+
+                Onu da yanımıza alıyoruz.
+
+                Kız üzülmesin şimdi.
+
+            </p>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="hilal reveal">
+
+        Hilal'i dışarıda bırakmayız.
+
+        <span>
+
+            😭
+
+        </span>
+
+        <br><br>
+
+        Bir bakanlık buluruz ona da.
 
         <br>
 
-        Fakat proje dosyası çoktan hazırlanmış.
+        Ne bakanı olacağını sonra düşünürüz.
 
-    </p>
-
-
-</div>
+    </div>
 
 
 
-<div class="government">
+    <div class="constitution reveal">
 
 
-    <div class="gov-card reveal left">
+        <div class="constitution-title">
 
-
-        <div class="gov-icon">
-
-            👑
+            KURUCU ANAYASA — MADDE 1
 
         </div>
 
 
-        <h3>
-
-            Eylül
-
-        </h3>
-
-
         <p>
 
-            Devlet Başkanı.
+            <strong>
 
-            Başka aday zaten değerlendirilmedi.
+                Devletin başkenti Van'dır.
+
+            </strong>
+
+            <br><br>
+
+            Devlet başkanının istediği zaman
+            Emirhan'dan kişiye özel şarkı talep etme hakkı vardır.
+
+            <br><br>
+
+            Hilal'in hangi bakanlığı yönettiğinin
+            kimse tarafından sorgulanmaması esastır.
 
         </p>
 
 
     </div>
 
-
-
-    <div class="gov-card reveal scale">
-
-
-        <div class="gov-icon">
-
-            🎵
-
-        </div>
-
-
-        <h3>
-
-            Emirhan
-
-        </h3>
-
-
-        <p>
-
-            Kültür ve Müzik Bakanı.
-
-            Elimizdeki tek işe yarar yeteneği
-            doğru kullanalım.
-
-        </p>
-
-
-    </div>
-
-
-
-    <div class="gov-card reveal right">
-
-
-        <div class="gov-icon">
-
-            🫡
-
-        </div>
-
-
-        <h3>
-
-            Hilal
-
-        </h3>
-
-
-        <p>
-
-            Onu da yanımıza alıyoruz.
-
-            Kız üzülmesin şimdi.
-
-        </p>
-
-
-    </div>
-
-
-</div>
-
-
-
-<div class="hilal reveal">
-
-    Hilal'i dışarıda bırakmayız.
-
-    <span>
-
-        😭
-
-    </span>
-
-    <br><br>
-
-    Bir bakanlık buluruz ona da.
-
-    <br>
-
-    Ne bakanı olacağını sonra düşünürüz.
-
-</div>
-
-
-
-<div class="constitution reveal">
-
-
-    <div class="constitution-title">
-
-        KURUCU ANAYASA — MADDE 1
-
-    </div>
-
-
-    <p>
-
-        <strong>
-
-            Devletin başkenti Van'dır.
-
-        </strong>
-
-        <br><br>
-
-        Devlet başkanının istediği zaman
-        Emirhan'dan kişiye özel şarkı talep etme hakkı vardır.
-
-        <br><br>
-
-        Hilal'in hangi bakanlığı yönettiğinin
-        kimse tarafından sorgulanmaması esastır.
-
-    </p>
-
-
-</div>
-```
 
 </div>
 
 </section>
+
+
 
 <!-- =========================================================
      BONUS
@@ -7364,308 +7380,308 @@ button:hover{
 
 <div class="container">
 
-```
-<div class="reveal">
+
+    <div class="reveal">
 
 
-    <div class="eyebrow">
+        <div class="eyebrow">
 
-        avantaj 08 — ek paketler
-
-    </div>
-
-
-    <h2>
-
-        Paket hâlâ bitmedi.
-
-    </h2>
-
-
-</div>
-
-
-
-<div class="bonus-grid">
-
-
-    <div class="bonus-card reveal left">
-
-
-        <div class="icon">
-
-            🌙
+            avantaj 08 — ek paketler
 
         </div>
 
 
-        <h3>
+        <h2>
 
-            Gece konuşmaları
+            Paket hâlâ bitmedi.
 
-        </h3>
-
-
-        <p>
-
-            “5 dakika konuşalım”
-            diye başlayıp iki saat
-            hayatı sorgulamak.
-
-        </p>
+        </h2>
 
 
     </div>
 
 
 
-    <div class="bonus-card reveal scale">
+    <div class="bonus-grid">
 
 
-        <div class="icon">
+        <div class="bonus-card reveal left">
 
-            🎧
+
+            <div class="icon">
+
+                🌙
+
+            </div>
+
+
+            <h3>
+
+                Gece konuşmaları
+
+            </h3>
+
+
+            <p>
+
+                “5 dakika konuşalım”
+                diye başlayıp iki saat
+                hayatı sorgulamak.
+
+            </p>
+
 
         </div>
 
 
-        <h3>
 
-            Erken erişim
-
-        </h3>
+        <div class="bonus-card reveal scale">
 
 
-        <p>
+            <div class="icon">
 
-            Yeni yaptığım her şarkıyı
-            herkesten önce dinleme ayrıcalığı.
+                🎧
 
-        </p>
-
-
-    </div>
+            </div>
 
 
+            <h3>
 
-    <div class="bonus-card reveal right">
+                Erken erişim
+
+            </h3>
 
 
-        <div class="icon">
+            <p>
 
-            🍕
+                Yeni yaptığım her şarkıyı
+                herkesten önce dinleme ayrıcalığı.
+
+            </p>
+
 
         </div>
 
 
-        <h3>
 
-            Ciddi planlama
-
-        </h3>
+        <div class="bonus-card reveal right">
 
 
-        <p>
+            <div class="icon">
 
-            40 dakika film seçip
-            sonunda hiçbir şey izlememek.
+                🍕
 
-        </p>
-
-
-    </div>
+            </div>
 
 
+            <h3>
 
-    <div class="bonus-card reveal left">
+                Ciddi planlama
+
+            </h3>
 
 
-        <div class="icon">
+            <p>
 
-            📞
+                40 dakika film seçip
+                sonunda hiçbir şey izlememek.
+
+            </p>
+
 
         </div>
 
 
-        <h3>
 
-            Teknik destek
-
-        </h3>
+        <div class="bonus-card reveal left">
 
 
-        <p>
+            <div class="icon">
 
-            Gecenin anlamsız saatlerinde
-            tamamen gereksiz sohbet desteği.
+                📞
 
-        </p>
-
-
-    </div>
+            </div>
 
 
+            <h3>
 
-    <div class="bonus-card reveal scale">
+                Teknik destek
+
+            </h3>
 
 
-        <div class="icon">
+            <p>
 
-            🧠
+                Gecenin anlamsız saatlerinde
+                tamamen gereksiz sohbet desteği.
+
+            </p>
+
 
         </div>
 
 
-        <h3>
 
-            Hafıza servisi
-
-        </h3>
+        <div class="bonus-card reveal scale">
 
 
-        <p>
+            <div class="icon">
 
-            Senin söylediğin saçma bir cümleyi
-            altı ay sonra hatırlayıp
-            sana karşı kullanabilirim.
+                🧠
 
-        </p>
+            </div>
 
 
-    </div>
+            <h3>
+
+                Hafıza servisi
+
+            </h3>
 
 
+            <p>
 
-    <div class="bonus-card reveal right">
+                Senin söylediğin saçma bir cümleyi
+                altı ay sonra hatırlayıp
+                sana karşı kullanabilirim.
 
+            </p>
 
-        <div class="icon">
-
-            👴🏻
 
         </div>
 
 
-        <h3>
 
-            Uzun vadeli paket
-
-        </h3>
+        <div class="bonus-card reveal right">
 
 
-        <p>
+            <div class="icon">
 
-            70 yaşında bile aynı saçma şeylerden
-            birbirimize laf atma ihtimali.
+                👴🏻
 
-        </p>
+            </div>
+
+
+            <h3>
+
+                Uzun vadeli paket
+
+            </h3>
+
+
+            <p>
+
+                70 yaşında bile aynı saçma şeylerden
+                birbirimize laf atma ihtimali.
+
+            </p>
+
+
+        </div>
 
 
     </div>
 
-
-</div>
-```
 
 </div>
 
 </section>
 
+
+
+
 <!-- =========================================================
      OYUNLAR
 ========================================================= -->
-
 <section class="game-invite">
 <div class="container">
 
-```
-<div class="reveal">
-    <div class="eyebrow">
-        avantaj 09 — beraber vakit geçirme protokolü
+    <div class="reveal">
+        <div class="eyebrow">
+            avantaj 09 — beraber vakit geçirme protokolü
+        </div>
+
+        <h2>
+            Bir de bizim için dört farklı oyun yaptım.
+        </h2>
+
+        <p class="text">
+            Bu siteyi hazırlarken sadece geçmişten bahsetmek istemedim.
+            Eğer yeniden konuşursak, beraber yapabileceğimiz küçük şeyler de olsun istedim.
+        </p>
     </div>
 
-    <h2>
-        Bir de bizim için dört farklı oyun yaptım.
-    </h2>
+    <div class="game-invite-card reveal scale">
 
-    <p class="text">
-        Bu siteyi hazırlarken sadece geçmişten bahsetmek istemedim.
-        Eğer yeniden konuşursak, beraber yapabileceğimiz küçük şeyler de olsun istedim.
-    </p>
-</div>
+        <div class="game-badge">
+            🎮 EYLÜL × EMİRHAN — 4 OYUN HAZIR
+        </div>
 
-<div class="game-invite-card reveal scale">
+        <h3>
+            Dört farklı oyun.<br>
+            İki ayrı telefon.<br>
+            Aynı oda.
+        </h3>
 
-    <div class="game-badge">
-        🎮 EYLÜL × EMİRHAN — 4 OYUN HAZIR
+        <div class="game-invite-copy">
+            O yüzden oturdum ve ikimizin uzaktan beraber oynayabileceği,
+            <strong>birbirinden farklı dört oyun tasarladım.</strong>
+            <br><br>
+
+            Ve evet, hazır bir yerden bulmadım.
+            <strong>Fikirlerinden tasarımına, sorularından nasıl çalışacağına kadar kendim hazırladım.</strong>
+            <br><br>
+
+            İki ayrı telefondan aynı oyuna girebiliyoruz.
+            Bazılarında birbirimizi ne kadar tanıdığımızı göreceğiz,
+            bazılarında birbirimizin cevaplarını tahmin edeceğiz,
+            bazılarında ise muhtemelen tamamen saçmalayacağız.
+            <br><br>
+
+            Biraz gereksiz derecede uğraştım mı?
+            <br>
+            <strong>Evet.</strong>
+            <br><br>
+
+            Ama ortaya gerçekten güzel bir şey çıktı.
+            <br><br>
+
+            Belki bir gece uykumuz kaçtığında açarız.
+            Belki canımız sıkıldığında birini seçip oynarız.
+            Belki yirmi dakika diye girip saatlerce konuşuruz.
+            <br><br>
+
+            Bilmiyorum.
+            <br><br>
+
+            Ama hepsini yaparken aklımdan geçen şey aynıydı:
+            <br><br>
+
+            <strong>“Bunu Eylül’le oynamak güzel olurdu.”</strong>
+            <br><br>
+
+            Şimdilik dört oyunun da linkini burada bırakmıyorum.
+            <br><br>
+
+            <strong>Sitenin sonundaki cevabına göre belki sana gösteririm.</strong>
+        </div>
+
+        <div class="game-pills">
+            <span class="game-pill">🎮 4 farklı oyun</span>
+            <span class="game-pill">📱 iki telefon</span>
+            <span class="game-pill">🌙 belki bir gece</span>
+            <span class="game-pill">🔒 şimdilik kilitli</span>
+        </div>
+
+        <div class="game-launch" style="cursor:default; user-select:none;">
+            🔒 Erişim şimdilik kapalı
+        </div>
+
+        <div class="game-footnote">
+            Eylül × Emirhan • 4 oyun hazır • linkler sınıflandırılmış bilgi
+        </div>
+
     </div>
-
-    <h3>
-        Dört farklı oyun.<br>
-        İki ayrı telefon.<br>
-        Aynı oda.
-    </h3>
-
-    <div class="game-invite-copy">
-        O yüzden oturdum ve ikimizin uzaktan beraber oynayabileceği,
-        <strong>birbirinden farklı dört oyun tasarladım.</strong>
-        <br><br>
-
-        Ve evet, hazır bir yerden bulmadım.
-        <strong>Fikirlerinden tasarımına, sorularından nasıl çalışacağına kadar kendim hazırladım.</strong>
-        <br><br>
-
-        İki ayrı telefondan aynı oyuna girebiliyoruz.
-        Bazılarında birbirimizi ne kadar tanıdığımızı göreceğiz,
-        bazılarında birbirimizin cevaplarını tahmin edeceğiz,
-        bazılarında ise muhtemelen tamamen saçmalayacağız.
-        <br><br>
-
-        Biraz gereksiz derecede uğraştım mı?
-        <br>
-        <strong>Evet.</strong>
-        <br><br>
-
-        Ama ortaya gerçekten güzel bir şey çıktı.
-        <br><br>
-
-        Belki bir gece uykumuz kaçtığında açarız.
-        Belki canımız sıkıldığında birini seçip oynarız.
-        Belki yirmi dakika diye girip saatlerce konuşuruz.
-        <br><br>
-
-        Bilmiyorum.
-        <br><br>
-
-        Ama hepsini yaparken aklımdan geçen şey aynıydı:
-        <br><br>
-
-        <strong>“Bunu Eylül’le oynamak güzel olurdu.”</strong>
-        <br><br>
-
-        Şimdilik dört oyunun da linkini burada bırakmıyorum.
-        <br><br>
-
-        <strong>Sitenin sonundaki cevabına göre belki sana gösteririm.</strong>
-    </div>
-
-    <div class="game-pills">
-        <span class="game-pill">🎮 4 farklı oyun</span>
-        <span class="game-pill">📱 iki telefon</span>
-        <span class="game-pill">🌙 belki bir gece</span>
-        <span class="game-pill">🔒 şimdilik kilitli</span>
-    </div>
-
-    <div class="game-launch" style="cursor:default; user-select:none;">
-        🔒 Erişim şimdilik kapalı
-    </div>
-
-    <div class="game-footnote">
-        Eylül × Emirhan • 4 oyun hazır • linkler sınıflandırılmış bilgi
-    </div>
-
-</div>
-```
 
 </div>
 </section>
@@ -7673,7 +7689,6 @@ button:hover{
 <!-- =========================================================
      NE DEĞİŞECEK?
 ========================================================= -->
-
 <section class="change-section">
 <div class="container">
     <div class="reveal">
@@ -7685,28 +7700,26 @@ button:hover{
         </p>
     </div>
 
-```
-<div class="change-grid">
-    <div class="change-card reveal left"><div class="change-icon">🌿</div><h3>Daha çok alan</h3><p>Her şeyi hemen çözmeye, cevap almaya veya netleştirmeye çalışmayacağım. Bazen bir şeyin kendi hızında ilerlemesine izin vereceğim.</p></div>
-    <div class="change-card reveal right"><div class="change-icon">🧊</div><h3>Daha sakin iletişim</h3><p>Bir şey canımı sıktığında anlık tepki vermek yerine düşünüp sonra konuşacağım. Gereksiz kriz üretim departmanı küçültülüyor.</p></div>
-    <div class="change-card reveal left"><div class="change-icon">🔍</div><h3>Daha az kurcalama</h3><p>Her kelimeden, sessizlikten veya küçük şeyden gizli anlam çıkarmak yerine sana ve söylediğine daha fazla güveneceğim.</p></div>
-    <div class="change-card reveal right"><div class="change-icon">🎵</div><h3>Kendi hayatımı da yaşayacağım</h3><p>Müziğim, okul hedeflerim, arkadaşlarım ve kendi düzenim devam edecek. Güzel bir şey hayatın tamamı olmak zorunda değil.</p></div>
-    <div class="change-card reveal left"><div class="change-icon">🪞</div><h3>Hatamı kabul etmek</h3><p>Hatalıysam “ama sen de...” diye savunmaya kaçmadan önce kendi payıma bakacağım. Bazen özür gerçekten sadece özürdür.</p></div>
-    <div class="change-card reveal right"><div class="change-icon">⏳</div><h3>Söz değil, istikrar</h3><p>“Değişeceğim” demek kolay. Asıl mesele bunu haftalar ve aylar boyunca davranışla göstermek. Bu bölümün kanıtı site değil, zaman olacak.</p></div>
-</div>
+    <div class="change-grid">
+        <div class="change-card reveal left"><div class="change-icon">🌿</div><h3>Daha çok alan</h3><p>Her şeyi hemen çözmeye, cevap almaya veya netleştirmeye çalışmayacağım. Bazen bir şeyin kendi hızında ilerlemesine izin vereceğim.</p></div>
+        <div class="change-card reveal right"><div class="change-icon">🧊</div><h3>Daha sakin iletişim</h3><p>Bir şey canımı sıktığında anlık tepki vermek yerine düşünüp sonra konuşacağım. Gereksiz kriz üretim departmanı küçültülüyor.</p></div>
+        <div class="change-card reveal left"><div class="change-icon">🔍</div><h3>Daha az kurcalama</h3><p>Her kelimeden, sessizlikten veya küçük şeyden gizli anlam çıkarmak yerine sana ve söylediğine daha fazla güveneceğim.</p></div>
+        <div class="change-card reveal right"><div class="change-icon">🎵</div><h3>Kendi hayatımı da yaşayacağım</h3><p>Müziğim, okul hedeflerim, arkadaşlarım ve kendi düzenim devam edecek. Güzel bir şey hayatın tamamı olmak zorunda değil.</p></div>
+        <div class="change-card reveal left"><div class="change-icon">🪞</div><h3>Hatamı kabul etmek</h3><p>Hatalıysam “ama sen de...” diye savunmaya kaçmadan önce kendi payıma bakacağım. Bazen özür gerçekten sadece özürdür.</p></div>
+        <div class="change-card reveal right"><div class="change-icon">⏳</div><h3>Söz değil, istikrar</h3><p>“Değişeceğim” demek kolay. Asıl mesele bunu haftalar ve aylar boyunca davranışla göstermek. Bu bölümün kanıtı site değil, zaman olacak.</p></div>
+    </div>
 
-<div class="change-equation reveal scale">
-    Aynı Emirhan + aynı hatalar = <strong>aynı sonuç.</strong><br>
-    Matematik bu konuda da acımasız.
-</div>
-<p class="change-final reveal">
-    Ve en önemlisi: <strong>seni kaybetme korkusuyla seni bunaltmak istemiyorum.</strong>
-    Yeniden bir şey kuracaksak, ikimizin de içinde rahat nefes alabildiği bir şey olsun.
-</p>
-```
-
+    <div class="change-equation reveal scale">
+        Aynı Emirhan + aynı hatalar = <strong>aynı sonuç.</strong><br>
+        Matematik bu konuda da acımasız.
+    </div>
+    <p class="change-final reveal">
+        Ve en önemlisi: <strong>seni kaybetme korkusuyla seni bunaltmak istemiyorum.</strong>
+        Yeniden bir şey kuracaksak, ikimizin de içinde rahat nefes alabildiği bir şey olsun.
+    </p>
 </div>
 </section>
+
 
 <!-- =========================================================
      LETTER
@@ -7716,133 +7729,136 @@ button:hover{
 
 <div class="container">
 
-```
-<div class="reveal">
+
+    <div class="reveal">
 
 
-    <div class="eyebrow">
+        <div class="eyebrow">
 
-        şakalar bir yana
+            şakalar bir yana
+
+        </div>
+
+
+        <h2>
+
+            Asıl söylemek istediğim şey.
+
+        </h2>
+
 
     </div>
 
 
-    <h2>
 
-        Asıl söylemek istediğim şey.
-
-    </h2>
+    <div class="letter reveal">
 
 
-</div>
+        <strong>
+
+            Eylül,
+
+        </strong>
 
 
-
-<div class="letter reveal">
-
-
-    <strong>
-
-        Eylül,
-
-    </strong>
+        <br><br>
 
 
-    <br><br>
+        Bu sitenin büyük bölümü saçmalık.
+
+        <br>
+
+        Zaten seni güldürmek için yaptım.
 
 
-    Bu sitenin büyük bölümü saçmalık.
-
-    <br>
-
-    Zaten seni güldürmek için yaptım.
+        <br><br>
 
 
-    <br><br>
+        Ama şu kısmı ciddi:
 
 
-    Ama şu kısmı ciddi:
+        <br><br>
 
 
-    <br><br>
+        Seninle konuştuğum zamanları,
+        aramızdaki saçma muhabbetleri
+        ve birbirimizi tanıdığımız o hâli özlüyorum.
 
 
-    Seninle konuştuğum zamanları,
-    aramızdaki saçma muhabbetleri
-    ve birbirimizi tanıdığımız o hâli özlüyorum.
+        <br><br>
 
 
-    <br><br>
+        Geçmişte her şeyi doğru yaptığımı
+        söyleyemem.
 
 
-    Geçmişte her şeyi doğru yaptığımı
-    söyleyemem.
+        Yapmadım.
 
 
-    Yapmadım.
+        <br><br>
 
 
-    <br><br>
+        Yeniden konuşursak da
+        eskisinin aynısını kopyalamaya
+        çalışmak istemiyorum.
 
 
-    Yeniden konuşursak da
-    eskisinin aynısını kopyalamaya
-    çalışmak istemiyorum.
+        <br><br>
 
 
-    <br><br>
+        <strong>
+
+            Daha sakin,
+
+            daha dürüst,
+
+            ikimizin de daha rahat olduğu
+            bir şey olsun isterim.
+
+        </strong>
 
 
-    <strong>
-
-        Daha sakin,
-
-        daha dürüst,
-
-        ikimizin de daha rahat olduğu
-        bir şey olsun isterim.
-
-    </strong>
+        <br><br>
 
 
-    <br><br>
+        Şarkılar,
+
+        Ankara,
+
+        Esranur,
+
+        annemin mağlubiyeti,
+
+        EylülOS,
+
+        Van'ın başkent oluşu...
 
 
-    Şarkılar,
-
-    Ankara,
-
-    Esranur,
-
-    annemin mağlubiyeti,
-
-    EylülOS,
-
-    Van'ın başkent oluşu...
+        <br><br>
 
 
-    <br><br>
+        Bunların hepsi bonus.
 
 
-    Bunların hepsi bonus.
+        <br><br>
 
 
-    <br><br>
+        Ben aslında seni yeniden tanımak istiyorum.
 
 
-    Ben aslında seni yeniden tanımak istiyorum.
+    </div>
 
-
-</div>
-```
 
 </div>
 
 </section>
 
+
+
 <!-- =========================================================
      FINAL
 ========================================================= -->
+
 
 <!-- =========================================================
      AİLE GALERİMİZ
@@ -7851,7 +7867,6 @@ button:hover{
 <!-- =========================================================
      MINI OYUN 05 — GELECEKTEKİ ÇOCUK TATLILIK BAREMİ
 ========================================================= -->
-
 <section class="mini-game-section" id="babyCuteGame">
     <div class="mg-wrap">
         <div class="mg-head reveal">
@@ -7863,55 +7878,53 @@ button:hover{
             </p>
         </div>
 
-```
-    <div class="baby-cute-card reveal" id="babyCuteCard">
-        <div class="baby-cute-layout">
-            <div class="baby-cute-photo">
-                <img src="image00001 (2).png" alt="Gelecekteki aile için yapay zekâ görseli">
-            </div>
-
-            <div class="baby-meter-side">
-                <h3>Tatlılık baremi.</h3>
-                <p>
-                    Eylül, aşağıdaki kontrolü sürükle.
-                    Sistem değerlendirmeyi tamamen tarafsız yapacağına söz veriyor.
-                </p>
-
-                <div class="cute-meter-shell">
-                    <div class="cute-meter-labels">
-                        <span>normal</span>
-                        <span>fazla tatlı</span>
-                        <span>yasadışı seviye</span>
-                    </div>
-
-                    <div class="cute-meter-track">
-                        <div class="cute-meter-fill" id="cuteMeterFill"></div>
-                    </div>
-
-                    <input
-                        id="cuteMeterRange"
-                        class="cute-meter-range"
-                        type="range"
-                        min="0"
-                        max="100"
-                        value="12"
-                        aria-label="Tatlılık baremi"
-                    >
-
-                    <div class="cute-meter-value" id="cuteMeterValue">%12</div>
+        <div class="baby-cute-card reveal" id="babyCuteCard">
+            <div class="baby-cute-layout">
+                <div class="baby-cute-photo">
+                    <img src="image00001 (2).png" alt="Gelecekteki aile için yapay zekâ görseli">
                 </div>
 
-                <div class="baby-cute-result" id="babyCuteResult">
-                    <strong>Sistem henüz ikna olmadı.</strong>
-                    <span>biraz daha dürüst bir değerlendirme gerekiyor</span>
+                <div class="baby-meter-side">
+                    <h3>Tatlılık baremi.</h3>
+                    <p>
+                        Eylül, aşağıdaki kontrolü sürükle.
+                        Sistem değerlendirmeyi tamamen tarafsız yapacağına söz veriyor.
+                    </p>
+
+                    <div class="cute-meter-shell">
+                        <div class="cute-meter-labels">
+                            <span>normal</span>
+                            <span>fazla tatlı</span>
+                            <span>yasadışı seviye</span>
+                        </div>
+
+                        <div class="cute-meter-track">
+                            <div class="cute-meter-fill" id="cuteMeterFill"></div>
+                        </div>
+
+                        <input
+                            id="cuteMeterRange"
+                            class="cute-meter-range"
+                            type="range"
+                            min="0"
+                            max="100"
+                            value="12"
+                            aria-label="Tatlılık baremi"
+                        >
+
+                        <div class="cute-meter-value" id="cuteMeterValue">%12</div>
+                    </div>
+
+                    <div class="baby-cute-result" id="babyCuteResult">
+                        <strong>Sistem henüz ikna olmadı.</strong>
+                        <span>biraz daha dürüst bir değerlendirme gerekiyor</span>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-```
-
 </section>
+
 
 <section class="family-gallery" id="familyGallery">
     <div class="gallery-wrap">
@@ -7924,112 +7937,113 @@ button:hover{
             </p>
         </div>
 
-```
-    <div class="family-gallery-grid">
-        <div class="family-card reveal">
-            <img src="image00016.jpeg" alt="Aile galerisi fotoğrafı"><div class="family-label">Emirhan + Esranur</div>
+        <div class="family-gallery-grid">
+            <div class="family-card reveal">
+                <img src="image00016.jpeg" alt="Aile galerisi fotoğrafı"><div class="family-label">Emirhan + Esranur</div>
+            </div>
+
+            <div class="family-card reveal">
+                <img src="image00001.png" alt="Aile galerisi fotoğrafı"><div class="family-label">Ömer</div>
+            </div>
+
+            <div class="family-card reveal">
+                <img src="image00002.png" alt="Aile galerisi fotoğrafı"><div class="family-label">Eylül + Emirhan — yapay zekâ diplomasisi</div>
+            </div>
+
+            <div class="family-card reveal">
+                <img src="image00003 (2).jpeg" alt="Aile galerisi fotoğrafı"><div class="family-label">Eylül — küçükken</div>
+            </div>
+
+            <div class="family-card reveal">
+                <img src="image00004.jpeg" alt="Aile galerisi fotoğrafı"><div class="family-label">Emirhan — küçükken</div>
+            </div>
+
+            <div class="family-card reveal">
+                <img src="image00005.jpeg" alt="Aile galerisi fotoğrafı"><div class="family-label">Eylül — şimdi</div>
+            </div>
         </div>
 
-        <div class="family-card reveal">
-            <img src="image00001.png" alt="Aile galerisi fotoğrafı"><div class="family-label">Ömer</div>
-        </div>
-
-        <div class="family-card reveal">
-            <img src="image00002.png" alt="Aile galerisi fotoğrafı"><div class="family-label">Eylül + Emirhan — yapay zekâ diplomasisi</div>
-        </div>
-
-        <div class="family-card reveal">
-            <img src="image00003 (2).jpeg" alt="Aile galerisi fotoğrafı"><div class="family-label">Eylül — küçükken</div>
-        </div>
-
-        <div class="family-card reveal">
-            <img src="image00004.jpeg" alt="Aile galerisi fotoğrafı"><div class="family-label">Emirhan — küçükken</div>
-        </div>
-
-        <div class="family-card reveal">
-            <img src="image00005.jpeg" alt="Aile galerisi fotoğrafı"><div class="family-label">Eylül — şimdi</div>
+        <div class="family-gallery-note reveal">
+            Arşiv beklenenden hızlı büyüyor.
         </div>
     </div>
-
-    <div class="family-gallery-note reveal">
-        Arşiv beklenenden hızlı büyüyor.
-    </div>
-</div>
-```
-
 </section>
+
 
 <section class="final">
 
 <div class="container reveal">
 
-```
-<div class="eyebrow">
 
-    nihai karar
+    <div class="eyebrow">
 
-</div>
+        nihai karar
 
-
-<h2>
-
-    Dosyanın sonuna geldik.
-
-</h2>
+    </div>
 
 
-<div class="final-question">
+    <h2>
 
-    Benimle yeniden konuşmak ister misin?
+        Dosyanın sonuna geldik.
 
-</div>
-
-
-
-<div class="final-buttons">
+    </h2>
 
 
-    <button
-        class="yes"
-        onclick="yesAnswer()"
-    >
+    <div class="final-question">
 
-        konuşalım ❤️
+        Benimle yeniden konuşmak ister misin?
 
-    </button>
-
-
-    <button
-        onclick="maybeAnswer()"
-    >
-
-        biraz düşüneyim
-
-    </button>
-
-
-    <button
-        id="noButton"
-        onclick="noAnswer()"
-    >
-
-        istemiyorum
-
-    </button>
-
-
-</div>
+    </div>
 
 
 
-<div id="finalAnswer"></div>
-```
+    <div class="final-buttons">
+
+
+        <button
+            class="yes"
+            onclick="yesAnswer()"
+        >
+
+            konuşalım ❤️
+
+        </button>
+
+
+        <button
+            onclick="maybeAnswer()"
+        >
+
+            biraz düşüneyim
+
+        </button>
+
+
+        <button
+            id="noButton"
+            onclick="noAnswer()"
+        >
+
+            istemiyorum
+
+        </button>
+
+
+    </div>
+
+
+
+    <div id="finalAnswer"></div>
+
 
 </div>
 
 </section>
 
+
 </main>
+
+
 
 <script>
 
@@ -8665,6 +8679,9 @@ function celebration(){
 
 </script>
 
+
+
+
 <script>
 (function(){
     const puzzle = document.getElementById("togetherPuzzle");
@@ -8878,6 +8895,7 @@ function isAcceptedEylulAnswer(value){
     setTimeout(function(){ input.focus(); }, 250);
 })();
 </script>
+
 
 <script>
 /* =========================================================
@@ -9122,6 +9140,7 @@ function isAcceptedEylulAnswer(value){
 })();
 </script>
 
+
 <script>
 /* =========================================================
    MINI OYUN 04 — FOTOĞRAF DÜELLOSU
@@ -9198,6 +9217,7 @@ function isAcceptedEylulAnswer(value){
 })();
 </script>
 
+
 <script>
 /* =========================================================
    MINI OYUN 05 — TATLILIK BAREMİ
@@ -9237,6 +9257,50 @@ function isAcceptedEylulAnswer(value){
 
     slider.addEventListener("input",render);
     render();
+})();
+</script>
+
+
+<script>
+/* =========================================================
+   STRAY PUNCTUATION CLEANUP
+========================================================= */
+(function(){
+    function cleanStrayPunctuation(root){
+        if(!root) return;
+
+        const walker=document.createTreeWalker(
+            root,
+            NodeFilter.SHOW_TEXT
+        );
+
+        const remove=[];
+        let node;
+
+        while((node=walker.nextNode())){
+            const text=(node.nodeValue || "").trim();
+
+            if(
+                text === "```" ||
+                text === "\'\'\'" ||
+                text === "´´´" ||
+                text === "..." ||
+                text === "…"
+            ){
+                remove.push(node);
+            }
+        }
+
+        remove.forEach(node=>node.remove());
+    }
+
+    if(document.readyState==="loading"){
+        document.addEventListener("DOMContentLoaded",function(){
+            cleanStrayPunctuation(document.body);
+        });
+    }else{
+        cleanStrayPunctuation(document.body);
+    }
 })();
 </script>
 
