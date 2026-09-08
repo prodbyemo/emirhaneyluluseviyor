@@ -3611,12 +3611,126 @@ button:hover{
 
 }
 
+
+/* =========================================================
+   EYLÜL GİRİŞ KİLİDİ
+========================================================= */
+#eylulGate{
+    position:fixed;
+    inset:0;
+    z-index:999999;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:24px;
+    background:
+        radial-gradient(circle at 50% 30%,rgba(140,32,65,.24),transparent 38%),
+        #070708;
+    transition:opacity .7s ease, visibility .7s ease;
+}
+#eylulGate.unlocked{
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+}
+.gate-card{
+    width:min(520px,100%);
+    padding:42px 28px;
+    border:1px solid rgba(255,255,255,.09);
+    border-radius:28px;
+    background:rgba(255,255,255,.025);
+    box-shadow:0 35px 100px rgba(0,0,0,.45);
+    text-align:center;
+}
+.gate-lock{
+    margin-bottom:18px;
+    font-size:42px;
+    animation:lockPulse 1.3s infinite alternate;
+}
+.gate-label{
+    color:#9f697b;
+    font-size:9px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+}
+.gate-card h2{
+    margin-top:17px;
+    font-size:clamp(36px,7vw,54px);
+    line-height:1.08;
+}
+.gate-card p{
+    margin-top:14px;
+    color:#817874;
+    font-size:12px;
+    line-height:1.7;
+}
+.gate-input{
+    width:100%;
+    margin-top:27px;
+    padding:16px 18px;
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:16px;
+    outline:none;
+    background:rgba(255,255,255,.035);
+    color:#f3eeeb;
+    font:inherit;
+    text-align:center;
+    transition:.25s;
+}
+.gate-input:focus{
+    border-color:rgba(196,123,141,.55);
+    box-shadow:0 0 0 4px rgba(196,123,141,.06);
+}
+.gate-button{
+    width:100%;
+    margin-top:12px;
+}
+.gate-message{
+    min-height:22px;
+    margin-top:16px;
+    color:#9f697b;
+    font-size:11px;
+}
+.gate-card.wrong{
+    animation:gateShake .38s ease;
+}
+@keyframes gateShake{
+    0%,100%{transform:translateX(0)}
+    25%{transform:translateX(-7px)}
+    75%{transform:translateX(7px)}
+}
+
 </style>
 
 </head>
 
 
 <body>
+
+<div id="eylulGate" aria-modal="true" role="dialog">
+    <div class="gate-card" id="gateCard">
+        <div class="gate-lock">🔒</div>
+        <div class="gate-label">özel dosya • kimlik doğrulama</div>
+        <h2>Bu dosya Eylül'e ait.</h2>
+        <p>Eylül'ün en sevdiği hitap şekli ne?</p>
+
+        <input
+            id="gateInput"
+            class="gate-input"
+            type="text"
+            autocomplete="off"
+            placeholder="Cevabını yaz..."
+            aria-label="Eylül'ün en sevdiği hitap şekli"
+        >
+
+        <button class="gate-button" id="gateButton" type="button">
+            dosyayı aç
+        </button>
+
+        <div class="gate-message" id="gateMessage"></div>
+    </div>
+</div>
+
 
 
 <!-- =========================================================
@@ -6997,6 +7111,59 @@ function celebration(){
 
 </script>
 
+
+
+<script>
+(function(){
+    const gate = document.getElementById("eylulGate");
+    const input = document.getElementById("gateInput");
+    const button = document.getElementById("gateButton");
+    const message = document.getElementById("gateMessage");
+    const card = document.getElementById("gateCard");
+
+    function normalizeAnswer(value){
+        return value
+            .toLocaleLowerCase("tr-TR")
+            .trim()
+            .replace(/\s+/g," ");
+    }
+
+    function unlock(){
+        const answer = normalizeAnswer(input.value);
+
+        if(answer === "güzel kızım" || answer === "güzel kizim"){
+            message.style.color = "#c9b4bc";
+            message.textContent = "Kimlik doğrulandı. Hoş geldin güzel kızım. ❤️";
+            input.disabled = true;
+            button.disabled = true;
+
+            setTimeout(function(){
+                gate.classList.add("unlocked");
+                document.body.style.overflow = "";
+            }, 850);
+
+            setTimeout(function(){
+                gate.remove();
+            }, 1650);
+        }else{
+            message.style.color = "#9f697b";
+            message.textContent = "Eylül olduğundan emin miyiz?";
+            card.classList.remove("wrong");
+            void card.offsetWidth;
+            card.classList.add("wrong");
+            input.select();
+        }
+    }
+
+    document.body.style.overflow = "hidden";
+    button.addEventListener("click", unlock);
+    input.addEventListener("keydown", function(e){
+        if(e.key === "Enter") unlock();
+    });
+
+    setTimeout(function(){ input.focus(); }, 250);
+})();
+</script>
 
 </body>
 
