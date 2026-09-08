@@ -4691,42 +4691,6 @@ button:hover{
 }
 
 
-/* =========================================================
-   SEVİYE KİLİTLERİ — oyun çözülmeden aşağı geçme yok
-========================================================= */
-.level-lock-note{
-    width:min(900px,calc(100% - 34px));
-    margin:24px auto 0;
-    padding:13px 16px;
-    border:1px solid rgba(255,255,255,.075);
-    border-radius:15px;
-    background:rgba(255,255,255,.025);
-    color:#8d807e;
-    font-size:9px;
-    letter-spacing:1.2px;
-    text-align:center;
-    text-transform:uppercase;
-    transition:.35s ease;
-}
-.level-lock-note::before{
-    content:"🔒 ";
-}
-.level-lock-note.unlocked{
-    color:#bda2aa;
-    border-color:rgba(184,104,127,.22);
-    background:rgba(132,45,70,.07);
-}
-.level-lock-note.unlocked::before{
-    content:"✓ ";
-}
-.level-lock-bump{
-    animation:levelLockBump .32s ease;
-}
-@keyframes levelLockBump{
-    0%,100%{transform:translateY(0)}
-    45%{transform:translateY(-5px)}
-}
-
 </style>
 
 <link rel="preload" as="image" href="image00001 (1).png">
@@ -4950,10 +4914,6 @@ button:hover{
         </div>
     </div>
 </div>
-
-    <div class="level-lock-note" id="lockNoteProbability">
-        bu bölüm tamamlanmadan aşağısı açılmaz
-    </div>
 </section>
 
 
@@ -5978,10 +5938,6 @@ button:hover{
             </div>
         </div>
     </div>
-
-    <div class="level-lock-note" id="lockNotePuzzle">
-        bu bölüm tamamlanmadan aşağısı açılmaz
-    </div>
 </section>
 </div>
 
@@ -6705,10 +6661,6 @@ button:hover{
             </div>
         </div>
     </div>
-
-    <div class="level-lock-note" id="lockNoteMix">
-        bu bölüm tamamlanmadan aşağısı açılmaz
-    </div>
 </section>
 
 
@@ -6917,10 +6869,6 @@ button:hover{
                 <div class="duel-strip" id="duelStrip"></div>
             </div>
         </div>
-    </div>
-
-    <div class="level-lock-note" id="lockNoteDuel">
-        bu bölüm tamamlanmadan aşağısı açılmaz
     </div>
 </section>
 
@@ -7866,185 +7814,73 @@ button:hover{
    START
 ========================================================= */
 
-let probabilityTestCompleted=false;
-
 /* =========================================================
-   GENEL SEVİYE KİLİDİ
-   Sıradaki zorunlu oyun çözülmeden sonraki bölüme geçilemez.
+   OYUN GEÇİŞ KİLİDİ
+   Yalnızca gerçek mini oyunlarda aktif.
+   Uyarı yazısı göstermez.
 ========================================================= */
-const levelProgress = {
-    probability:false,
+const gameProgress = {
     puzzle:false,
     mix:false,
     duel:false
 };
 
-const levelDefinitions = [
-    {
-        key:"probability",
-        selector:".probability-test",
-        note:"lockNoteProbability"
-    },
-    {
-        key:"puzzle",
-        selector:"#photoPuzzleGame",
-        note:"lockNotePuzzle"
-    },
-    {
-        key:"mix",
-        selector:"#mixMiniGame",
-        note:"lockNoteMix"
-    },
-    {
-        key:"duel",
-        selector:"#photoDuelGame",
-        note:"lockNoteDuel"
-    }
+const gameLocks = [
+    { key:"puzzle", selector:"#photoPuzzleGame" },
+    { key:"mix", selector:"#mixMiniGame" },
+    { key:"duel", selector:"#photoDuelGame" }
 ];
 
-let levelLockBusy=false;
+let gameLockBusy = false;
 
-function getLevelSection(def){
-    return document.querySelector(def.selector);
-}
-
-function getFirstIncompleteLevel(){
-    return levelDefinitions.find(def=>{
-        const section=getLevelSection(def);
-        return section && !levelProgress[def.key];
+function currentLockedGame(){
+    return gameLocks.find(item=>{
+        const el=document.querySelector(item.selector);
+        return el && !gameProgress[item.key];
     }) || null;
 }
 
-function getLevelMaxScroll(section){
-    const rect=section.getBoundingClientRect();
-    const top=rect.top+window.scrollY;
-    const height=section.offsetHeight;
-
-    return Math.max(
-        top,
-        top + height - window.innerHeight
-    );
-}
-
-function bumpLockNote(def){
-    const note=document.getElementById(def.note);
-    if(!note) return;
-
-    note.classList.remove("level-lock-bump");
-    void note.offsetWidth;
-    note.classList.add("level-lock-bump");
-}
-
-function keepInsideCurrentLevel(){
-    if(levelLockBusy) return;
-
-    const def=getFirstIncompleteLevel();
-    if(!def) return;
-
-    const section=getLevelSection(def);
-    if(!section) return;
-
-    const sectionTop=
-        section.getBoundingClientRect().top
-        +
-        window.scrollY;
-
-    const maxScroll=getLevelMaxScroll(section);
-
+function gameBottomScroll(el){
+    const top = el.getBoundingClientRect().top + window.scrollY;
     /*
-      Kullanıcı bu seviyeye henüz gelmediyse normal scroll.
-      Seviyeyi gördüğü andan itibaren alt sınır kilitlenir.
-      Scrollbar ile aşağı atlamaya çalışsa bile geri getirir.
+      Kilit noktası oyunun ALTINA yakın.
+      Böylece oyun kartının tamamı ekranda görülebilir ama
+      sonraki bölüme geçilemez.
     */
-    if(window.scrollY > maxScroll){
-        levelLockBusy=true;
+    return Math.max(top, top + el.offsetHeight - window.innerHeight + 30);
+}
 
-        window.scrollTo({
-            top:maxScroll,
-            behavior:"auto"
-        });
+function enforceGameLock(){
+    if(gameLockBusy) return;
 
-        bumpLockNote(def);
+    const lock=currentLockedGame();
+    if(!lock) return;
 
-        setTimeout(()=>{
-            levelLockBusy=false;
-        },60);
+    const el=document.querySelector(lock.selector);
+    if(!el) return;
+
+    const top=el.getBoundingClientRect().top + window.scrollY;
+    const max=gameBottomScroll(el);
+
+    // Oyun bölümüne daha gelmediyse hiçbir şey yapma.
+    if(window.scrollY + window.innerHeight < top + 80) return;
+
+    if(window.scrollY > max){
+        gameLockBusy=true;
+        window.scrollTo({top:max,behavior:"auto"});
+        setTimeout(()=>{gameLockBusy=false;},40);
     }
 }
 
-function markLevelComplete(key){
-    if(!(key in levelProgress)) return;
-
-    levelProgress[key]=true;
-
-    if(key==="probability"){
-        probabilityTestCompleted=true;
-    markLevelComplete("probability");
-    }
-
-    const def=levelDefinitions.find(x=>x.key===key);
-    if(def){
-        const note=document.getElementById(def.note);
-        if(note){
-            note.classList.add("unlocked");
-            note.textContent="seviye tamamlandı • aşağısı açıldı";
-        }
-    }
-
-    setTimeout(()=>{
-        keepInsideCurrentLevel();
-    },50);
+function unlockGame(key){
+    if(!(key in gameProgress)) return;
+    gameProgress[key]=true;
 }
 
-window.markLevelComplete=markLevelComplete;
+window.unlockGame=unlockGame;
 
-function startSite(){
-
-    probabilityTestCompleted=false;
-
-    levelProgress.probability=false;
-    levelProgress.puzzle=false;
-    levelProgress.mix=false;
-    levelProgress.duel=false;
-
-    document
-        .getElementById("story")
-        .style
-        .display="block";
-
-
-    document.documentElement.style.overflow="";
-    document.body.style.overflow="";
-
-
-    setTimeout(()=>{
-
-        document
-            .querySelector(".test-section")
-            .scrollIntoView({
-
-                behavior:"smooth"
-
-            });
-
-    },100);
-
-}
-
-
-window.addEventListener(
-    "scroll",
-    keepInsideCurrentLevel,
-    {passive:true}
-);
-
-
-window.addEventListener(
-    "resize",
-    keepInsideCurrentLevel
-);
-
-
+window.addEventListener("scroll",enforceGameLock,{passive:true});
+window.addEventListener("resize",enforceGameLock);
 
 /* =========================================================
    TEST
@@ -8110,7 +7946,6 @@ function finishTest(){
         .display="block";
 
 
-    probabilityTestCompleted=true;
 
 
     document.documentElement.style.overflow="";
@@ -8839,7 +8674,7 @@ function isAcceptedEylulAnswer(value){
         if(solved !== 6) return;
 
         card.classList.add("solved");
-        if(window.markLevelComplete) window.markLevelComplete("puzzle");
+        if(window.unlockGame) window.unlockGame("puzzle");
         message.innerHTML =
             "<strong>Gerçek bir fotoğrafımızın hâlâ olmaması biraz üzücü. 😭❤️</strong>" +
             "<span>ama ileride gerçeğini çekme şansımız hâlâ var. Şimdilik bunu kabul edelim. :)</span>";
@@ -8998,7 +8833,7 @@ function isAcceptedEylulAnswer(value){
             card.classList.add("approved");
             if(!card.dataset.levelUnlocked){
                 card.dataset.levelUnlocked="1";
-                if(window.markLevelComplete) window.markLevelComplete("mix");
+                if(window.unlockGame) window.unlockGame("mix");
             }
             fill.style.height="96%";
             if(window.innerWidth<=760) fill.style.width="96%";
@@ -9067,7 +8902,7 @@ function isAcceptedEylulAnswer(value){
     function render(){
         if(round >= rounds.length){
             card.classList.add("finished");
-            if(window.markLevelComplete) window.markLevelComplete("duel");
+            if(window.unlockGame) window.unlockGame("duel");
             strip.innerHTML = picks.map(src=>`<img src="${src}" alt="Seçilen fotoğraf">`).join("");
             return;
         }
