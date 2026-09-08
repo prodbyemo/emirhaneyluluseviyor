@@ -4455,60 +4455,156 @@ button:hover{
 }
 
 
+
 /* =========================================================
-   YENİ FOTOĞRAF ŞERİDİ
+   MINI OYUN 04 — FOTOĞRAF DÜELLOSU
 ========================================================= */
-.memory-roll{
-    width:min(980px,calc(100% - 34px));
-    margin:55px auto 0;
+.photo-duel-card{
+    margin-top:28px;
+    padding:28px;
+    border:1px solid rgba(255,255,255,.075);
+    border-radius:30px;
+    background:
+        radial-gradient(circle at 50% 0%,rgba(150,53,82,.08),transparent 34%),
+        rgba(255,255,255,.017);
+    box-shadow:0 28px 80px rgba(0,0,0,.24);
 }
-.memory-roll-title{
-    margin-bottom:15px;
-    color:#746b69;
-    font-size:8px;
-    letter-spacing:2px;
+.photo-duel-top{
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    align-items:center;
+    color:#736a68;
+    font-size:9px;
+    letter-spacing:1.5px;
     text-transform:uppercase;
+}
+.photo-duel-top b{color:#b58b98;font-weight:500;}
+.photo-duel-prompt{
+    margin:22px auto 17px;
+    max-width:540px;
     text-align:center;
+    font-family:"Cormorant Garamond",serif;
+    font-size:clamp(26px,4vw,38px);
+    color:#e8dddf;
 }
-.memory-roll-grid{
+.photo-duel-arena{
     display:grid;
-    grid-template-columns:repeat(5,1fr);
-    gap:9px;
+    grid-template-columns:1fr auto 1fr;
+    gap:18px;
+    align-items:center;
+    max-width:680px;
+    margin:0 auto;
 }
-.memory-shot{
+.duel-photo{
     position:relative;
-    aspect-ratio:4/5;
     overflow:hidden;
-    border-radius:15px;
-    border:1px solid rgba(255,255,255,.07);
+    border:1px solid rgba(255,255,255,.09);
+    border-radius:22px;
     background:#111;
-    box-shadow:0 10px 30px rgba(0,0,0,.22);
+    aspect-ratio:4/5;
+    cursor:pointer;
+    transition:transform .24s ease,border-color .24s ease,box-shadow .24s ease;
+    padding:0;
 }
-.memory-shot:first-child{
-    grid-column:span 2;
-    aspect-ratio:8/5;
+.duel-photo:hover{
+    transform:translateY(-4px);
+    border-color:rgba(198,128,149,.40);
+    box-shadow:0 18px 50px rgba(0,0,0,.30);
 }
-.memory-shot img{
+.duel-photo img{
     width:100%;
     height:100%;
     object-fit:cover;
     display:block;
-    transition:transform .45s ease,filter .45s ease;
-}
-.memory-shot:hover img{transform:scale(1.035);}
-.memory-shot::after{
-    content:"";
-    position:absolute;
-    inset:0;
     pointer-events:none;
-    box-shadow:inset 0 -30px 40px rgba(0,0,0,.13);
 }
-@media(max-width:700px){
-    .memory-roll-grid{grid-template-columns:repeat(3,1fr);}
-    .memory-shot:first-child{grid-column:span 2;}
+.duel-photo::after{
+    content:"bunu seç";
+    position:absolute;
+    left:50%;
+    bottom:10px;
+    transform:translateX(-50%);
+    padding:7px 10px;
+    border-radius:999px;
+    white-space:nowrap;
+    color:#ddd0d3;
+    background:rgba(0,0,0,.55);
+    border:1px solid rgba(255,255,255,.08);
+    font-size:8px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    backdrop-filter:blur(7px);
 }
-@media(max-width:430px){
-    .memory-roll-grid{grid-template-columns:repeat(2,1fr);}
+.duel-vs{
+    color:#6f6565;
+    font-size:10px;
+    letter-spacing:2px;
+}
+.duel-photo.chosen{
+    border-color:rgba(206,139,159,.72);
+    box-shadow:0 0 0 4px rgba(161,61,91,.08),0 20px 55px rgba(113,35,58,.18);
+}
+.duel-photo.out{
+    opacity:.22;
+    transform:scale(.96);
+}
+.duel-progress{
+    display:flex;
+    justify-content:center;
+    gap:7px;
+    margin-top:19px;
+}
+.duel-dot{
+    width:7px;height:7px;
+    border-radius:50%;
+    border:1px solid rgba(255,255,255,.12);
+    background:transparent;
+}
+.duel-dot.done{background:#a06f7e;border-color:#a06f7e;}
+.duel-result{
+    display:none;
+    margin-top:24px;
+    text-align:center;
+    animation:mgFade .6s ease both;
+}
+.photo-duel-card.finished .duel-result{display:block;}
+.photo-duel-card.finished .photo-duel-arena,
+.photo-duel-card.finished .photo-duel-prompt{display:none;}
+.duel-result strong{
+    display:block;
+    font-family:"Cormorant Garamond",serif;
+    font-size:clamp(30px,5vw,44px);
+    color:#eee3e5;
+}
+.duel-result span{
+    display:block;
+    margin-top:6px;
+    color:#8a7c80;
+    font-size:10px;
+    line-height:1.6;
+}
+.duel-strip{
+    display:flex;
+    justify-content:center;
+    gap:9px;
+    margin-top:18px;
+}
+.duel-strip img{
+    width:88px;
+    height:105px;
+    object-fit:cover;
+    border-radius:13px;
+    border:1px solid rgba(255,255,255,.08);
+    transform:rotate(-2deg);
+}
+.duel-strip img:nth-child(2){transform:rotate(2deg);}
+.duel-strip img:nth-child(3){transform:rotate(-1deg);}
+@media(max-width:600px){
+    .photo-duel-card{padding:20px;}
+    .photo-duel-arena{gap:10px;grid-template-columns:1fr 24px 1fr;}
+    .duel-photo{border-radius:17px;}
+    .duel-strip img{width:72px;height:88px;}
 }
 
 </style>
@@ -5759,20 +5855,6 @@ button:hover{
         </div>
     </div>
 </section>
-
-<div class="memory-roll reveal">
-    <div class="memory-roll-title">dosyaya eklenen yeni görüntüler</div>
-    <div class="memory-roll-grid">
-        <div class="memory-shot"><img src="image00001 (1).png" alt="Dosyadaki fotoğraf" loading="lazy"></div>
-        <div class="memory-shot"><img src="image00001.jpeg" alt="Dosyadaki fotoğraf" loading="lazy"></div>
-        <div class="memory-shot"><img src="image00002.jpeg" alt="Dosyadaki fotoğraf" loading="lazy"></div>
-        <div class="memory-shot"><img src="image00003.jpeg" alt="Dosyadaki fotoğraf" loading="lazy"></div>
-        <div class="memory-shot"><img src="image00016.png" alt="Dosyadaki fotoğraf" loading="lazy"></div>
-        <div class="memory-shot"><img src="image00017.jpeg" alt="Dosyadaki fotoğraf" loading="lazy"></div>
-        <div class="memory-shot"><img src="image00018.png" alt="Dosyadaki fotoğraf" loading="lazy"></div>
-        <div class="memory-shot"><img src="image00037.jpeg" alt="Dosyadaki fotoğraf" loading="lazy"></div>
-        <div class="memory-shot"><img src="image00059.jpeg" alt="Dosyadaki fotoğraf" loading="lazy"></div>
-    </div>
 </div>
 
 
@@ -6282,7 +6364,7 @@ button:hover{
 
 
             <img
-                src="görsel_2026-09-07_225706178.png"
+                src="image00037.jpeg"
                 class="esranur-photo"
                 alt="Esranur"
             >
@@ -6542,7 +6624,7 @@ button:hover{
 
 
             <img
-                src="görsel_2026-09-07_230022946.png"
+                src="image00059.jpeg"
                 class="mom-photo"
                 alt="Anne"
             >
@@ -6651,6 +6733,61 @@ button:hover{
 </div>
 
 </section>
+
+
+<!-- =========================================================
+     MINI OYUN 04 — FOTOĞRAF DÜELLOSU
+========================================================= -->
+<section class="mini-game-section" id="photoDuelGame">
+    <div class="mg-wrap">
+        <div class="mg-head reveal">
+            <div class="eyebrow">mini oyun 04 — arşivden seçim</div>
+            <h2>Fotoğraf düellosu.</h2>
+            <p>
+                Üç tur. Her turda iki fotoğraf.
+                Fazla düşünmeden daha çok hoşuna gideni seç.
+            </p>
+        </div>
+
+        <div class="photo-duel-card reveal" id="photoDuelCard">
+            <div class="photo-duel-top">
+                <span>tur <b id="duelRound">1 / 3</b></span>
+                <span>ilk aklına geleni seç</span>
+            </div>
+
+            <div class="photo-duel-prompt" id="duelPrompt">
+                Hangisi daha çok “saklanmalı”?
+            </div>
+
+            <div class="photo-duel-arena">
+                <button class="duel-photo" id="duelLeft" type="button">
+                    <img src="" alt="Fotoğraf seçeneği 1">
+                </button>
+
+                <div class="duel-vs">VS</div>
+
+                <button class="duel-photo" id="duelRight" type="button">
+                    <img src="" alt="Fotoğraf seçeneği 2">
+                </button>
+            </div>
+
+            <div class="duel-progress">
+                <span class="duel-dot"></span>
+                <span class="duel-dot"></span>
+                <span class="duel-dot"></span>
+            </div>
+
+            <div class="duel-result" id="duelResult">
+                <strong>Seçimler kaydedildi. 📸</strong>
+                <span>
+                    Resmî bir anlamı yok. Sadece bu üç fotoğraf artık Eylül seçim kurulundan geçti.
+                </span>
+                <div class="duel-strip" id="duelStrip"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
 
 
 
@@ -8599,6 +8736,82 @@ function isAcceptedEylulAnswer(value){
     sliders.forEach(s=>s.addEventListener("input",evaluate));
     window.addEventListener("resize",evaluate);
     evaluate();
+})();
+</script>
+
+
+<script>
+/* =========================================================
+   MINI OYUN 04 — FOTOĞRAF DÜELLOSU
+========================================================= */
+(function(){
+    const card = document.getElementById("photoDuelCard");
+    if(!card) return;
+
+    const left = document.getElementById("duelLeft");
+    const right = document.getElementById("duelRight");
+    const roundText = document.getElementById("duelRound");
+    const prompt = document.getElementById("duelPrompt");
+    const dots = [...card.querySelectorAll(".duel-dot")];
+    const strip = document.getElementById("duelStrip");
+
+    const rounds = [
+        {
+            left:"image00001.jpeg",
+            right:"image00016.png",
+            prompt:"Hangisi daha çok “saklanmalı”?"
+        },
+        {
+            left:"image00002.jpeg",
+            right:"image00017.jpeg",
+            prompt:"Hangisi profil fotoğrafı olmaya daha yakın?"
+        },
+        {
+            left:"image00003.jpeg",
+            right:"image00018.png",
+            prompt:"Hangisini yıllar sonra görüp daha çok gülerdin?"
+        }
+    ];
+
+    let round = 0;
+    const picks = [];
+
+    function render(){
+        if(round >= rounds.length){
+            card.classList.add("finished");
+            strip.innerHTML = picks.map(src=>`<img src="${src}" alt="Seçilen fotoğraf">`).join("");
+            return;
+        }
+
+        const r = rounds[round];
+        roundText.textContent = (round+1) + " / 3";
+        prompt.textContent = r.prompt;
+        left.querySelector("img").src = r.left;
+        right.querySelector("img").src = r.right;
+        left.classList.remove("chosen","out");
+        right.classList.remove("chosen","out");
+    }
+
+    function choose(button, other){
+        if(button.classList.contains("chosen")) return;
+
+        button.classList.add("chosen");
+        other.classList.add("out");
+        picks.push(button.querySelector("img").getAttribute("src"));
+        dots[round].classList.add("done");
+
+        if(navigator.vibrate) navigator.vibrate(25);
+
+        setTimeout(()=>{
+            round++;
+            render();
+        },520);
+    }
+
+    left.addEventListener("click",()=>choose(left,right));
+    right.addEventListener("click",()=>choose(right,left));
+
+    render();
 })();
 </script>
 
