@@ -4084,7 +4084,7 @@ button:hover{
     aspect-ratio:3/2;
     border:1px solid rgba(255,255,255,.10);
     border-radius:15px;
-    background-image:url("görsel_2026-09-08_075231109.png");
+    background-image:url("image00001 (1).png");
     background-repeat:no-repeat;
     background-size:300% 200%;
     cursor:grab;
@@ -4166,7 +4166,7 @@ button:hover{
     opacity:.90;
     border-radius:13px;
     border:1px solid rgba(255,255,255,.14);
-    background-image:url("görsel_2026-09-08_075231109.png");
+    background-image:url("image00001 (1).png");
     background-repeat:no-repeat;
     background-size:300% 200%;
     box-shadow:0 18px 45px rgba(0,0,0,.44);
@@ -4454,9 +4454,66 @@ button:hover{
     .mix-slider{width:148px;}
 }
 
+
+/* =========================================================
+   YENİ FOTOĞRAF ŞERİDİ
+========================================================= */
+.memory-roll{
+    width:min(980px,calc(100% - 34px));
+    margin:55px auto 0;
+}
+.memory-roll-title{
+    margin-bottom:15px;
+    color:#746b69;
+    font-size:8px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    text-align:center;
+}
+.memory-roll-grid{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:9px;
+}
+.memory-shot{
+    position:relative;
+    aspect-ratio:4/5;
+    overflow:hidden;
+    border-radius:15px;
+    border:1px solid rgba(255,255,255,.07);
+    background:#111;
+    box-shadow:0 10px 30px rgba(0,0,0,.22);
+}
+.memory-shot:first-child{
+    grid-column:span 2;
+    aspect-ratio:8/5;
+}
+.memory-shot img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    transition:transform .45s ease,filter .45s ease;
+}
+.memory-shot:hover img{transform:scale(1.035);}
+.memory-shot::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    box-shadow:inset 0 -30px 40px rgba(0,0,0,.13);
+}
+@media(max-width:700px){
+    .memory-roll-grid{grid-template-columns:repeat(3,1fr);}
+    .memory-shot:first-child{grid-column:span 2;}
+}
+@media(max-width:430px){
+    .memory-roll-grid{grid-template-columns:repeat(2,1fr);}
+}
+
 </style>
 
-<link rel="preload" as="image" href="görsel_2026-09-08_075231109.png">
+<link rel="preload" as="image" href="image00001 (1).png">
 </head>
 
 
@@ -5702,6 +5759,22 @@ button:hover{
         </div>
     </div>
 </section>
+
+<div class="memory-roll reveal">
+    <div class="memory-roll-title">dosyaya eklenen yeni görüntüler</div>
+    <div class="memory-roll-grid">
+        <div class="memory-shot"><img src="image00001 (1).png" alt="Dosyadaki fotoğraf" loading="lazy"></div>
+        <div class="memory-shot"><img src="image00001.jpeg" alt="Dosyadaki fotoğraf" loading="lazy"></div>
+        <div class="memory-shot"><img src="image00002.jpeg" alt="Dosyadaki fotoğraf" loading="lazy"></div>
+        <div class="memory-shot"><img src="image00003.jpeg" alt="Dosyadaki fotoğraf" loading="lazy"></div>
+        <div class="memory-shot"><img src="image00016.png" alt="Dosyadaki fotoğraf" loading="lazy"></div>
+        <div class="memory-shot"><img src="image00017.jpeg" alt="Dosyadaki fotoğraf" loading="lazy"></div>
+        <div class="memory-shot"><img src="image00018.png" alt="Dosyadaki fotoğraf" loading="lazy"></div>
+        <div class="memory-shot"><img src="image00037.jpeg" alt="Dosyadaki fotoğraf" loading="lazy"></div>
+        <div class="memory-shot"><img src="image00059.jpeg" alt="Dosyadaki fotoğraf" loading="lazy"></div>
+    </div>
+</div>
+
 
 
 <section class="eylulos">
@@ -8347,8 +8420,8 @@ function isAcceptedEylulAnswer(value){
 
         card.classList.add("solved");
         message.innerHTML =
-            "<strong>Bir fotoğrafımızın bile olmaması ne kadar üzücü amk. 😭❤️</strong>" +
-            "<span>neyse, yapay zekâ şimdilik diplomatik boşluğu kapattı</span>";
+            "<strong>Gerçek bir fotoğrafımızın hâlâ olmaması biraz üzücü. 😭❤️</strong>" +
+            "<span>ama ileride gerçeğini çekme şansımız hâlâ var. Şimdilik bunu kabul edelim. :)</span>";
 
         if(navigator.vibrate) navigator.vibrate([35,45,35,45,60]);
     }
