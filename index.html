@@ -4036,6 +4036,417 @@ button:hover{
     }
 }
 
+
+/* =========================================================
+   MINI OYUN — 4 PARÇA FOTOĞRAF PUZZLE
+========================================================= */
+.mini-game-section{
+    position:relative;
+    padding:110px 0;
+    overflow:hidden;
+}
+.mini-game-section::before{
+    content:"";
+    position:absolute;
+    inset:12% 5%;
+    pointer-events:none;
+    background:radial-gradient(circle at 50% 50%,rgba(119,36,60,.09),transparent 60%);
+}
+.mg-wrap{
+    position:relative;
+    width:min(900px,calc(100% - 34px));
+    margin:auto;
+}
+.mg-head{
+    max-width:650px;
+    margin-bottom:30px;
+}
+.mg-head .eyebrow{
+    margin-bottom:13px;
+}
+.mg-head h2{
+    margin:0;
+    font-size:clamp(38px,7vw,66px);
+    line-height:.98;
+}
+.mg-head p{
+    margin:16px 0 0;
+    max-width:570px;
+    color:#918784;
+    font-size:12px;
+    line-height:1.75;
+}
+.photo-puzzle-card,
+.mix-game-card{
+    border:1px solid rgba(255,255,255,.075);
+    border-radius:30px;
+    background:
+        radial-gradient(circle at 15% 10%,rgba(144,50,78,.08),transparent 32%),
+        rgba(255,255,255,.018);
+    box-shadow:0 30px 90px rgba(0,0,0,.26);
+    overflow:hidden;
+}
+.photo-puzzle-card{
+    padding:28px;
+}
+.photo-puzzle-status{
+    display:flex;
+    justify-content:space-between;
+    gap:14px;
+    align-items:center;
+    color:#716967;
+    font-size:9px;
+    letter-spacing:1.6px;
+    text-transform:uppercase;
+}
+.photo-puzzle-status b{
+    color:#b58b98;
+    font-weight:500;
+}
+.photo-puzzle-area{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:24px;
+    margin-top:24px;
+}
+.photo-piece-pool{
+    min-height:365px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    align-content:center;
+    padding:16px;
+    border:1px dashed rgba(255,255,255,.07);
+    border-radius:24px;
+}
+.photo-piece{
+    position:relative;
+    aspect-ratio:1/1.05;
+    border:1px solid rgba(255,255,255,.09);
+    border-radius:20px;
+    overflow:hidden;
+    cursor:grab;
+    touch-action:none;
+    user-select:none;
+    background:#111;
+    box-shadow:0 14px 30px rgba(0,0,0,.22);
+    transition:transform .25s ease, opacity .25s ease, border-color .25s ease;
+}
+.photo-piece:active{cursor:grabbing;}
+.photo-piece.dragging{
+    opacity:.65;
+    transform:scale(.96) rotate(-1deg);
+}
+.photo-piece img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    pointer-events:none;
+}
+.photo-piece small{
+    position:absolute;
+    left:9px;
+    bottom:8px;
+    padding:5px 7px;
+    border-radius:999px;
+    background:rgba(0,0,0,.58);
+    color:#d8c8cd;
+    font-size:7px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    backdrop-filter:blur(7px);
+}
+.photo-board{
+    min-height:365px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:7px;
+    padding:7px;
+    border-radius:24px;
+    background:#0d0c0d;
+    border:1px solid rgba(255,255,255,.08);
+}
+.photo-slot{
+    position:relative;
+    min-height:165px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border:1px dashed rgba(255,255,255,.085);
+    border-radius:18px;
+    background:rgba(255,255,255,.015);
+    color:#534d4c;
+    font-size:9px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    transition:.25s ease;
+    overflow:hidden;
+}
+.photo-slot.hot{
+    border-color:rgba(201,140,158,.65);
+    background:rgba(143,53,80,.10);
+}
+.photo-slot.filled{
+    border-style:solid;
+    border-color:rgba(255,255,255,.08);
+}
+.photo-slot .photo-piece{
+    width:100%;
+    height:100%;
+    aspect-ratio:auto;
+    border:0;
+    border-radius:16px;
+    box-shadow:none;
+}
+.photo-puzzle-done{
+    display:none;
+    margin-top:22px;
+    text-align:center;
+    animation:mgFade .7s ease both;
+}
+.photo-puzzle-card.solved .photo-puzzle-done{
+    display:block;
+}
+.photo-puzzle-done strong{
+    display:block;
+    font-family:"Cormorant Garamond",serif;
+    font-size:clamp(30px,5vw,45px);
+    color:#f0e9e7;
+}
+.photo-puzzle-done span{
+    display:block;
+    margin-top:4px;
+    color:#947f86;
+    font-size:10px;
+}
+.photo-puzzle-card.solved .photo-board{
+    box-shadow:0 0 0 1px rgba(180,91,117,.15),0 0 70px rgba(144,52,80,.13);
+}
+
+/* =========================================================
+   MINI OYUN — PRODBYEMO MIX
+========================================================= */
+.mix-game-card{
+    padding:30px;
+}
+.mix-topline{
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    align-items:center;
+    margin-bottom:25px;
+}
+.mix-project{
+    color:#a67584;
+    font-size:9px;
+    letter-spacing:1.8px;
+    text-transform:uppercase;
+}
+.mix-badge{
+    padding:7px 10px;
+    border:1px solid rgba(255,255,255,.075);
+    border-radius:999px;
+    color:#7d7471;
+    font-size:8px;
+    letter-spacing:1.2px;
+    text-transform:uppercase;
+}
+.mix-console{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) 105px;
+    gap:22px;
+}
+.mix-channels{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:11px;
+}
+.mix-channel{
+    min-width:0;
+    padding:17px 10px 14px;
+    text-align:center;
+    border:1px solid rgba(255,255,255,.06);
+    border-radius:19px;
+    background:rgba(0,0,0,.13);
+}
+.mix-channel-name{
+    min-height:31px;
+    color:#a89b98;
+    font-size:8px;
+    line-height:1.35;
+    letter-spacing:1px;
+    text-transform:uppercase;
+}
+.mix-fader-wrap{
+    position:relative;
+    height:210px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:7px 0 6px;
+}
+.mix-track{
+    position:absolute;
+    width:3px;
+    height:178px;
+    border-radius:999px;
+    background:linear-gradient(to top,#3f3638,#77636a);
+}
+.mix-slider{
+    position:absolute;
+    width:180px;
+    height:30px;
+    transform:rotate(-90deg);
+    appearance:none;
+    background:transparent;
+    cursor:pointer;
+    touch-action:none;
+}
+.mix-slider::-webkit-slider-runnable-track{
+    height:3px;
+    background:transparent;
+}
+.mix-slider::-webkit-slider-thumb{
+    appearance:none;
+    width:27px;
+    height:16px;
+    margin-top:-6.5px;
+    border-radius:5px;
+    border:1px solid rgba(255,255,255,.18);
+    background:#d0b5be;
+    box-shadow:0 4px 15px rgba(0,0,0,.32);
+}
+.mix-slider::-moz-range-track{height:3px;background:transparent;}
+.mix-slider::-moz-range-thumb{
+    width:27px;
+    height:16px;
+    border-radius:5px;
+    border:1px solid rgba(255,255,255,.18);
+    background:#d0b5be;
+}
+.mix-value{
+    font-variant-numeric:tabular-nums;
+    color:#6f6664;
+    font-size:9px;
+}
+.master-strip{
+    display:flex;
+    flex-direction:column;
+    padding:16px 13px;
+    border:1px solid rgba(255,255,255,.065);
+    border-radius:20px;
+    background:rgba(0,0,0,.15);
+}
+.master-title{
+    color:#a08f94;
+    font-size:8px;
+    letter-spacing:1.6px;
+    text-transform:uppercase;
+    text-align:center;
+}
+.master-meter{
+    position:relative;
+    flex:1;
+    min-height:205px;
+    width:30px;
+    margin:14px auto;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,.07);
+    border-radius:999px;
+    background:#0b0a0b;
+}
+.master-fill{
+    position:absolute;
+    left:3px;
+    right:3px;
+    bottom:3px;
+    height:15%;
+    border-radius:999px;
+    background:linear-gradient(to top,#60444c,#a67584);
+    transition:height .25s ease, filter .25s ease;
+}
+.master-readout{
+    text-align:center;
+    color:#756c69;
+    font-size:8px;
+    line-height:1.5;
+}
+.mix-hint{
+    margin-top:21px;
+    color:#7d7471;
+    font-size:10px;
+    line-height:1.65;
+    text-align:center;
+}
+.mix-result{
+    margin-top:16px;
+    min-height:44px;
+    text-align:center;
+}
+.mix-result strong{
+    display:block;
+    font-family:"Cormorant Garamond",serif;
+    font-size:26px;
+    color:#b99aa4;
+}
+.mix-result span{
+    display:block;
+    margin-top:3px;
+    color:#746a68;
+    font-size:9px;
+}
+.mix-game-card.approved{
+    box-shadow:0 0 0 1px rgba(178,84,111,.13),0 25px 90px rgba(94,29,49,.17);
+}
+.mix-game-card.approved .master-fill{
+    filter:brightness(1.35);
+}
+.mix-game-card.approved .mix-result strong{
+    color:#e1c8d0;
+}
+@keyframes mgFade{
+    from{opacity:0;transform:translateY(8px)}
+    to{opacity:1;transform:none}
+}
+@media(max-width:760px){
+    .mini-game-section{padding:85px 0;}
+    .photo-puzzle-card,.mix-game-card{padding:20px;}
+    .photo-puzzle-area{grid-template-columns:1fr;gap:15px;}
+    .photo-piece-pool{min-height:250px;}
+    .photo-board{min-height:320px;}
+    .photo-slot{min-height:145px;}
+    .mix-console{grid-template-columns:1fr;}
+    .master-strip{
+        min-height:auto;
+        display:grid;
+        grid-template-columns:auto 1fr auto;
+        align-items:center;
+        gap:12px;
+    }
+    .master-meter{
+        width:auto;
+        height:23px;
+        min-height:0;
+        margin:0;
+    }
+    .master-fill{
+        top:3px;
+        bottom:3px;
+        left:3px;
+        height:auto !important;
+        width:15%;
+        transition:width .25s ease;
+    }
+}
+@media(max-width:540px){
+    .mix-channels{grid-template-columns:repeat(5,minmax(52px,1fr));gap:6px;overflow-x:auto;padding-bottom:5px;}
+    .mix-channel{padding:13px 6px 10px;}
+    .mix-fader-wrap{height:175px;}
+    .mix-track{height:145px;}
+    .mix-slider{width:148px;}
+}
+
 </style>
 
 </head>
@@ -5233,6 +5644,64 @@ button:hover{
      EYLUL OS
 ========================================================= -->
 
+
+<!-- =========================================================
+     MINI OYUN — 4 PARÇA FOTOĞRAF PUZZLE
+========================================================= -->
+<section class="mini-game-section" id="photoPuzzleGame">
+    <div class="mg-wrap">
+        <div class="mg-head reveal">
+            <div class="eyebrow">mini oyun 02 — bir araya getirme testi</div>
+            <h2>Dört parça. İki kişi.</h2>
+            <p>
+                Fotoğraflar yanlış yerde. Çok büyük bir mühendislik problemi.
+                Parçaları doğru kişilerin yerine bırak.
+            </p>
+        </div>
+
+        <div class="photo-puzzle-card reveal" id="photoPuzzleCard">
+            <div class="photo-puzzle-status">
+                <span>durum: <b id="photoPuzzleCount">0 / 4</b></span>
+                <span>sürükle • bırak</span>
+            </div>
+
+            <div class="photo-puzzle-area">
+                <div class="photo-piece-pool" id="photoPiecePool">
+                    <div class="photo-piece" draggable="true" data-owner="eylul" data-piece="e1">
+                        <img src="görsel_2026-09-08_074458333.png" alt="Eylül fotoğrafı" draggable="false">
+                        <small>Eylül</small>
+                    </div>
+                    <div class="photo-piece" draggable="true" data-owner="emirhan" data-piece="m2">
+                        <img src="görsel_2026-09-08_074703814.png" alt="Emirhan fotoğrafı" draggable="false">
+                        <small>Emirhan</small>
+                    </div>
+                    <div class="photo-piece" draggable="true" data-owner="emirhan" data-piece="m1">
+                        <img src="görsel_2026-09-08_074529801.png" alt="Emirhan fotoğrafı" draggable="false">
+                        <small>Emirhan</small>
+                    </div>
+                    <div class="photo-piece" draggable="true" data-owner="eylul" data-piece="e2">
+                        <img src="görsel_2026-09-08_074640767.png" alt="Eylül fotoğrafı" draggable="false">
+                        <small>Eylül</small>
+                    </div>
+                </div>
+
+                <div class="photo-board" id="photoPuzzleBoard">
+                    <div class="photo-slot" data-accept="eylul">Eylül</div>
+                    <div class="photo-slot" data-accept="emirhan">Emirhan</div>
+                    <div class="photo-slot" data-accept="emirhan">Emirhan</div>
+                    <div class="photo-slot" data-accept="eylul">Eylül</div>
+                </div>
+            </div>
+
+            <div class="photo-puzzle-done">
+                <strong>Bunu bile bir araya getirdin amk. ❤️</strong>
+                <span>fotoğraf departmanı: başarıyla tamamlandı</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+
 <section class="eylulos">
 
 <div class="container">
@@ -5864,6 +6333,100 @@ button:hover{
 <!-- =========================================================
      MOM
 ========================================================= -->
+
+
+<!-- =========================================================
+     MINI OYUN — PRODBYEMO MIX
+========================================================= -->
+<section class="mini-game-section" id="mixMiniGame">
+    <div class="mg-wrap">
+        <div class="mg-head reveal">
+            <div class="eyebrow">mini oyun 03 — ProdByEmo kalite kontrol</div>
+            <h2>Bu ilişkiyi düzgün mixle.</h2>
+            <p>
+                Master şu an biraz kötü geliyor. Beş kanalı ayarla.
+                İpucu vermiyorum. Ne yapılması gerektiği zaten biraz belli.
+            </p>
+        </div>
+
+        <div class="mix-game-card reveal" id="mixGameCard">
+            <div class="mix-topline">
+                <div class="mix-project">PROJECT: EYLÜL × EMİRHAN</div>
+                <div class="mix-badge">ProdByEmo Console v1.0</div>
+            </div>
+
+            <div class="mix-console">
+                <div class="mix-channels">
+                    <div class="mix-channel">
+                        <div class="mix-channel-name">Eylül</div>
+                        <div class="mix-fader-wrap">
+                            <div class="mix-track"></div>
+                            <input class="mix-slider" data-key="eylul" type="range" min="0" max="100" value="38">
+                        </div>
+                        <div class="mix-value">38</div>
+                    </div>
+
+                    <div class="mix-channel">
+                        <div class="mix-channel-name">Emirhan</div>
+                        <div class="mix-fader-wrap">
+                            <div class="mix-track"></div>
+                            <input class="mix-slider" data-key="emirhan" type="range" min="0" max="100" value="42">
+                        </div>
+                        <div class="mix-value">42</div>
+                    </div>
+
+                    <div class="mix-channel">
+                        <div class="mix-channel-name">İletişim</div>
+                        <div class="mix-fader-wrap">
+                            <div class="mix-track"></div>
+                            <input class="mix-slider" data-key="iletisim" type="range" min="0" max="100" value="25">
+                        </div>
+                        <div class="mix-value">25</div>
+                    </div>
+
+                    <div class="mix-channel">
+                        <div class="mix-channel-name">Gurur</div>
+                        <div class="mix-fader-wrap">
+                            <div class="mix-track"></div>
+                            <input class="mix-slider" data-key="gurur" type="range" min="0" max="100" value="78">
+                        </div>
+                        <div class="mix-value">78</div>
+                    </div>
+
+                    <div class="mix-channel">
+                        <div class="mix-channel-name">İnat</div>
+                        <div class="mix-fader-wrap">
+                            <div class="mix-track"></div>
+                            <input class="mix-slider" data-key="inat" type="range" min="0" max="100" value="83">
+                        </div>
+                        <div class="mix-value">83</div>
+                    </div>
+                </div>
+
+                <div class="master-strip">
+                    <div class="master-title">MASTER</div>
+                    <div class="master-meter">
+                        <div class="master-fill" id="masterFill"></div>
+                    </div>
+                    <div class="master-readout" id="masterReadout">
+                        -8.7 dB<br>NOT READY
+                    </div>
+                </div>
+            </div>
+
+            <div class="mix-hint">
+                Amaç: Eylül + Emirhan + iletişimi yükselt,
+                gurur + inadı aşağı çek. Master kendisi söyleyecek.
+            </div>
+
+            <div class="mix-result" id="mixResult">
+                <strong>MASTER: sorunlu</strong>
+                <span>birkaç fader yanlış yerde gibi</span>
+            </div>
+        </div>
+    </div>
+</section>
+
 
 <section class="mom">
 
@@ -7694,6 +8257,186 @@ function celebration(){
     });
 
     setTimeout(function(){ input.focus(); }, 250);
+})();
+</script>
+
+
+<script>
+/* =========================================================
+   MINI OYUN 02 — FOTOĞRAF PUZZLE
+========================================================= */
+(function(){
+    const card = document.getElementById("photoPuzzleCard");
+    const pool = document.getElementById("photoPiecePool");
+    const board = document.getElementById("photoPuzzleBoard");
+    const count = document.getElementById("photoPuzzleCount");
+    if(!card || !pool || !board) return;
+
+    let activePiece = null;
+    let solvedCount = 0;
+
+    function updateCount(){
+        count.textContent = solvedCount + " / 4";
+        if(solvedCount >= 4){
+            card.classList.add("solved");
+            if(navigator.vibrate) navigator.vibrate([30,40,30]);
+        }
+    }
+
+    function placePiece(piece, slot){
+        if(!piece || !slot || slot.classList.contains("filled")) return false;
+        if(piece.dataset.owner !== slot.dataset.accept) return false;
+
+        slot.textContent = "";
+        slot.appendChild(piece);
+        slot.classList.add("filled");
+        piece.setAttribute("draggable","false");
+        piece.style.touchAction = "auto";
+        solvedCount++;
+        updateCount();
+        return true;
+    }
+
+    document.querySelectorAll("#photoPiecePool .photo-piece").forEach(piece=>{
+        piece.addEventListener("dragstart",e=>{
+            activePiece = piece;
+            piece.classList.add("dragging");
+            e.dataTransfer.effectAllowed = "move";
+            e.dataTransfer.setData("text/plain", piece.dataset.piece);
+        });
+        piece.addEventListener("dragend",()=>{
+            piece.classList.remove("dragging");
+            activePiece = null;
+            document.querySelectorAll(".photo-slot").forEach(s=>s.classList.remove("hot"));
+        });
+
+        let startX=0,startY=0,clone=null;
+        piece.addEventListener("pointerdown",e=>{
+            if(piece.getAttribute("draggable")==="false") return;
+            activePiece = piece;
+            startX=e.clientX; startY=e.clientY;
+            piece.setPointerCapture(e.pointerId);
+            piece.classList.add("dragging");
+            clone=piece.cloneNode(true);
+            clone.style.position="fixed";
+            clone.style.left=(e.clientX-42)+"px";
+            clone.style.top=(e.clientY-42)+"px";
+            clone.style.width="84px";
+            clone.style.height="88px";
+            clone.style.zIndex="999999";
+            clone.style.pointerEvents="none";
+            clone.style.opacity=".9";
+            clone.removeAttribute("id");
+            document.body.appendChild(clone);
+        });
+        piece.addEventListener("pointermove",e=>{
+            if(!clone) return;
+            clone.style.left=(e.clientX-42)+"px";
+            clone.style.top=(e.clientY-42)+"px";
+            document.querySelectorAll(".photo-slot").forEach(s=>{
+                const r=s.getBoundingClientRect();
+                const hit=e.clientX>=r.left&&e.clientX<=r.right&&e.clientY>=r.top&&e.clientY<=r.bottom;
+                s.classList.toggle("hot",hit&&!s.classList.contains("filled"));
+            });
+        });
+        function pointerFinish(e){
+            if(!clone) return;
+            const x=e.clientX,y=e.clientY;
+            const target=[...document.querySelectorAll(".photo-slot")].find(s=>{
+                const r=s.getBoundingClientRect();
+                return !s.classList.contains("filled")&&x>=r.left&&x<=r.right&&y>=r.top&&y<=r.bottom;
+            });
+            if(target) placePiece(piece,target);
+            clone.remove(); clone=null;
+            piece.classList.remove("dragging");
+            document.querySelectorAll(".photo-slot").forEach(s=>s.classList.remove("hot"));
+            try{piece.releasePointerCapture(e.pointerId)}catch(_){}
+            activePiece=null;
+        }
+        piece.addEventListener("pointerup",pointerFinish);
+        piece.addEventListener("pointercancel",pointerFinish);
+    });
+
+    document.querySelectorAll(".photo-slot").forEach(slot=>{
+        slot.addEventListener("dragover",e=>{
+            e.preventDefault();
+            if(!slot.classList.contains("filled")) slot.classList.add("hot");
+        });
+        slot.addEventListener("dragleave",()=>slot.classList.remove("hot"));
+        slot.addEventListener("drop",e=>{
+            e.preventDefault();
+            slot.classList.remove("hot");
+            if(activePiece) placePiece(activePiece,slot);
+        });
+    });
+})();
+
+/* =========================================================
+   MINI OYUN 03 — MIX GAME
+========================================================= */
+(function(){
+    const card=document.getElementById("mixGameCard");
+    if(!card) return;
+    const sliders=[...card.querySelectorAll(".mix-slider")];
+    const fill=document.getElementById("masterFill");
+    const readout=document.getElementById("masterReadout");
+    const result=document.getElementById("mixResult");
+
+    function vals(){
+        const out={};
+        sliders.forEach(s=>out[s.dataset.key]=Number(s.value));
+        return out;
+    }
+
+    function evaluate(){
+        const v=vals();
+
+        sliders.forEach(s=>{
+            const txt=s.closest(".mix-channel").querySelector(".mix-value");
+            txt.textContent=s.value;
+        });
+
+        const good =
+            ((v.eylul + v.emirhan + v.iletisim) / 3) * .68 +
+            ((100-v.gurur + 100-v.inat) / 2) * .32;
+
+        const pct=Math.max(8,Math.min(100,Math.round(good)));
+        fill.style.height=pct+"%";
+        if(window.innerWidth<=760) fill.style.width=pct+"%";
+
+        const approved =
+            v.eylul >= 72 &&
+            v.emirhan >= 72 &&
+            v.iletisim >= 78 &&
+            v.gurur <= 30 &&
+            v.inat <= 30;
+
+        if(approved){
+            card.classList.add("approved");
+            fill.style.height="96%";
+            if(window.innerWidth<=760) fill.style.width="96%";
+            readout.innerHTML="-1.0 dB<br>APPROVED";
+            result.innerHTML="<strong>MASTER APPROVED ✓</strong><span>ProdByEmo kalite kontrolden geçti. Böyle daha iyi.</span>";
+        }else{
+            card.classList.remove("approved");
+            const db=(-12 + pct*.105).toFixed(1);
+            readout.innerHTML=db+" dB<br>NOT READY";
+
+            if(v.gurur>55 || v.inat>55){
+                result.innerHTML="<strong>MASTER: sert geliyor</strong><span>bazı gereksiz kanallar fazla açık</span>";
+            }else if(v.iletisim<55){
+                result.innerHTML="<strong>MASTER: bir şey eksik</strong><span>iletişim kanalı baya geride kalmış</span>";
+            }else if(v.eylul<60 || v.emirhan<60){
+                result.innerHTML="<strong>MASTER: ana vokaller kayıp</strong><span>iki önemli kanal biraz daha yukarı</span>";
+            }else{
+                result.innerHTML="<strong>MASTER: yaklaştın</strong><span>birkaç küçük ayar daha</span>";
+            }
+        }
+    }
+
+    sliders.forEach(s=>s.addEventListener("input",evaluate));
+    window.addEventListener("resize",evaluate);
+    evaluate();
 })();
 </script>
 
