@@ -304,6 +304,33 @@ button:hover{
 
 
 
+
+function startSite(){
+
+    // Reset only the actual mini-game locks.
+    gameProgress.puzzle=false;
+    gameProgress.mix=false;
+    gameProgress.duel=false;
+
+    const story=document.getElementById("story");
+    if(!story) return;
+
+    story.style.display="block";
+
+    document.documentElement.style.overflow="";
+    document.body.style.overflow="";
+
+    setTimeout(()=>{
+        const firstTest=document.querySelector(".test-section");
+        if(firstTest){
+            firstTest.scrollIntoView({
+                behavior:"smooth",
+                block:"start"
+            });
+        }
+    },100);
+}
+
 /* =========================================================
    TEST
 ========================================================= */
