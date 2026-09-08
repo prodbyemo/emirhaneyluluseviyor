@@ -305,32 +305,6 @@ button:hover{
 
 
 
-function startSite(){
-
-    // Reset only the actual mini-game locks.
-    gameProgress.puzzle=false;
-    gameProgress.mix=false;
-    gameProgress.duel=false;
-
-    const story=document.getElementById("story");
-    if(!story) return;
-
-    story.style.display="block";
-
-    document.documentElement.style.overflow="";
-    document.body.style.overflow="";
-
-    setTimeout(()=>{
-        const firstTest=document.querySelector(".test-section");
-        if(firstTest){
-            firstTest.scrollIntoView({
-                behavior:"smooth",
-                block:"start"
-            });
-        }
-    },100);
-}
-
 /* =========================================================
    TEST
 ========================================================= */
@@ -4718,6 +4692,174 @@ function startSite(){
 }
 
 
+
+/* =========================================================
+   MINI OYUN 05 — GELECEKTEKİ ÇOCUK TATLILIK BAREMİ
+========================================================= */
+.baby-cute-card{
+    margin-top:28px;
+    padding:28px;
+    border:1px solid rgba(255,255,255,.075);
+    border-radius:30px;
+    background:
+        radial-gradient(circle at 50% 15%,rgba(154,61,90,.10),transparent 35%),
+        rgba(255,255,255,.018);
+    box-shadow:0 28px 85px rgba(0,0,0,.25);
+}
+.baby-cute-layout{
+    display:grid;
+    grid-template-columns:minmax(240px,.9fr) minmax(300px,1.1fr);
+    gap:28px;
+    align-items:center;
+}
+.baby-cute-photo{
+    position:relative;
+    overflow:hidden;
+    border-radius:24px;
+    border:1px solid rgba(255,255,255,.08);
+    background:#111;
+    aspect-ratio:4/5;
+}
+.baby-cute-photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+.baby-cute-photo::after{
+    content:"AI aile arşivi";
+    position:absolute;
+    left:10px;
+    bottom:10px;
+    padding:7px 10px;
+    border-radius:999px;
+    background:rgba(0,0,0,.55);
+    color:#dfd0d4;
+    border:1px solid rgba(255,255,255,.07);
+    font-size:8px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    backdrop-filter:blur(8px);
+}
+.baby-meter-side h3{
+    margin:0 0 8px;
+    font-family:"Cormorant Garamond",serif;
+    font-size:clamp(30px,5vw,46px);
+    color:#eee4e6;
+}
+.baby-meter-side p{
+    margin:0 0 24px;
+    color:#8f8380;
+    font-size:11px;
+    line-height:1.7;
+}
+.cute-meter-shell{
+    position:relative;
+    padding:22px 18px 17px;
+    border:1px solid rgba(255,255,255,.065);
+    border-radius:22px;
+    background:rgba(0,0,0,.14);
+}
+.cute-meter-labels{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:12px;
+    color:#756b69;
+    font-size:8px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+}
+.cute-meter-track{
+    position:relative;
+    height:18px;
+    border-radius:999px;
+    background:#181417;
+    border:1px solid rgba(255,255,255,.065);
+    overflow:hidden;
+}
+.cute-meter-fill{
+    position:absolute;
+    inset:2px auto 2px 2px;
+    width:12%;
+    border-radius:999px;
+    background:linear-gradient(90deg,#654852,#a97a89,#d9bac4);
+    transition:width .18s ease;
+}
+.cute-meter-range{
+    width:100%;
+    margin:17px 0 0;
+    appearance:none;
+    background:transparent;
+    cursor:pointer;
+    touch-action:none;
+}
+.cute-meter-range::-webkit-slider-runnable-track{
+    height:4px;
+    border-radius:999px;
+    background:#342b2f;
+}
+.cute-meter-range::-webkit-slider-thumb{
+    appearance:none;
+    width:28px;
+    height:28px;
+    margin-top:-12px;
+    border-radius:50%;
+    background:#dfc5cd;
+    border:1px solid rgba(255,255,255,.26);
+    box-shadow:0 5px 18px rgba(0,0,0,.35);
+}
+.cute-meter-range::-moz-range-track{
+    height:4px;
+    border-radius:999px;
+    background:#342b2f;
+}
+.cute-meter-range::-moz-range-thumb{
+    width:28px;
+    height:28px;
+    border-radius:50%;
+    background:#dfc5cd;
+    border:1px solid rgba(255,255,255,.26);
+}
+.cute-meter-value{
+    margin-top:15px;
+    text-align:center;
+    font-family:"Cormorant Garamond",serif;
+    font-size:34px;
+    color:#c8aab4;
+}
+.baby-cute-result{
+    min-height:54px;
+    margin-top:18px;
+    text-align:center;
+}
+.baby-cute-result strong{
+    display:block;
+    font-family:"Cormorant Garamond",serif;
+    font-size:26px;
+    color:#bca0aa;
+}
+.baby-cute-result span{
+    display:block;
+    margin-top:4px;
+    color:#786e6b;
+    font-size:9px;
+}
+.baby-cute-card.maxed{
+    box-shadow:0 0 0 1px rgba(189,96,124,.14),0 25px 90px rgba(121,37,61,.19);
+}
+.baby-cute-card.maxed .baby-cute-result strong{color:#eee1e5;}
+.baby-cute-card.maxed .cute-meter-fill{
+    animation:cuteGlow .8s ease alternate infinite;
+}
+@keyframes cuteGlow{
+    from{filter:brightness(1)}
+    to{filter:brightness(1.35)}
+}
+@media(max-width:700px){
+    .baby-cute-layout{grid-template-columns:1fr;}
+    .baby-cute-photo{max-width:430px;width:100%;margin:auto;}
+}
+
 </style>
 
 <link rel="preload" as="image" href="image00001 (1).png">
@@ -7709,6 +7851,69 @@ function startSite(){
 <!-- =========================================================
      AİLE GALERİMİZ
 ========================================================= -->
+
+<!-- =========================================================
+     MINI OYUN 05 — GELECEKTEKİ ÇOCUK TATLILIK BAREMİ
+========================================================= -->
+<section class="mini-game-section" id="babyCuteGame">
+    <div class="mg-wrap">
+        <div class="mg-head reveal">
+            <div class="eyebrow">mini oyun 05 — gelecek simülasyonu</div>
+            <h2>Gelecekteki çocuğumuzun tatlılığına bakın.</h2>
+            <p>
+                Yapay zekâ yine haddini aşmış ve aile arşivine gelecekteki üyeyi de eklemiş.
+                Bilimsel olarak yapılması gereken tek şey kaldı: tatlılık baremini belirlemek.
+            </p>
+        </div>
+
+        <div class="baby-cute-card reveal" id="babyCuteCard">
+            <div class="baby-cute-layout">
+                <div class="baby-cute-photo">
+                    <img src="image00001 (2).png" alt="Gelecekteki aile için yapay zekâ görseli">
+                </div>
+
+                <div class="baby-meter-side">
+                    <h3>Tatlılık baremi.</h3>
+                    <p>
+                        Eylül, aşağıdaki kontrolü sürükle.
+                        Sistem değerlendirmeyi tamamen tarafsız yapacağına söz veriyor.
+                    </p>
+
+                    <div class="cute-meter-shell">
+                        <div class="cute-meter-labels">
+                            <span>normal</span>
+                            <span>fazla tatlı</span>
+                            <span>yasadışı seviye</span>
+                        </div>
+
+                        <div class="cute-meter-track">
+                            <div class="cute-meter-fill" id="cuteMeterFill"></div>
+                        </div>
+
+                        <input
+                            id="cuteMeterRange"
+                            class="cute-meter-range"
+                            type="range"
+                            min="0"
+                            max="100"
+                            value="12"
+                            aria-label="Tatlılık baremi"
+                        >
+
+                        <div class="cute-meter-value" id="cuteMeterValue">%12</div>
+                    </div>
+
+                    <div class="baby-cute-result" id="babyCuteResult">
+                        <strong>Sistem henüz ikna olmadı.</strong>
+                        <span>biraz daha dürüst bir değerlendirme gerekiyor</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
 <section class="family-gallery" id="familyGallery">
     <div class="gallery-wrap">
         <div class="mg-head reveal">
@@ -7841,6 +8046,39 @@ function startSite(){
    START
 ========================================================= */
 
+function startSite(){
+    const story=document.getElementById("story");
+    if(!story) return;
+
+    // Ana dosyayı görünür yap.
+    story.style.display="block";
+
+    // Introdan sonra normal kaydırmayı garanti et.
+    document.documentElement.style.overflow="";
+    document.body.style.overflow="";
+
+    // Zorunlu mini oyunların başlangıç durumu.
+    if(window.gameProgress){
+        window.gameProgress.puzzle=false;
+        window.gameProgress.mix=false;
+        window.gameProgress.duel=false;
+        window.gameProgress.baby=false;
+    }
+
+    setTimeout(()=>{
+        const firstTest=document.querySelector(".test-section");
+        if(firstTest){
+            firstTest.scrollIntoView({
+                behavior:"smooth",
+                block:"start"
+            });
+        }
+    },120);
+}
+
+window.startSite=startSite;
+
+
 /* =========================================================
    OYUN GEÇİŞ KİLİDİ
    Yalnızca gerçek mini oyunlarda aktif.
@@ -7849,13 +8087,16 @@ function startSite(){
 const gameProgress = {
     puzzle:false,
     mix:false,
-    duel:false
+    duel:false,
+    baby:false
 };
+window.gameProgress=gameProgress;
 
 const gameLocks = [
     { key:"puzzle", selector:"#photoPuzzleGame" },
     { key:"mix", selector:"#mixMiniGame" },
-    { key:"duel", selector:"#photoDuelGame" }
+    { key:"duel", selector:"#photoDuelGame" },
+    { key:"baby", selector:"#babyCuteGame" }
 ];
 
 let gameLockBusy = false;
@@ -8962,6 +9203,49 @@ function isAcceptedEylulAnswer(value){
     left.addEventListener("click",()=>choose(left,right));
     right.addEventListener("click",()=>choose(right,left));
 
+    render();
+})();
+</script>
+
+
+<script>
+/* =========================================================
+   MINI OYUN 05 — TATLILIK BAREMİ
+========================================================= */
+(function(){
+    const card=document.getElementById("babyCuteCard");
+    const slider=document.getElementById("cuteMeterRange");
+    const fill=document.getElementById("cuteMeterFill");
+    const value=document.getElementById("cuteMeterValue");
+    const result=document.getElementById("babyCuteResult");
+    if(!card || !slider || !fill || !value || !result) return;
+
+    let completed=false;
+
+    function render(){
+        const v=Number(slider.value);
+        fill.style.width=Math.max(2,v)+"%";
+        value.textContent="%"+v;
+
+        if(v<45){
+            result.innerHTML="<strong>Sistem henüz ikna olmadı.</strong><span>bu değerlendirme biraz şüpheli</span>";
+        }else if(v<80){
+            result.innerHTML="<strong>Evet, yaklaşmaya başladık.</strong><span>ama fotoğrafa bir daha bak derim</span>";
+        }else if(v<100){
+            result.innerHTML="<strong>Tehlikeli derecede tatlı.</strong><span>birkaç puan daha var gibi</span>";
+        }else{
+            card.classList.add("maxed");
+            result.innerHTML="<strong>%100 — karar verildi. ❤️</strong><span>genetik departmanı gereksiz özgüven kazandı</span>";
+
+            if(!completed){
+                completed=true;
+                if(window.unlockGame) window.unlockGame("baby");
+                if(navigator.vibrate) navigator.vibrate([30,40,50]);
+            }
+        }
+    }
+
+    slider.addEventListener("input",render);
     render();
 })();
 </script>
